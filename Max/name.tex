@@ -1,0 +1,247 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{cancel}
+\usepackage[shortlabels]{enumitem}
+\usepackage{fancyhdr} 
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{multicol}
+\usepackage{pgfplots}
+\usepackage{tikz-cd,tikz}
+\usepackage{todonotes}
+    \pgfplotsset{
+        compat=1.12,
+    }
+\usepackage[breakable,skins,most]{tcolorbox}
+\usepackage{verbatim}
+\usepackage{xcolor}
+
+\newtcolorbox{greybox}[1]{%untitled
+colback=gray!5!white,
+colframe=gray!75!black,
+fonttitle=\bfseries,
+title=#1}
+
+\newtcolorbox{defbox}{
+colback=blue!5,
+colframe=blue!50,
+fonttitle=\bfseries,
+title=Definition}
+
+\newtcolorbox{exbox}{
+colback=green!5,
+colframe=green!75!black,
+fonttitle=\bfseries,
+title=Example}
+
+\newtcolorbox{pbox}[1]{
+colback=violet!5,
+colframe=violet!50,
+fonttitle=\bfseries,
+title=Proposition #1}
+
+\newtcolorbox{quesbox}{
+colback=magenta!5,
+colframe=magenta!50,
+fonttitle=\bfseries,
+title=??}
+
+\newtcolorbox{qbox}{
+colback=red!5,
+colframe=red!75,
+fonttitle=\bfseries,
+title=Question}
+
+\newtcolorbox{thbox}[1]{
+colback=violet!5,
+colframe=violet!75,
+fonttitle=\bfseries,
+title=Theorem #1}
+
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+ 
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{}             
+\newcommand\Name{}
+
+% Macros
+\newcommand{\A}{\mathbb{A}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+
+\newcommand{\all}{\ \forall \ }
+\newcommand{\ans}{\textbf{A: \ }}
+\newcommand{\aut}{\text{Aut}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\bs}{\backslash}
+\newcommand{\cross}{\times}
+\newcommand{\Def}[1]{\begin{defbox}{#1}
+\end{defbox}}
+\newcommand{\defn}{\textbf{\underline{Definition}}}
+\newcommand{\ex}[1]{\begin{exbox}{#1}
+\end{exbox}}
+\newcommand{\exist}{ \ \exists \ }
+\newcommand{\ext}{\text{Ext}}
+\newcommand{\facts}{\textbf{\underline{Facts}}}
+\newcommand{\green}[1]{\textcolor{green}{#1}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\id}[1]{\begin{quesbox}{#1}
+\end{quesbox}}
+\newcommand{\iso}{\cong}
+\newcommand{\kw}[1]{\textit{#1}}
+\newcommand{\la}{\lambda}
+\newcommand{\prop}[2]{\begin{pbox}{#1}{#2}
+\end{pbox}}
+\newcommand{\Ques}[1]{\begin{qbox}{#1}
+\end{qbox}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\sect}[1]{\section*{#1}}
+\newcommand{\ssect}[1]{\subsection*{#1}}
+\newcommand{\thm}[2]{\begin{thbox}{#1}{#2}
+\end{thbox}}
+
+\title{}
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\Name}
+\chead{\textbf{\Large Numerical Semigroups}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\begin{document} 
+
+\underline{Prop} Let $S$ be a numerical semigroup. 
+$$S \subseteq A(I \cup S) \iff I \subseteq M(S) \ \text{is an order ideal}$$
+\underline{Pf} Suppose $I$ is an order ideal. Suppose $s \in S$. 
+
+Show $s + (I \cup S) \subseteq I \cup S$. 
+
+equivalently $s+y \in I \cup S$ for any $y \in I \cup S$. 
+
+Suppose $y \in I.$ Then $F-y \in M(S).$ 
+
+Suppose $s+y \not\in S.$ Then either $s + y \not \in M(S)$ or $s+y \in M(S) \backslash I$. If $s + y \not \in M(S)$ then $F-S - y \in S.$ But then $(F-s-y)+s = F-y \in S$, which is a contradiction. 
+
+If $s+y \in M(S) \backslash I$. Note: $y \preceq s+y$ since $(s+y) - y \in S.$ Since $y \in I$ and $I $ is an order ideal $s+y \in I.$
+
+Suppose $S \subseteq A(I \cup S)$. 
+
+Suppose $x \in I $ and $\underbrace{x \preceq y}_{y - x \in S}$
+
+Show $y \in I.$
+$(y - x)+ \underbrace{x}_{I} = y \in I \cup S$ since $y-x \in A(I \cup S)$
+
+Since $y \in M(S), y \not \in S,$ so $y \in I. \qed$
+
+
+\underline{Def} A poset $(P, \preceq)$ is self-dual if $\exist$ a bijection $\phi : P \to P$ s.t. $x \preceq y \iff \phi(y) \preceq \phi(x).$
+
+\underline{Prop} $(M(S), \preceq)$
+
+\underline{pf} consider $\phi(x) = F-x.$ If $x \preceq y (y -x \in S)$, then $\phi (y) \preceq \phi(x) ((F-x)-(F-y) = y-x \in S.)$
+
+\underline{Def} An order ideal $I \subseteq M(S)$ is \underline{self-dual} if $x \in I \implies \overline{x} = F-x \in I$.  
+
+\underline{Prop} If $I \subseteq M(S)$ is a self-dual order ideal, then $A(I \cup S) = S.$ So $T=S \cup I$ is a numerical set associated to $S.$
+
+\underline{Ex} (from slides?) $S=\langle 9, 10,11,12,13 \rangle$ 
+
+$|\lambda(S)| = 32$ 
+
+$F(S)=17$
+
+$\N_0 \backslash S = \{1,2, \dots, 8, 14, 15, 16, 17 \}$
+
+$\lambda = (9, 8, 2, 2, 2, 2, 2, 2, 2) \quad |\lambda|=31$
+
+$H(\lambda) = \N_0 \backslash S$. 
+
+$\lambda$ corresponds to some numerical set 
+
+$T = S \cup I$ for some order ideal of $(M(S),\preceq)$. 
+
+$M(S) = \{1, 16, 2, 15, 3, 14 \}$
+
+**Insert Image 1**
+
+Self dual order ideal: how to create one? 
+
+\underline{Q:} How many numerical sets associated to $S$ are of the form $T= S \cup I$ where $I $ is a self-dual order ideal of $M(S)?$
+
+\underline{Theorem 3.6}
+If $I$ is a self-dual order ideal, $I \cap PF(S)$ is a union of connected components of $GPF(S)$. 
+
+Conversely given any union of connected components of $GPF(S)$, there exists a self-dual order ideal $I$ for which those are the maximal elements. 
+
+$GPF(S)$
+
+-Vertices $PF(S) \backslash F(S)$
+
+-Edges $(P,Q)$ if $P+Q - F \in S$
+
+-Can have loops
+
+\underline{Note} Edge between $P, Q \iff \overline{P} \preceq Q, \overline{Q} \preceq P$. 
+
+Check: $Q-(F-P) = P + Q - F \in S \quad P - (F-Q) = P+ Q - F \in S$
+
+We know that $S \subseteq A(I \cup S) \iff I$ is an order ideal. 
+
+\underline{Q:} What is the condition on an order ideal $I$ s.t. $A(I \cup S ) \subseteq S$?
+
+\underline{Theorem 3.9} (ii) for each $P \in I \cap PF(S)$ either 
+
+(a) $2 P \not \in S$
+
+(b) $F-P \in I$
+
+(c) 'there is a Frobenius Triangle $(P,x,y)$ satisfied by $I$'
+
+What is a Frobenius Triangle? 
+
+If $P \in PF(S) \backslash F$ and $x,y \in M(S),$ then $(P,x,y)$ is a \underline{Frobenius triangle} if $P + x = \overline{y} = F -y$, $P+x+y = F$. 
+
+$I$ satisfies $(P,x,y)$ if $P, x \in I$ and $\overline{y} \not \in I.$
+
+\underline{Ex} $I \in \{1, 14, 16\}$
+
+$I \cap PF(S) = \{14,16 \}$
+
+-$P=16, \ \overline{P} = 17 - P = 1 \in I$. 
+
+- $P = 14, \ \overline{P} = 3 \not \in I. 2P = 14 + 14 \in S$. 
+
+$(14, 1, 2)$ we need that $y=2, \overline{y} = 17 -2 =15 \not \in I$ so $(14, 1, 2)$ is a frobenius triangle. $(14,2,1)$ is not. 
+
+$S$ is called \underline{elementary} if $F(S) < 2M(S)$. 
+
+$S = \{ 0 , m , \underbrace{\dots}_{m+1, \dots 2m-1}, 2m, 2m+1, \dots \}$
+(s is determined by $m+1, \dots , 2m-1$). 
+
+
+
+
+
+\end{document}

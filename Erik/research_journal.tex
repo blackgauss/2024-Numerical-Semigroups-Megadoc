@@ -1,0 +1,98 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{todonotes}
+    \pgfplotsset{
+        compat=1.12,
+    }
+\usepackage{physics}
+\usepackage{draftwatermark}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{emoji}
+
+\usepackage{ytableau}
+
+
+
+\usepackage[breakable,skins,most]{tcolorbox}
+
+% tcolorboxes
+\usepackage{Erik/Styles/colorboxes}
+ 
+\renewcommand\lstlistingname{Algorithm}
+\renewcommand\lstlistlistingname{Algorithms}
+\def\lstlistingautorefname{Alg.}
+
+\lstdefinestyle{Python}{
+    language        = Python,
+    frame           = lines, 
+    basicstyle      = \footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily
+}
+
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{UCI 2024}
+\newcommand\hwnumber{}                 
+\newcommand\Name{Erik Imathiu-Jones}
+
+% Macros
+\usepackage{Erik/Styles/macros}
+
+\SetWatermarkText{}%\emoji{rose}} %\emoji{smiling-face-with-horns}}
+\SetWatermarkScale{1}
+\SetWatermarkAngle{0}
+
+% Bibliography setup
+\usepackage{natbib} % For more flexible citations
+\bibliographystyle{plainnat} % Specify bibliography style
+\usepackage{url} % To include URLs in bibliography
+
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\Name}
+\chead{\textbf{\Large Journal \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\title{UCI 2024}
+\author{Erik Imathiu-Jones}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+
+%\maketitle
+
+\newpage
+\section{Preface}
+\input{Erik/Napkin/Parts/Preface}
+\tableofcontents
+\newpage
+\part{Research Log}
+\section{June 28, 2024}
+\input{Erik/Napkin/Parts/June28}
+
+
+\end{document}

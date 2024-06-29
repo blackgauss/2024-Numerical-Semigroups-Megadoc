@@ -1,0 +1,307 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{ytableau}
+\usepackage{tabularx}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{definition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{prop}[thm]{Proposition}
+
+\title{all the things}
+\date{Summer 2024}
+\begin{document}
+\section{Table of Notation}
+\begin{table}[!h]
+    \centering
+    \begin{tabularx}{\textwidth}{c|X}
+        Notation & Item \\
+        \hline \\
+        $\lambda_i$ & $i$-th part of partition $\lambda$ \\
+        $|\lambda|$ & size of $\lambda$, i.e. $\sum\limits_{i=0}^t\lambda_i$ \\
+        $p(n)$ & partition counting function by size, $p(n) =  \#\{\text{partitions of }n\}$\\
+         $\mathcal{H}(\lambda)$ & multiset of hook lengths \\
+         $H(\lambda)$ & set of hook lengths \\
+         $\lambda ', \tilde{\lambda}$ & conjugate of a partition $\lambda$ \\
+         g(S) & genus of $S$, i.e. number of gaps of $S$ \\
+         F(S) & Frobenius number of $S$ \\
+         PF(S) & set of pseudo-Frobenius numbers of $S$ \\
+         $\lambda(S)$ & the partition built from the numerical semigroup $S$, \newline i.e. the enumeration of $S$ \\
+         $P(S)$ & partition counting function by semigroup, \newline $P(S) = \#\{\lambda \mid H(\lambda) = \mathbb{N} \setminus S\}$ \\
+         & \\
+         & \\
+         & \\
+         & \\
+         & \\
+    \end{tabularx}
+\end{table}
+\section{Integer partitions}
+\begin{defn}[Integer partition]
+    An $\textbf{integer partition}$ $\lambda$ of a positive integer $n$ is a tuple of non-increasing positive integers that add up to $n$. That is, $\lambda = (\lambda_1, \lambda_2, ..., \lambda_t)$ where $\lambda_1 \geq \lambda_2 \geq ... \geq \lambda_t \geq 1$ and $\sum\limits_{i=0}^t\lambda_i = n$. We write $\lambda \vdash n$, and $\lambda$ is said to have \textbf{size} $\mid\lambda\mid = n$. Each $\lambda_i$ is called a \textbf{part}.
+\end{defn}
+
+\begin{defn}[Partition counting function]
+    The \textbf{partition counting function}, $p(n)$, is defined as 
+    $$p(n) = \#\{\text{partitions of }n\}$$.
+
+    We note that $p(n)$ is exactly the number of conjugacy classes in the symmetric group $S_n$.
+\end{defn}
+
+\begin{defn}[Young diagram]
+    The \textbf{Young diagram} of an integer partition $\lambda = (\lambda_1, \lambda_2, ..., \lambda_t)$ is a left-justified array of squares where the $i$-th row has $\lambda_i$ squares.
+\end{defn}
+    
+\begin{defn}[Hook length]
+    The \textbf{hook length} of a square on the Young diagram of a partition is the sum of the number of squares below it and to the right of it, plus one. 
+
+    The \textbf{multiset of hook lengths} of a partition $\lambda$ is denoted $\mathcal{H}(\lambda)$. Note that the multiset counts repetitions, that is, a hook length occuring multiple times in the Young diagram appears multiple times in $\mathcal{H}(\lambda)$. 
+
+    The \textbf{set of hook lengths} of a partition $\lambda$ is denoted $H(\lambda)$. We note that this is similar to $\mathcal{H}(\lambda)$, except that repetitions are not counted. 
+    
+\end{defn}
+
+\begin{ex}[Young diagram, hook length]
+Here we have the Young diagram of the partition $\lambda = (3, 2)$, with each square labeled with its hook length.
+
+    \begin{figure}[h!]
+        \begin{center}
+            \begin{ytableau}
+                \none[3] & 4 & 3 & 1 \\
+                \none[2] & 2 & 1 & \none \\
+            \end{ytableau}
+        \end{center} 
+        \caption{Hook lengths on the Young diagram of the partition $(3,2)$}
+        \label{fig:hook-lengths}
+    \end{figure}
+
+We note that $\mathcal{H}(\lambda) = \{1, 1, 2, 3, 4\}$, and $H(\lambda) = \{1, 2, 3, 4\}$.
+
+\end{ex}
+
+\begin{prop}
+    Let $X$ be a finite multiset of positive integers. Then there are only finitely many partitions $\lambda$ with $\mathcal{H}(\lambda) = X$.
+
+    \textit{Proof.} The key observation is that at some point, the partitions get too large to have hook multiset $X$. We note that since $\mathcal{H}(\lambda)$ counts repetitions, $|\lambda| = |\mathcal{H}(\lambda)|$, so $|\lambda| = |X|$. But the number of partitions of a given size is finite, that is, $p(|X|)$ is finite. So there are only finitely many partitions $\lambda$ with $\mathcal{H}(\lambda) = X$. $\blacksquare$ 
+\end{prop}
+
+\begin{prop}
+    Let $Y$ be a finite set of positive integers. There are only finitely many partitions $\lambda$ with $H(\lambda) = Y$.
+
+    \textit{Proof.} We note that the largest hook length of a partition $\lambda$ is 
+    $$\#\{\text{rows of } \lambda\} + \#\{\text{columns of }\lambda\} - 1$$
+    Hence, any partition with $H(\lambda) = Y$ must fit in one of a finite number of "bounding boxes" based on $\max Y$. So there are only finitely many partitions with a given largest hook length. $\blacksquare$ 
+    
+\end{prop}
+
+\begin{thm}[Craven]
+    Given any $N >0$, there exists a multiset $X_N$ such that 
+    $$\#\{\lambda \mid \mathcal{H}(\lambda) = X_N\}>N$$.
+    That is, the number of partitions associated with a multiset of hook lengths can get arbitrarily large as you change the multiset. 
+\end{thm}
+
+\begin{defn}[Conjugate of a partition]
+    The conjugate of a partition $\lambda$, denoted $\lambda '$ or $\tilde{\lambda}$, is the partition represented by the "transpose" of the Young diagram of $\lambda$. 
+\end{defn}
+
+\begin{defn}[Self-conjugate partition]
+    A partition $\lambda$ is \textbf{self-conjugate} if $\lambda = \lambda'$.
+\end{defn}
+
+\begin{prop}
+    $(\lambda ')'=\lambda$.
+\end{prop}
+
+\begin{ex}[Conjugate of a partition]
+    Here we see the Young diagrams of the partitions (3, 2) and (2, 2, 1), which are conjugates of each other. 
+    
+    \begin{figure}[h!]
+        \begin{center}
+            \begin{ytableau}
+                \none[3] &  &  &  \\
+                \none[2] &  &  & \none \\
+            \end{ytableau}
+            \begin{ytableau}
+                \none[2] &  &  & \none  \\
+                \none[2] &  &  & \none \\
+                \none[1] & & \none & \none 
+            \end{ytableau}
+        \end{center}
+    \end{figure}
+\end{ex}
+
+\section{Numerical sets, semigroups, and their associated partitions}
+
+\begin{defn}[Numerical semigroup]
+    A subset $S \subseteq \mathbb{N}$ is a \textbf{numerical semigroup} if 
+
+    \begin{enumerate}
+        \item[(i)] $0 \in S$
+        \item[(ii)] $S$ is closed under addition
+        \item[(iii)] $\mathbb{N} \setminus S$ is finite
+    \end{enumerate}
+
+    In other words, $S$ is a numerical semigroup if it is a submonoid of $\mathbb{N}$ under addition.
+\end{defn}
+
+\begin{defn}[Gap]
+    A \textbf{gap} of a numerical semigroup $S$ is a natural number not included in $S$. 
+\end{defn}
+
+\begin{defn}[Genus]
+    The \textbf{genus} of a numerical semigroup is the number of gaps that semigroup has, denoted $g(S)$. 
+\end{defn}
+
+\begin{defn}[Frobenius number]
+    The \textbf{Frobenius number} is the largest gap of a numerical semigroup $S$, denoted $F(S)$.
+\end{defn}
+
+\begin{defn}[Pseudo-Frobenius number]
+     Suppose $x\in \mathbb{Z}$. $x$ is a \textbf{pseudo-Frobenius number} if $x\notin S$ and $x+s\in S$ for all nonzero $s\in S$. We denote the set of pseudo-Frobenius numbers of $S$ by $PF(S)$, that is, 
+     $$PF(S) = \{x\in \mathbb{N} \setminus S \mid x+s\in S \space \text{ for all } s\in S\setminus{\{0\}} \}$$
+\end{defn}
+
+\begin{defn}[Type]
+    
+\end{defn}
+
+\begin{defn}[Generating set]
+    
+\end{defn}
+
+\begin{defn}[Multiplicity]
+    
+\end{defn}
+
+\begin{defn}[Embedding dimension]
+    
+\end{defn}
+
+\begin{prop}
+    For any partition $\lambda$, $H(\lambda)$ is the complement of a numerical semigroup. That is, if $a \notin H(\lambda)$ and $b \notin H(\lambda)$, $a+b \notin H(\lambda)$.
+
+    \textit{Proof Idea.} We note that there is a bijection between a box on a Young diagram and a pair of a bottom edge and right edge on the profile of the Young diagram. 
+
+    For example, we can see that the box marked $\bullet$ has corresponding edges marked with *:
+    
+    \begin{figure}[h!]
+        \begin{center}
+            \begin{ytableau}
+                \none[] & \bullet &  & & \none[*] \\
+                \none[] &  &  & \none \\
+                \none[] & \none[*] 
+            \end{ytableau}
+        \end{center}
+    \end{figure}
+
+    By labeling each step on the profile with non-negative numbers starting from 0, we can recover the hook length of any particular box:
+
+    $$\text{hook length} = \text{right edge label} - \text{bottom edge label}$$
+
+    Then, we prove that if the sum $a+b \in H(\lambda)$, $a \in H(\lambda)$ and $b \in H(\lambda)$. Without loss of generality, we suppose that the box with hook length $a+b$ is the box in the top left corner of the Young diagram. We split by cases: the case where $a$ is a label an up step in the profile, and the case where $a$ is the label for a right step in profile. Both cases can be proven using the formula for the hook length. $\square$
+    
+\end{prop}
+
+\begin{prop}
+    If $Y$ is a finite set such that $\mathbb{N} \setminus Y$ is not closed under addition, there are no partitions $\lambda$ with $H(\lambda) = Y$.
+\end{prop}
+
+\begin{prop}
+    If $Y$ is a finite set of positive integers st $\mathbb{N} \setminus Y = S$ for some numerical semigroup $S$, then there is at least one partition $\lambda$ with $H(\lambda) = Y$.
+
+    \textit{Proof Idea.} You can build a certain partition called the \textit{enumeration of} $S$, denoted $\lambda(S)$. We will count up natural numbers starting from $0$, taking a right step if the number is an element of $S$ and taking an up step if it is not. This traces out the profile of an integer partition, which will have the desired hook set. $\square$ 
+\end{prop}
+
+\begin{defn}[Partition counting function]
+    Let $S$ be a numerical semigroup. Then we define the \textbf{partition counting function} $P(S)$ as
+    $$P(S) = \#\{\lambda \mid H(\lambda) = \mathbb{N} \setminus S\}$$
+\end{defn}
+
+\begin{defn}[Symmetric numerical semigroup]
+    A numerical semigroup $S$ is \textbf{symmetric} if for all $x \in \mathbb{Z}$, exactly one of $\{x, F(S)-x\}$ is in $S$.
+\end{defn}
+
+\begin{prop}
+    For a symmetric semigroup $S$, $|\mathbb{N} \setminus S| = \frac{F+1}{2}$
+\end{prop}
+
+\begin{prop}
+    The partition built from $S$, $\lambda(S)$, is self-conjugate if and only if $S$ is symmetric.
+\end{prop}
+
+\begin{prop}
+    If $F(S)$ is even, then $S$ is not symmetric. 
+
+    \textit{Proof. } The key insight is that if $F$ is even, $\frac{F}{2} \notin S$. Hence, $S$ is not symmetric.$\blacksquare$
+\end{prop}
+
+\begin{defn}[Pseudosymmetric numerical semigroup]
+    Let $S$ be a numerical semigroup. If $F(S)$ is even and for every $x \in \{1, 2, ..., \frac{F(S)}{2} - 1\}$, exactly one of $\{x, F(S)-x\}$ is in $S$, $S$ is pseudosymmetric.
+\end{defn}
+
+\begin{prop}
+    If $S$ is pseudosymmetric, then $g(S) = \frac{F(S)+2}{2}$
+\end{prop}
+
+\section{The void poset and order ideals}
+
+\begin{defn}[Void]
+    The \textbf{void} of $S$, denoted $\mathcal{M}(S)$ is the union of all the sets $\{x, F(S) -x\}$ for all $x$ where both $x$ and $F(S)-x$ are gaps. We note that $\mathcal{M}(S) \subseteq \mathbb{N} \setminus S$.
+\end{defn}
+
+\begin{prop}
+    $S$ is symmetric if and only if $\mathcal{M}(S) = \varnothing$.
+\end{prop}
+
+\begin{defn}[Numerical set]
+    A numerical set $T$ is a subset of $\mathbb{N}$ such that 
+    \begin{enumerate}
+        \item[(i)] $0\in T$
+        \item[(ii)] $\mathbb{N} \setminus T$ is finite 
+    \end{enumerate}
+    That is, a numerical set is like a numerical semigroup, except that we do not require closure.
+\end{defn}
+
+\begin{defn}[Gap, Frobenius number, pseudo-Frobenius number of a numerical set]
+    We define \textbf{gaps}, \textbf{Frobenius numbers}, and \textbf{pseudo-Frobenius numbers} for numerical sets as they are defined for numerical semigroups.
+\end{defn}
+
+\begin{defn}[Atom monoid]
+    Let $T$ be a numerical set. The \textbf{atom monoid} of $T$ is 
+    $$A(T) = \{x \in \mathbb{N} \mid x+ T \subseteq T\}$$
+    That is, 
+    $$A(T) = \{x \in \mathbb{N} \mid x+ y \in T \text{ } \forall y \in T\}$$
+\end{defn}
+
+\begin{prop}
+For a numerical set $T$, $A(T)$
+    \begin{enumerate}
+        \item[(i)] $0 \in A(T)$ 
+        \item[(ii)] $A(T) \subseteq T$
+        \item[(iii)] $A(T)$ is closed under addition
+        \item[(iv)] $A(T)$ has finitely many gaps
+    \end{enumerate}
+
+    That is, $A(T)$ is a numerical semigroup that is contained in $T$.
+\end{prop}
+
+\begin{defn}[Numerical set associaed to a numerical semigroup]
+    If $T$ is a numerical set with $A(T) = S$, we say $T$ is a numerical set \textbf{associated} to $S$.
+\end{defn}
+
+\begin{prop}
+    $F(A(T)) = F(T)$
+\end{prop}
+
+\begin{prop}
+    There are $2^{F-1}$ numerical sets $T$ with Frobenius number $F(T) = F$.
+\end{prop}
+
+
+\end{document}

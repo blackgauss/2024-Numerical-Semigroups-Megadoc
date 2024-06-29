@@ -1,0 +1,89 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{ytableau}
+\usepackage{tabularx}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{definition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{prop}[thm]{Proposition}
+
+%\title{}
+%\date{2024}
+\begin{document}
+
+I am listing potential problems to work on and interesting questions raised during the meetings. Feel free to add to the list.
+
+\section{Distribution of size of partitions with given hook-lengths}
+\begin{itemize}
+    \item 
+    \begin{enumerate}
+    \item Given a numerical semigroup $S$, what can you say about the distribution of $n(T)$ as $T$ varies through numerical sets with $A(T)=S$.
+    \item Do part 1) when $S$ is in the following families:
+    \begin{enumerate}
+        \item[a] $S(n)=\{0,n+1\rightarrow\}$. (M$\&$M paper asymptotically computes $P(S)$ for this family)
+        \item[b] $S(n)=\{0,5,10,\dots,5n,5n+2\rightarrow\}$. (2019 REU paper 2, computes $P(S)$ for this and next families)
+        \item[c] $S(n)=\{0,5,10,\dots,5n,5n+4\rightarrow\}$.
+        \item[d] $S(n)=\{0,6,12,\dots,6n\rightarrow\}$.
+    \end{enumerate}
+    \item Given a numerical semigroup $S$, what can you say about the distribution of $n(T)$ as $T$ varies through the numerical sets with $A(T)=S$ for which $T\setminus S$ is \emph{self-dual} (This is not the same as the partition of $T$ being symmetric).
+\end{enumerate}
+    \item
+    \begin{enumerate}
+        \item Given a numerical semigroup $S$, what is $\min\{n(T)\mid A(T)=S\}$? (what about $\max$?)
+        \item Under what condition on $S$ can you conclude that $\min\{n(T)\mid A(T)=S\}=n(S)$?
+        \item Do "most" numerical semigroups $S$ satisfy $\min\{n(T)\mid A(T)=S\}=n(S)$?
+    \end{enumerate}
+\end{itemize}
+
+
+\section{Numerical semigroups of size $n$}
+Consider the set of all numerical semigroups for which $n(S)=n$.
+\begin{enumerate}
+    \item Among them what is the largest/smallest Frobenius number?
+    \item Among them what is the largest/smallest genus?
+    \item Among them what is the largest/smallest Durfee square?
+    \item Do most of them have Frobenius number close to some value?
+    \item Do most of them have genus close to some value?
+\end{enumerate}
+
+
+\section{Counting numerical semigroups of size $n$}
+Let $p(n)$ be the number of partitions of $n$. So $p(n)=\#\{T\mid n(T)=n\}$. It is known that
+\[p(n)\sim \frac{1}{4\sqrt{3} n}\exp\Big(\pi\sqrt{\frac{2}{3}}\sqrt{n}\Big).\]
+
+\begin{itemize}
+    \item Show that
+    \[\lim_{n\to\infty} \frac{\#\{S\mid n(S)=n\}}{p(n)}=0.\]
+    \item Does the following limit exist
+    \[\lim_{n\to\infty} \frac{\log(n\times \#\{S\mid n(S)=n\})}{\sqrt{n}}?\]
+\end{itemize}
+
+
+\section{Void poset}
+\begin{itemize}
+    \item Which finite posets $(X,\preccurlyeq)$ occur as a void poset of a numerical semigroup?
+    \begin{enumerate}
+        \item It needs to be self dual.
+        \item The map $\phi: X\to X$, has exactly one ficed point if $|X|$ is odd, and no fixed points if $|X|$ is even.
+        \item For $x,y\in X$ if $x\preccurlyeq y$, then the number of elements of $X$ directly above $x$ is at least as many as directly above $y$.
+        \item What else???
+    \end{enumerate}
+    \item What properties of a numerical semigroup can be deduced by looking at its void poset?
+    \begin{enumerate}
+        \item $S$ is symmetric iff $M(S)=\emptyset$.
+        \item $S$ is pseudo-symmetric iff $|M(S)|=1$.
+        \item $S$ is almost-symmetric iff $M(S)$ has no relations.
+        \item What else???
+    \end{enumerate}
+\end{itemize}
+
+
+\end{document}
