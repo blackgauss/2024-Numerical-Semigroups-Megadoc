@@ -1,0 +1,274 @@
+\begin{tldrbox}
+    I can work with pictures instead of sets. I suspect it will be easier for me to spot patterns from pictures rather than set builder notation.
+\end{tldrbox}
+
+\subsection{Partitions and Numerical Sets}
+
+This material is background but its worth recalling it here. There exists a bijection
+\[\varphi: \textsf{Numerical Sets} \to \textsf{Partitions}\]
+
+constructed by forming walks where each step is decided by an elements membership in a numerical set. A formal construction could look something like this:
+\[e_T: \N_{\le \frob(T)} \to \{\rightarrow, \uparrow\}^{\frob(T) + 1}\]
+
+\[e_T(x): \begin{cases} \rightarrow & x \in T \\ \uparrow & x \not\in T\end{cases}\]
+
+but the description of the construction is up to personal preference.
+
+The set \(\Gamma_T := \{(x, e_T(x)): x \in \N_{\le \frob(T)}\}\) describes a walk which is equivalent to the profile of a partition\footnote{The walk is finite because after \(\frob(T)\) every step is a right step. We cut the walk off at this point}. The correspondence \(T \sim_\varphi \Gamma_T\) gives a bijection between numerical sets and partitions. The details can be found in \cite{Constantin2017}. The following is a worked example for constructing a partition from a numerical set.
+
+\begin{examplebox}
+    Let \(T\) be the numerical set defined by \(\N_0 \setminus T = \{1, 2, 4\}\) so that \(\frob(T) = 4\). We construct the walk by finding the the steps associated to each element less than or equal to \(\frob(T) = 4\).
+
+    \begin{center}
+        \begin{tabular}{c|c}
+        Element & Step \\
+        \hline
+        \(0\) & \(\rightarrow\)  \\
+        \(1\) & \(\uparrow\) \\
+        \(2\) & \(\uparrow\) \\
+        \(3\) & \(\rightarrow\) \\
+        \(4\) & \(\uparrow\) \\
+        \end{tabular}
+    \end{center}
+
+    Starting at \(0\) and taking each step gives the following walk:
+        \begin{center}
+    \begin{center}
+    \begin{tikzpicture}[scale=1, >=Stealth]
+
+    % Draw the grid
+    \draw[very thin, gray] (0,0) grid (5,3);
+
+    % Draw the axes
+    \draw[->] (0,0) -- (5.5,0) node[right] {x};
+    \draw[->] (0,0) -- (0,3.5) node[above] {y};
+
+    % Draw the path
+    \draw[->, thick] (0,0) -- (1,0) node[midway, below] {\(0\)};
+    \draw[->, thick] (1,0) -- (1,1) node[midway, right] {\(1\)};
+    \draw[->, thick] (1,1) -- (1,2) node[midway, right] {\(2\)};
+    \draw[->, thick] (1,2) -- (2,2) node[midway, below] {\(3\)};
+    \draw[->, thick] (2,2) -- (2,3) node[midway, right] {\(4\)};
+
+    % Remove the tick labels on x and y axes
+    \foreach \x in {0, 1, 2, 3, 4, 5}
+        \draw (\x, 0) -- (\x, -0.1);
+
+    \foreach \y in {0, 1, 2, 3}
+        \draw (0, \y) -- (-0.1, \y);
+
+    \end{tikzpicture}
+    \end{center}
+    \end{center}
+
+    This region to the left of the walk is the partition \(2 + 1 + 1\) which corresponds to the following Ferrers diagram: {\tiny \ydiagram[*(white) ]{2, 1, 1}}. From now on we will omit the arrow heads on the steps of the walk since arrow heads communicate no additional information.
+\end{examplebox}
+
+The hook lengths of the partition encode information about the walk and therefore the numerical set associated to the walk. We use \(\lambda(T)\) to denote the partition associated to a numerical set \(T\). It is useful to state some computational tricks.
+
+\subsection{Computational Tricks Using Hooks}
+
+Given a labeled walk, which amounts to a function \(e_T\), we can find the hook lengths by noting each box uniquely determines a right step and an up step.
+
+\begin{center}
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=1, >=Stealth]
+
+        % Draw the grid
+        \draw[very thin, gray] (0,0) grid (8,4);
+
+        % Draw the axes
+        \draw[->] (0,0) -- (8.5,0) node[right] {x};
+        \draw[->] (0,0) -- (0,4.5) node[above] {y};
+
+        % Draw the path
+        \draw[thick] (0,0) -- (1,0) node[midway, below] {\(0\)};
+        \draw[thick] (1,0) -- (1,1) node[midway, right] {\(1\)};
+        \draw[thick] (1,1) -- (2,1) node[midway, below] {\(\textcolor{gray}{2}\)};
+        \draw[thick] (2,1) -- (3,1) node[midway, below] {\(3\)};
+        \draw[thick] (3,1) -- (3,2) node[midway, right] {\(4\)};
+        \draw[thick] (3,2) -- (3,3) node[midway, right] {\(\textcolor{gray}{5}\)};
+        \draw[thick] (3,3) -- (4,3) node[midway, below] {\(6\)};
+        \draw[thick] (4,3) -- (4,4) node[midway, right] {\(7\)};
+
+        % Remove the tick labels on x and y axes
+        \foreach \x in {0, 1, 2, 3, 4, 5, 6, 7, 8}
+            \draw (\x, 0) -- (\x, -0.1);
+
+        \foreach \y in {0, 1, 2, 3, 4}
+            \draw (0, \y) -- (-0.1, \y);
+
+        % Draw the hook in the box with center (1.5, 2.5)
+        \draw[gray, thick] (1.5, 2.5) -- (2.5, 2.5); % Blue line extending to the center of the box to the right
+        \draw[gray, thick] (1.5, 2.5) -- (1.5, 1.5); % Blue line going down to the center of the box below
+        \fill[blue] (1.5, 2.5) circle (0.2); % Filled blue circle in the middle of the specified box
+
+        \end{tikzpicture}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        {\Large \ytableausetup{centertableaux}
+        \begin{ytableau}
+            7 & 5 & 4 & 1 \\
+            6 & *(lightgray) \textcolor{blue}{3} & *(lightgray) 2 \\
+            4 & *(lightgray) 2 & 1 \\
+            1 \\
+        \end{ytableau}}
+    \end{minipage}
+\end{center}
+
+The length of the hook can be be found be taking the index of the up step (at the right of the arm) the index of the right step (at the bottom of the leg). In the diagram above the blue hook length is \(\textcolor{gray}{5} - \textcolor{gray}{2} = \textcolor{blue}{3}\). Recall that the length of the hook is also the number of boxes the hook crosses. 
+
+\begin{observationbox}
+    If \(f\) is a gap of a numerical set \(T\) then \(f\) appears as a hook length in \(\lambda(T)\).
+    Each gap of \(T\) appears as an up step in the profile of \(\lambda(T)\) so \(f\) must appear as an up step. By our method for computing the hook lengths described above, the hook length with arm intersecting \(f\) and leg intersecting \(0\) is \(f - 0 = f\). As a remark, it is helpful to note that this hook length is in the leftmost column.
+\end{observationbox}
+
+However, thinking in terms of the step indices helps us understand what each box can tell us about the numerical set associated to the walk.
+
+\begin{itemize}
+    \item The leftmost column contains all the indices which are up steps. Therefore the leftmost column has exactly the gaps of the numerical set as its hook lengths.
+    \item The topmost row contains hook lengths of the form \(\frob(T) - x\) for each \(x \in T\). The void \(M(T)\) contains the elements in the leftmost column that do not appear in the topmost column. We can also find all small elements of \(T\) by taking subtracting the top row hook lengths from \(F(T)\).
+\end{itemize}
+
+\begin{examplebox}
+    Consider the numerical set \(T\) defined by \(\N_0 \setminus T = \{1, 4, 6, 7\}\) which has the following partition:
+    \begin{center}
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        {\Large \ytableausetup{centertableaux}
+        \begin{ytableau}
+            *(lightgray) 7 & 5 & 4 & 1 \\
+            *(lightgray) 6 & 3 & 2 \\
+            *(lightgray) 4 & 2 & 1 \\
+            *(lightgray) 1 \\
+        \end{ytableau}}
+        \\[1em]
+        \textbf{1: Hook lengths}
+    \end{minipage}%
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        {\Large \ytableausetup{centertableaux}
+        \begin{ytableau}
+            *(lightgray) 0 & *(lightgray) 2 & *(lightgray) 3 & *(lightgray) 6 \\
+            1 & 4 & 5 \\
+            3 & 5 & 6 \\
+            6 \\
+        \end{ytableau}}
+        \\[1em]
+        \textbf{2: \(\frob(T)\) minus hook lengths}
+    \end{minipage}
+    \end{center}
+
+    \begin{enumerate}
+        \item The gaps of \(T\) are exactly the hooks in the left most columnn in the left diagram.
+        \item The small elements of \(T\) are the hooks in the topmost row in the top diagram.
+    \end{enumerate}
+    In practice, one does not need to take \(F(S) - x\) since it is sufficient to know the original top row. I can imagine it might be helpful for computing the dual \(T^*\) of the numerical set.
+\end{examplebox}
+
+\subsection{The Atom Monoid}
+Antokoletz and Miller defined the atom monoid of a numerical set T in \cite{Antokoletz2002} as
+\[A(T) := \{x \in \N_0 \ssep x + T \subseteq T\}.\] This is always a numerical semigroup contained in \(T\).
+
+\begin{proposition}
+    \(A(T)\) is a numerical semigroup contained in \(T\).
+\end{proposition}
+\begin{proof}
+    We must show that \(A(T)\) is a cofinite submonoid of \(\N_0\) contained in \(T\). For the low hanging fruit, \(A(T)\) contains \(0\) as \(0 + T = T\). For additive closure, if \(x\) and \(y\) are elements of \(A(T)\) then for any \(t \in T\), \((x + y) + t = x + (y + t)\). Now, \(y + t \in T\) so that \(x + (y + t) \in T\) by definition of the atom monoid. To see that \(A(T)\) is cofinite note that if \(x > \frob(T)\) then \(x + t \in T\) for all \(t \in T\). 
+    
+    For the final part, note that for any \(x \in A(T)\) we have \(x + 0 \in T\). 
+\end{proof}
+
+In class we show that if \(a\) and \(b\) are not hook lengths of \(\lambda(T)\) then neither is \(a + b\). This in turn showed that \(\N_0 \setminus H(\lambda(T))\) is a numerical semigroup. We can skip such a proof with the following proposition.
+
+\begin{proposition}
+    \(A(T) = \N_0 \setminus H(\lambda(T))\)
+\end{proposition}
+\begin{proof}
+    It suffices to show that the gaps of \(A(T)\) are exactly \(H(T)\). Suppose that \(h \in H(\lambda(T))\) so that \(h = f - t\) for some gap \(f\) and some small element \(t\) of \(T\). We must have \(h + t\) is a gap of \(T\) so that \(h\) cannot be an element of \(A(T)\).
+
+    In the other direction suppose that \(h \in \N_0 \setminus A(T)\). If \(h\) is an element of \(T\) then \(h + t \not\in T\) for some element \(t\) of \(T\). In other words, \(h = f - t\) for some gap \(f\) of \(T\). Recall that this implies that \(h\) appears as a hook length in \(\lambda(T)\). If \(h\) is not an element of \(T\) then it is a gap of \(T\) and appears as a hook length in the left most column of \(\lambda(T)\). In either case, \(h\) is a hook length of \(\lambda(T)\).
+
+    \label{proposition:AtomHookset}
+\end{proof}
+
+I believe this appears as Proposition 4 in \cite{Constantin2017}. The following corollary is immediate from the definition of \(A(T)\).
+
+\begin{corollary}
+    \(\N_0 \setminus H(\lambda(T))\) is a numerical semigroup contained in \(T\).
+\end{corollary}
+
+We can use the previous proposition to construct the partition \(\lambda(A(T))\) given the partition \(\lambda(T)\). I personally find this more enjoyable than computing the set \(A(T)\) from the set \(T\).
+
+\begin{examplebox}
+    Again, consider the numerical set \(T\) with gaps \(\{1, 4, 6, 7\}\).
+    \begin{center}
+    \begin{minipage}{0.5\textwidth}
+    \centering
+    \begin{ytableau}
+        7 & 5 & 4 & 1 \\
+        6 & 3 & 2 \\
+        4 & 2 & 1 \\
+        1 \\
+    \end{ytableau}\\[1em]
+        \textbf{\(\lambda(T)\)}
+\end{minipage}%
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \begin{ytableau}
+        7 \\
+        6 \\
+        5 \\
+        4 \\
+        3 \\
+        2 \\
+        1 \\
+    \end{ytableau}\\[1em]
+    \textbf{\(\lambda(A(T))\)}
+\end{minipage}
+\end{center}
+    To get \(\lambda(A(T))\) we can simply construct the walk which has up steps at \(H(\lambda(T)) = \{1, 2, 3, 4, 5, 6, 7\}\). As a sanity check, we can rewrite \(T = \{0, 1, 2, 3, 5, 8, \rightarrow\}\) so that \[A(T) = \{x \in T \ssep x + T \subseteq T\} = \{0, 8, \rightarrow\}\] which agrees with the partition above.
+\end{examplebox}
+
+\subsection{Constructing Numerical Sets From Other Numerical Sets}
+
+Given a partition \[\lambda = (\lambda_n, \dots, \lambda_1)\] where \(\lambda_n \ge \dots \ge \lambda_1\) we can construct new partitions by adjoining any \(\lambda_{n+1} \ge \lambda_n\) to the end of \(\lambda\). 
+
+
+\begin{center}
+\begin{tikzpicture}[
+  level distance=2.5cm,
+  level 1/.style={sibling distance=5cm},
+  level 2/.style={sibling distance=2.5cm},
+  every node/.style={anchor=north}]
+
+  \node {\begin{ytableau} 1 \end{ytableau}}
+    child {node {\begin{ytableau} 3 & 1 \\ 1 \end{ytableau}}
+      child {node {\begin{ytableau} 5 & 3 & 1 \\ 3 & 1 \\ 1 \end{ytableau}}}
+      child {node {\begin{ytableau} 4 & 2 \\ 3 & 1 \\ 1 \end{ytableau}}}
+    }
+    child {node {\begin{ytableau} 2 \\ 1 \end{ytableau}}
+      child {node {\begin{ytableau} 5 & 2 & 1 \\ 2 \\ 1\end{ytableau}}}
+      child {node {\begin{ytableau} 4 & 1 \\ 2 \\ 1\end{ytableau}}}
+      child {node {\begin{ytableau} 3 \\ 2 \\ 1\end{ytableau}}}
+    };
+
+\end{tikzpicture}
+\end{center}
+
+
+
+\subsection{Partitions Corresponding to Numerical Semigroups}
+Let \(S\) denote a numerical semigroup.
+
+\begin{remark}
+    If \(x\) is a small element of \(S\) then \(\frob(S) - x\) is a gap of \(S\).
+\end{remark}
+
+In other words, the topmost row of \(\lambda(S)\) must be no longer than the leftmost column of \(\lambda(S)\). 
+
+\subsubsection{The Numerical Semigroup Partition Tree}
+
+\bibliography{Erik/bibtex/references}
