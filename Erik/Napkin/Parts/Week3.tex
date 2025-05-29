@@ -1,0 +1,123 @@
+\section{Occurrences of Hooks and Gap Posets}
+
+\begin{definition}
+Let \( S \) be a numerical semigroup. The \term{gaps} of \( S \) are denoted by \(\{l_1, \dots, l_g\}\) and form a partially ordered set under the relation \( \ge_S \), defined by \( l_i \ge_S l_j \) whenever \( l_i - l_j \in S \). This partially ordered set is referred to as the \term{gap poset}.
+\end{definition}
+
+\begin{proposition}
+The pseudo-Frobenius numbers are the maximal elements in the gap poset.
+\end{proposition}
+
+\begin{proof}
+    Suppose \( l_i \) is a maximal element in the gap poset. This means there does not exist a gap \( l_j \) such that \( l_j - l_i \in S \). In other words, \( l_i + S \subseteq S \) and \( l_i \) is a pseudo-Frobenius number.
+    
+    Conversely, if \( l_i \) is a pseudo-Frobenius number, then \( l_i + S \subseteq S \). Suppose, for the sake of contradiction, that there exists a gap \( l_j \) such that \( l_j - l_i \in S \). Then \( l_j = l_i + s \) for some \( s \in S \), which would imply that \( l_j \) is in \( S \), contradicting the fact that \( l_j \) is a gap.
+\end{proof}
+
+
+We say a row corresponds to a gap \(l_j\) if \(l_j\) appears in the first column of the given row. 
+
+\begin{proposition}
+A gap \( l_i \) appears in the row corresponding to a gap \( l_j \) if and only if \( l_j \ge_S l_i \).
+\end{proposition}
+
+\begin{proof}
+Suppose \( l_i \) appears in the row of a gap \( l_j \). Then by construction of the partition, \( l_i = l_j - s \) for some \( s \in S \). Therefore, \( l_j - l_i = s \), implying \( l_j \ge_S l_i \).
+
+Conversely, if \( l_j \ge_S l_i \), then \( l_j - l_i = s \) for some \( s \in S \). Hence, \( l_i = l_j - s \) must appear as a hook in the row of \( l_j \).
+\end{proof}
+
+
+As a consequence of these two propositions we have a nice characterization of pseudo-Frobenius numbers.
+
+\begin{corollary}
+    The pseudo-frobenius numbers are the hooks which only appear once in the partition of \(S\).
+\end{corollary}
+
+Similarly, the number of times a hook appears counts how many gaps are cover the hook in the gap poset.
+
+\begin{corollary}
+The number of relations in the gap poset is equal to the number of boxes in the partition, which is the size of the partition.
+\end{corollary}
+
+\iffalse
+\begin{proof}
+    Each relation in the gap poset corresponds to a box in the Ferrers diagram of the partition. Since every box represents a unique relation where a hook \( h \) can be determined from a gap \( f \) and a semigroup element \( s \), the total number of such relations is precisely the number of boxes in the partition.
+\end{proof}
+\fi
+
+\newpage
+\section{Effect Weight and Cover Relations}
+
+Recall that a pair \((x, y)\) in a poset is a \textbf{covering relation} if \(x >_S y\) but there is no \(z\) such that \(x  >_S z\) and \(z >_S y\). We have a nice interpretation of covering relations as corresponding to minimal generators.
+
+\begin{proposition}
+    \((x, y)\) is a covering relation if and only if \(x - y\) is a minimal generator of \(S\).
+\end{proposition}
+
+\begin{proof}
+    \textbf{Part 1: If \(x - y\) is not a minimal generator, then \((x, y)\) is not a covering relation.}
+
+    Assume \(x - y = s\) is not a minimal generator. Then \(s\) can be written as \(s = s_1 + s_2\) for some non-zero \(s_1, s_2 \in S\). Let \(z = y + s_1\). We have:
+    \[
+    z - y = s_1 \in S \quad \text{and} \quad x - z = x - (y + s_1) = s_2 \in S.
+    \]
+    Therefore, \(z \ge_S y\) and \(x \ge_S z\), showing that \(z\) lies between \(x\) and \(y\) in the poset. Hence, \((x, y)\) is not a covering relation.
+
+    \textbf{Part 2: If \((x, y)\) is not a covering relation, then \(x - y\) is not a minimal generator.}
+
+    Assume \((x, y)\) is not a covering relation. Then there exists an element \(z\) such that \(x >_S z >_S y\). Let \(x - z = s_1\) and \(z - y = s_2\). Thus:
+    \[
+    x - y = (x - z) + (z - y) = s_1 + s_2.
+    \]
+    Since \(s_1, s_2 \in S\), \(x - y\) is expressed as a sum of nonzero elements of \(S\), implying that \(x - y\) is not a minimal generator.
+\end{proof}
+
+As of now, I can barely remember the effective weight definition so I recall here for convenience. See \cite{Pflueger_2018} and \cite{kaplan2019families} for more background.
+
+\begin{definition}
+        Let \( S \) be a numerical semigroup with gap set \( \mathbb{N}_0 \setminus S = \{ l_1, \ldots, l_g \} \).
+    The \term{effective weight} of \( S \) is
+    \[
+    \text{ewt}(S) = \sum_{l \in \mathbb{N}_0 \setminus S} \# \{ \text{minimal generators } a < l \}.
+    \]
+    \[
+    \text{ewt}(S) = \# \{ \text{pairs } (a, b) : 0 < a < b, \, a \text{ is a generator and } b \text{ is a gap} \}.
+    \]
+\end{definition}
+
+We say a cover relation of the form \((l, l')\) is cover relation below \(l\).
+
+\begin{proposition}
+\[\# \{ \text{minimal generators } a < l_i \} = \# \{\text{cover relations below \( l_i \)}\}\]
+\end{proposition}
+
+\begin{proof}
+Define a map \(\varphi\) from the set \(\{\text{minimal generators } a < l_i\}\) to the set \(\{\text{cover relations } (l_i, l_j)\}\) by:
+\[
+\varphi(a) = (l_i, l_i - a).
+\]
+
+First, we verify that \(\varphi\) is injective. Suppose \(\varphi(a_1) = \varphi(a_2)\) for some minimal generators \(a_1\) and \(a_2\). This means:
+\[
+(l_i, l_i - a_1) = (l_i, l_i - a_2).
+\]
+Therefore, \(l_i - a_1 = l_i - a_2\), which implies \(a_1 = a_2\).
+
+Next, we check that \(\varphi\) is surjective. Let \((l_i, l_j)\) be a cover relation below \( l_i \). By the previous proposition, we have \(l_i - l_j = a\) where \(a\) is a minimal generator. Clearly, \(a < l_i\) since \(l_j > 0\). Thus, \(\varphi(a) = (l_i, l_j)\) with \(a = l_i - l_j\).
+\end{proof}
+
+\begin{corollary}
+The effective weight of \(S\) is equal to the number of cover relations in the gap poset of \(S\).
+\end{corollary}
+
+For convenience, here is Pleuger's conjecture on the effective weight.
+
+\begin{conjecture}[\cite{Pflueger_2018}]
+    Let \( S \) be a semigroup with \( g(S) = g \). Then
+    \[
+    \text{ewt}(S) \leq \left\lfloor \frac{(g + 1)^2}{8} \right\rfloor.
+    \]
+\end{conjecture}
+
+If the correspondences above are valid then this becomes a statement about the number of edges possible in a gap poset with \(g\) vertices.

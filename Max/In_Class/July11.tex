@@ -1,0 +1,41 @@
+I wrote code that takes all numerical semigroups of a certain genus, prints its generators and the number of edges in it's gap poset to a csv file so it can be easily added to a spreadsheet.
+
+\begin{lstlisting}[language=python]
+    def GapPoset(S): #print gap poset        #Modified from VoidPoset which was taken from Deepesh
+        GG = S.Gaps()
+        L = []
+        for i in GG:
+            for j in GG:
+                if j-i in S:
+                    L.append([i,j])
+        GP = Poset([GG,L])
+        # show(GP)
+        return GP
+
+    def GapPosetEdges(S): #prints number of edges in GapPoset 
+        GP = GapPoset(S)
+        A = GP.cover_relations()
+        B = len(A)
+        return B
+
+    genus = 
+    sgps = NumericalSemigroup.SemigroupsWithGenus(genus)
+
+    L = []
+    M = []
+    for S in sgps: 
+        GE = S.gens
+        type(GE)
+        a = GapPosetEdges(S)
+        b = str(a)
+        L.append(GE)
+        M.append(b)
+    length = len(L)
+    with open('/home/samwisega/genusedges.csv', 'w') as file:
+        for i in range(length):
+            file.write('"')
+            file.write(str(L[i]))
+            file.write('",')
+            file.write(M[i])
+            file.write('\n')
+\end{lstlisting}

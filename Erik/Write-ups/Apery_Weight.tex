@@ -1,0 +1,402 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath, amsthm, amsfonts, amssymb, amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[capitalize, nameinlink, noabbrev]{cleveref}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{todonotes}
+\usepackage{physics}
+\usepackage{draftwatermark}
+\usepackage{ytableau}
+\usepackage[breakable, skins, most]{tcolorbox}
+\usepackage{Erik/Styles/colorboxes}
+\usepackage{natbib}
+\usepackage{url}
+
+% Bibliography setup
+\bibliographystyle{plainnat} % Specify bibliography style
+
+\pgfplotsset{compat=1.12}
+
+\lstdefinestyle{Sage}{
+    language        = Python,
+    frame           = lines,
+    basicstyle      = \ttfamily\footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily,
+    showstringspaces= false,
+    columns         = flexible,
+    keepspaces      = true,
+    breaklines      = true
+}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{UCI 2024}
+\newcommand\hwnumber{Ap\'ery Weights over Kunz Polyhedra}
+\newcommand\Name{Erik Imathiu-Jones}
+
+% Macros
+\usepackage{Erik/Styles/macros}
+
+\SetWatermarkText{} % Customize watermark text here
+\SetWatermarkScale{1}
+\SetWatermarkAngle{0}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\Name}
+\chead{\textbf{\Large \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\title{}
+\author{Erik Imathiu-Jones}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+
+\section{Background}
+
+Fix an integer \(m > 0\). A Kunz \(m\)-tuple is a tuple \((k_1, \dots, k_{m-1})\) of length \(m-1\) that satisfies the following constraints:
+
+\[
+\begin{cases}
+k_i + k_j \ge k_{i + j} & \text{for } i + j < m, \\
+k_i + k_j + 1 \ge k_{i + j - m} & \text{for } i + j > m.
+\end{cases}
+\]
+
+The Ap\'ery weight of a numerical semigroup \(S\) is defined as:
+
+\[
+\text{Aw}(S) := \sum\limits_{a \in \Ap(S)} \#\{l : l \not\in S, l > a\}.
+\]
+
+Our goal is to express this as a function over the Kunz tuple.
+
+\begin{example}
+    Consider the numerical semigroup \(S = \langle 5, 7, 16, 18 \rangle\) with the Ap\'ery set \(\{0, 7, 14, 16, 18\}\). Note the following calculations:
+    
+    \begin{align*}
+        7 &= 5 \cdot 1 + 2, \\
+        14 &= 5 \cdot 2 + 4, \\
+        16 &= 5 \cdot 3 + 1, \\
+        18 &= 5 \cdot 3 + 3.
+    \end{align*}
+    
+    From this, we derive the Kunz tuple \((3, 1, 3, 2)\).
+
+    Next, we check that the constraints are satisfied:
+
+    \begin{align*}
+        k_1 + k_1 \ge k_2 &: 3 + 3 \ge 1 ~ \checkmark, \\
+        k_1 + k_2 \ge k_3 &: 3 + 1 \ge 3 ~ \checkmark, \\
+        k_1 + k_3 \ge k_4 &: 3 + 3 \ge 2 ~ \checkmark, \\
+        k_2 + k_2 \ge k_4 &: 1 + 1 \ge 2 ~ \checkmark, \\
+        k_2 + k_4 + 1 \ge k_{2 + 4 - 5} &: 1 + 2 + 1 \ge 3 ~ \checkmark, \\
+        k_3 + k_3 + 1 \ge k_{3 + 3 - 5} &: 3 + 3 + 1 \ge 3 ~ \checkmark, \\
+        k_3 + k_4 + 1 \ge k_{3 + 4 - 5} &: 3 + 2 + 1 \ge 1 ~ \checkmark, \\
+        k_4 + k_4 + 1 \ge k_{4 + 4 - 5} &: 2 + 2 + 1 \ge 3 ~ \checkmark.
+    \end{align*}
+
+    Indeed, all conditions are satisfied.
+
+    This can be summarized in the diagram \todo{put diagram here}.
+\end{example}
+
+\section{Ap\'ery Weight Formula}
+
+To calculate the Ap\'ery weight, consider the following cases based on the comparison of elements in the Kunz tuple:
+
+\[
+\mathbf{k_i \le k_j} \implies k_j - k_i,
+\]
+\[
+\mathbf{k_i > k_j} \implies k_i - k_j - 1.
+\]
+
+This leads to a piece-wise linear function for the Ap\'ery weight.
+
+\section{Special Case: Ascending Order Tuples}
+
+Consider the case when the tuple \((k_1, \dots, k_{m-1})\) is in ascending order. We can parameterize by the count of each entry. Let \(x_{q-r},\dots, x_q\) represent these counts, where 
+
+\[
+x_k := \#\{j : k_j = k\}.
+\]
+
+Then, the Ap\'ery weight can be expressed as:
+
+\[
+\weight{A}(S) = \sum\limits_{i=1}^q x_i \sum\limits_{j=i+1}^q (j - i) x_j.
+\]
+
+For example:
+
+\[
+\sum_{i=1}^{3} x_i \sum_{j=i+1}^{3} (j - i) x_j = x_1(x_2 + 2x_3) + x_2x_3,
+\]
+\[
+(\underbrace{1,\dots, 1}_{x}, \underbrace{2, \dots, 2}_y, \underbrace{3, \dots, 3}_{z}).
+\]
+
+If \(x \le y\), \(m(S) = x + y + z + 1\), \(g(S) = x + 2y + 3z\), then:
+
+\begin{align*}
+    \weight{A}(S) &= (g - (m-1)) + x(y + 2z) + yz \\
+    &= (x + 2y + 3z - (x + y + z)) + x(y + 2z) + yz \\
+    &= (y + 2z) + x(y + 2z) + yz \\
+    &= (x + 1)(y + 2z) + yz.
+\end{align*}
+
+Now, using \(x = g - (2y + 3z)\):
+
+\begin{align*}
+    \weight{A}(S) &= (g - (2y + 3z) + 1)(y + 2z) + yz.
+\end{align*}
+
+We impose the condition \(x \le y\) to ensure that \(g - 2y - 3z \le y\) and \(g - 3z \le 3y\), leading to \(\frac{g}{3} - z \le y\). Under these constraints, the maximum is \(\frac{1}{8}g^2 + \frac{5}{12}g + \frac{1}{8} = \frac{(g+1)^2}{8} + \frac{g}{6}\). Without these constraints, the maximum is \(\frac{(g+1)^2}{6}\). [See Sage Code below.]
+
+Thus, the Ap\'ery weight is:
+
+\[
+(x+1)(y + 2z) + yz = xy + y + 2xz + yz.
+\]
+
+\begin{lstlisting}[style=Sage]
+# Define the variables
+y, z, g, lmbda = var('y z g lmbda')
+
+# Define the new function
+f = (g - (2*y + 3*z) + 1) * (y + 2*z) + y*z
+
+# Define the constraint
+constraint = y - g/3 + z <= 0
+
+# Set up the Lagrangian
+Lagrangian = f + lmbda * (y - g/3 + z)
+
+# Compute the partial derivatives
+dLdy = diff(Lagrangian, y)
+dLdz = diff(Lagrangian, z)
+dLdlmbda = diff(Lagrangian, lmbda)
+
+# Solve the system of equations
+solutions = solve([dLdy == 0, dLdz == 0, constraint.lhs() == 0], y, z, lmbda, solution_dict=True)
+
+# Substitute the solution into the original function
+max_value = f.subs(solutions[0])
+
+# Simplify the resulting expression and collect terms by powers of g
+collected_max_value = max_value.simplify().collect(g)
+
+# Output the collected maximum value
+collected_max_value
+\end{lstlisting}
+
+\section{Induction Argument}
+
+Suppose the tuple \((k_1, \dots, k_{m-1})\) corresponds to the numerical semigroup \(S\) and \(S\) has depth at most \(3\). If we append one coordinate to obtain a numerical semigroup \(S'\) with the tuple \((k_1, \dots, k_{m-1}, k')\), we consider three cases:
+
+\subsection{\(k' = 1\)}
+
+Regardless of the order of \(k_1, \dots, k_{m-1}\), the Ap\'ery weight is bounded above by ordering the \(1, 2, 3\) into ascending order. Let \(x\) be the number of \(1\)s, \(y\) the number of \(2\)s, and \(z\) the number of \(3\)s. Then we have:
+
+\[
+\weight{A}(S) \le (x+1)(y+2z) + yz.
+\]
+
+We are given \(g = x + 2y + 3z\) giving us a quadratic in two variables
+
+\begin{align*}
+    (x + 1)(y + 2z) + yz &= (x + 1)(y + 2(\frac{g - (x + 2y)}{3})) + y (\frac{g - (x + 2y)}{3}) \\
+    &= \left(\frac{2g}{3}  - \frac{y}{3} + \frac{gy}{3} - \frac{2y^2}{3}\right) + x\left(-\frac{2}{3} + \frac{2g}{3} - \frac{2y}{3}\right)  - \frac{2x^2}{3} \\
+    &= \frac{1}{6} \left(1 + 2g + g^2 - 3y^2\right) -\frac{1}{6} \left(-1 + g - 2x - y\right)^2 \\
+    &= \frac{(g+1)^2}{6} -\frac{1}{6} \left(-1 + g - 2x - y\right)^2 - 3y^2 \\
+    &= \frac{1}{6}\left( (g + 1)^2 - (g - 1 - 2x - y)^2\right) - 3y^2
+\end{align*}
+
+What are the possible pairs of \(x, y\) that can appear?
+
+Note \(m = x + y + z + 1\)
+
+\subsection{\(k' = 2\)}
+
+[Content for this case needs to be filled in.]
+
+\section{Further Analysis}
+
+Finally, the number of gaps above \(k_1\) will also play a role in further calculations.
+
+\section{A Curious Calculation}
+Suppose the tuple \((k_1, \dots, k_{m-1})\) corresponds to the numerical semigroup \(S\) and \(S\) has depth at most \(3\). Let \(x\) be the number of \(1\)s, \(y\) the number of \(2\)s, and \(z\) the number of \(3\)s. Then the Ap\'ery weight is bounded (coarsely) above by \[
+\weight{A}(S) \le (x+1)(y+2z) + yz.
+\] Knowing that \(g = x + 2y + 3z\) and \(m = x + y + z\) we can use some computer algebra magic to get the expression:
+
+
+\bibliography{Erik/bibtex/references}
+
+\newpage
+\section{Appendix}
+We start with the expression:
+\[
+(x+1)(y+2z) + yz
+\]
+Expanding this, we get:
+\[
+xy + yz + 2xz + y + 2z
+\]
+Given the functions:
+\[
+g(x, y, z) = x + 2y + 3z
+\]
+\[
+m(x, y, z) = x + y + z + 1
+\]
+We solve the system of equations to express \( y \) and \( z \) in terms of \( g \), \( m \), and \( x \):
+\[
+y = -3 - g + 3m - 2x
+\]
+\[
+z = 2 + g - 2m + x
+\]
+Substituting these into the expanded expression:
+\[
+(x + 1)\left(-3 - g + 3m - 2x + 2(2 + g - 2m + x)\right) + \left(-3 - g + 3m - 2x\right)\left(2 + g - 2m + x\right)
+\]
+Simplifying, we obtain:
+\[
+-5 - g^2 + 5gm - 6m^2 - 6x - 2x^2 - 2g(2 + x) + m(11 + 6x)
+\]
+We then separate the expression into a function of \( g \) and \( m \), and a function of \( x \):
+\[
+(-5 - g^2 + 5gm - 6m^2 - 4g + 11m) + (-2x^2 - 2gx - 6x + 6mx)
+\]
+Thus, the final expression is:
+\[
+\boxed{-5 - g^2 + 5gm - 6m^2 - 4g + 11m} + \boxed{-2x^2 - 2gx - 6x + 6mx}
+\]
+
+\subsection{Depth 2}
+To express the equation \((x + 1)y\) as a function of \(g = x + 2y\) and \(m = x + y + 1\), we need to eliminate \(x\) and \(y\) in favor of \(g\) and \(m\).
+
+\section*{Steps}
+
+1. \textbf{Substitute expressions for \(x\) and \(y\):}
+
+   From the equations:
+   \[
+   g = x + 2y
+   \]
+   \[
+   m = x + y + 1
+   \]
+   We can solve each equation for \(x\):
+   \[
+   x = g - 2y
+   \]
+   \[
+   x = m - y - 1
+   \]
+
+2. \textbf{Equate the two expressions for \(x\):}
+
+   \[
+   g - 2y = m - y - 1
+   \]
+
+3. \textbf{Solve for \(y\):}
+
+   Simplify and solve for \(y\):
+   \[
+   g - m + 1 = y
+   \]
+
+4. \textbf{Substitute \(y\) back into one of the equations to find \(x\):}
+
+   Let's use the equation \(x = g - 2y\):
+   \[
+   x = g - 2(g - m + 1)
+   \]
+   Simplifying:
+   \[
+   x = g - 2g + 2m - 2 = -g + 2m - 2
+   \]
+
+5. \textbf{Express \((x + 1)y\) in terms of \(g\) and \(m\):}
+
+   Now, substitute \(x\) and \(y\) into \((x + 1)y\):
+   \[
+   (x + 1)y = \left(-g + 2m - 2 + 1\right)(g - m + 1)
+   \]
+   Simplifying:
+   \[
+   (x + 1)y = (-g + 2m - 1)(g - m + 1)
+   \]
+
+This is the expression for \((x + 1)y\) in terms of \(g\) and \(m\).
+
+\section*{Maximizing \( f(m) \)}
+
+We define the function to maximize:
+\[
+f(m) = (-g + 2m - 1)(g - m + 1)
+\]
+Expanding this:
+\[
+f(m) = -g^2 + gm - g + 2gm - 2m^2 + 2m - g + m - 1
+\]
+Simplifying:
+\[
+f(m) = -2m^2 + (3g + 3)m - (g^2 + 2g + 1)
+\]
+
+\subsection*{Differentiate and Find Critical Points}
+
+Taking the derivative with respect to \(m\):
+\[
+\frac{df}{dm} = -4m + (3g + 3)
+\]
+Setting the derivative equal to zero:
+\[
+-4m + 3g + 3 = 0
+\]
+Solving for \(m\):
+\[
+m = \frac{3g + 3}{4}
+\]
+
+\subsection*{Plugging Back to Find Maximum}
+
+Substitute \(m = \frac{3g + 3}{4}\) back into \(f(m)\):
+\[
+f\left(\frac{3g + 3}{4}\right) = \left(\frac{g + 1}{2}\right)\left(\frac{g + 1}{4}\right)
+\]
+Simplifying:
+\[
+f\left(\frac{3g + 3}{4}\right) = \frac{(g + 1)^2}{8}
+\]
+
+Thus, the maximum value of \(f(m)\) is:
+\[
+\boxed{\frac{(g + 1)^2}{8}}
+\]
+\end{document}

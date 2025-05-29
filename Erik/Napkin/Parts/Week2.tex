@@ -1,0 +1,43 @@
+\section{Occurrences of Hooks and Gapsets}
+
+\begin{definition}
+Let \( S \) be a numerical semigroup. The \textbf{gaps} of \( S \) form a partially ordered set under the relation \( \ge_S \), defined by \( y \ge_S x \) whenever \( y - x \in S \). This partially ordered set is referred to as the \textbf{gap poset}.
+\end{definition}
+
+\begin{proposition}
+    The pseudo-Frobenius numbers are the maximal elements in the gap poset.
+\end{proposition}
+
+\begin{proof}
+    Suppose \( p \) is a maximal element in the gap poset. This means there does not exist a gap \( h \) such that \( h - p \in S \). In other words, \( p + S \subseteq S \) and \( p \) is a pseudo-Frobenius number.
+
+    Conversely, if \( p \) is a pseudo-Frobenius number, then \( p + S \subseteq S \). Suppose, for the sake of contradiction, that there exists a gap \( h \) such that \( h - p \in S \). Then \( h = p + s \) for some \( s \in S \), which would imply that \( h \) is in \( S \), contradicting the fact that \( h \) is a gap.
+\end{proof}
+
+We say a row corresponds to a gap \(f\) if \(f\) appears in the first column of the given row. 
+
+\begin{proposition}
+A gap \( h \) appears in the row corresponding to a gap \( f \) if and only if \( f \ge_S h \).
+\end{proposition}
+
+\begin{proof}
+Suppose \( h \) appears in the row of a gap \( f \). Then by definition, \( h = f - s \) for some \( s \in S \). Therefore, \( f - h = s \), implying \( f \ge_S h \). 
+
+Conversely, if \( f \ge_S h \), then \( f - h = s \) for some \( s \in S \). Hence, \( h = f - s \) must appear as a hook in the row of \( f \).
+\end{proof}
+
+\begin{corollary}
+    The pseudo-frobenius numbers are the hooks which only appear once in the partition of \(S\).
+\end{corollary}
+
+Similarly, the number of times a hook appears counts how many gaps are above it in the gap poset.
+
+\begin{corollarly}
+The number of relations in the gap poset is equal to the number of boxes in the partition, which is the size of the partition.
+\end{corollarly}
+
+\iffalse
+\begin{proof}
+    Each relation in the gap poset corresponds to a box in the Ferrers diagram of the partition. Since every box represents a unique relation where a hook \( h \) can be determined from a gap \( f \) and a semigroup element \( s \), the total number of such relations is precisely the number of boxes in the partition.
+\end{proof}
+\fi

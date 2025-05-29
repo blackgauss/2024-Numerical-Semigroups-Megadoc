@@ -1,0 +1,139 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath, amsthm, amsfonts, amssymb, amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[capitalize, nameinlink, noabbrev]{cleveref}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{todonotes}
+\usepackage{physics}
+\usepackage{draftwatermark}
+\usepackage{ytableau}
+\usepackage[breakable, skins, most]{tcolorbox}
+\usepackage{Erik/Styles/colorboxes}
+\usepackage{natbib}
+\usepackage{url}
+
+% Bibliography setup
+\bibliographystyle{plainnat} % Specify bibliography style
+
+\pgfplotsset{compat=1.12}
+
+\lstdefinestyle{Sage}{
+    language        = Python,
+    frame           = lines,
+    basicstyle      = \ttfamily\footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily,
+    showstringspaces= false,
+    columns         = flexible,
+    keepspaces      = true,
+    breaklines      = true
+}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{UCI 2024}
+\newcommand\hwnumber{Ap\'ery Weights over Kunz Polyhedra}
+\newcommand\Name{Erik Imathiu-Jones}
+
+% Macros
+\usepackage{Erik/Styles/macros}
+
+\SetWatermarkText{} % Customize watermark text here
+\SetWatermarkScale{1}
+\SetWatermarkAngle{0}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\Name}
+\chead{\textbf{\Large \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\title{}
+\author{Erik Imathiu-Jones}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+
+Consider the Kunz tuple \((d, 1, \dots, 1, d)\) for some \(d > 0\) and the \(d\)s and \(1\)s are alternating. Let \(n_1\) be the number of \(1\)s and \(n_d\) the number of \(d\)s.
+
+We know \[\begin{cases} n_1 + d \cdot n_d = g \\ n_1 + n_d = m - 1\end{cases}\]
+
+We know \(n_1 + 1 = n_d\) so \(n_d - 1 + d n_d = g\) and \((d + 1)n_d = g + 1\) so \(n_d = \frac{g+1}{d+1}\).
+
+\iffalse
+From the second equation we find \(n_1 = (m-1) - n_d\). Substituting this into the first equation yields \([(m-1) - n_d] + d \cdot n_d = g\) from which we conclude \[n_d = \frac{g - (m-1)}{d-1}.\]
+\fi 
+
+Now consider some \(1\) in the tuple. Let \(j\) be the number of \(d\)s appearing after the \(1\) so that \(n_d - j\) is the number of \(d\)s appearing before the \(1\). Every \(d\) appearing after the \(1\) contributes \(d-1\) gaps larger than the \(1\) and the ones before the \(1\) contribute \(d-2\) gaps larger than the \(1\). So the Ap\'ery weight can be expressed as 
+
+\begin{align*}
+    \mathsf{ApW}(S) &= \sum\limits_{j=0}^{n_d} (d-1)(n_d - j) + (d-2)j \\
+    &= \frac{1}{2} (-3 + 2d) n_d (1 + n_d) \\
+\end{align*}
+
+Now we can substitute our expression for \(n_d\) to yield 
+
+\iffalse\[\mathsf{ApW}(S) = \frac{(2d - 3)(d + g - m)(g - m + 1)}{2(d - 1)^2}\]
+
+Maximize with respect to \(m\) yields \(\frac{(2d - 3)(g + 1)(d + g)}{2(d - 1)^2}
+\)
+\fi
+
+\[\mathsf{ApW}(S) =  \frac{g^2(2d - 3) + g(2d^2 + 3d - 9) + 2d^2 + d - 6}{2(d+1)^2}\]
+Leads to \(x = x_1 = \dots x_{d-1}\) and \(y = x_d\). With this
+
+\begin{align*}
+    \sum\limits{j=1}^d j x_j &= g \\
+    \sum\limits_{j=1}^{d-1} j x  + d y &= g \\
+    \frac{x}{2}(d-1)d + dy &= g\\
+    \implies \frac{g}{d} - \frac{x}{2d}(d-1)d &= y  
+\end{align*}
+\begin{align*}
+    F_1(x_1, \dots, x_{d}) &= (x_1 + 1)\sum\limits_{j=1}^{d} (j - 1) x_j \\
+    &= (x + 1)\sum\limits_{j=1}^{d-1} (j - 1) x + (x + 1)(d - 1)y \\
+    &= x(x+1) \cdot \frac{1}{2}(d^2 - 3d + 2) + (x+1)(d - 1)y
+\end{align*}
+
+\begin{align*}
+    F_2(x_1, \dots, x_{d}) &= \sum\limits_{i = 2}^d\limits\sum\limits_{j=i+1}^d (j - i) x_i x_j \\
+    &= \sum\limits_{i = 2}^{d-1}\limits\sum\limits_{j=i+1}^d (j - i) x_i x_j \\
+    &= \sum\limits_{i = 2}^{d-1}\limits\sum\limits_{j=i+1}^d (j - i) x x_j \\
+    &= \sum\limits_{i = 2}^{d-1}\left( (d-i)xy + \sum\limits_{j=i+1}^{d-1}(j - i) x^2\right)\\
+    &= \sum\limits_{i = 2}^{d-1}\left( (d-i)xy + \frac{x^2}{2}(d-i-1)(d-i)\right)
+    &= \frac{1}{6}(d^2 - 3d + 2) \cdot x \left( ((d - 3)x + 3y) \right)
+\end{align*}
+
+\begin{align*}
+    F(x, y) &= x(x+1) \cdot \frac{1}{2}(d^2 - 3d + 2) + (x+1)(d - 1)y +  \frac{1}{6}(d^2 - 3d + 2) \cdot x \left( ((d - 3)x + 3y) \right) \\
+    &= \frac{1}{6}(d - 1)\left(d^2x^2 - 2dx^2 + 3dxy + 3dx - 6x + 6y\right)
+\end{align*}
+
+Use \(\frac{g}{d} - \frac{x}{2d}(d-1)d = y\) to get
+
+\[F(x) = \frac{(d - 1) \left( dx \left(-2d^2 x + 3dx(d - 1) + 4dx - 6g + 6 \right) - 12g \right)}{12d}
+\]
+This has critical value \[F(x_{\text{crit}}) = \frac{4d^2g + 3dg^2 - 6dg + 3d - 3g^2 + 2g - 3}{4d(d + 1)}
+\] which is equal to \[\frac{3(d - 1)}{4d(d+1)}\left(g^2 + \frac{(4d - 2)}{3}g + 1\right).
+\]
+
+Want to solve
+\end{document}

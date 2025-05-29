@@ -1,0 +1,24 @@
+I am going to look at void posets as that is something I have not spent very much time on. Here is some necessary background:
+
+\Def{Definition}{The \textbf{void} of $S$, denoted $\mathcal{M}(S)$ is the union of all the sets $\{x, F(S) -x\}$ for all $x$ where both $x$ and $F(S)-x$ are gaps. Note $\mathcal{M}(S) \subseteq \N \setminus S$.
+
+The \textbf{void poset} of $S$, denoted $(\mathcal{M}(S), \preceq)$, is the void, $\mathcal{M}$ equipped with the partial ordering $\preceq$, where
+    $$x \preceq y \text{ if } y-x \in S \text{ for all } x, y \in \mathcal{M}(S).$$
+}
+
+\Def{Definition}{$x \in \mathcal{M}(S)$ is \textbf{maximal} if $x \preceq y \implies x = y$.
+
+$x$ is a \textbf{pseudofrobenius number} if $x \not\in S$ and $x+s \in S$ for any $s \in S \backslash  \{ 0\}$. We denote the set of pseudofrobenius numbers by $PF(S)$.}
+
+\prop{}{ The maximal elements of $(\calM(S),\preceq)$ are the elements of $PF(S) \backslash F(S)$.}
+
+\Def{Definition}{Let $I \subseteq M(S).$ }
+
+Now that I have gathered all this information in one place I am going to write/find code that displays the void poset of a given numerical semigroup (with the edges labeled by difference?). This should be useful because it will allow me to easily visualize many posets and so recognize patterns faster. 
+
+Deepesh sent code, the first in the discord code channel that has to do with this. 
+
+
+
+
+

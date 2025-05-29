@@ -1,0 +1,353 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath, amsthm, amsfonts, amssymb, amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[capitalize, nameinlink, noabbrev]{cleveref}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{todonotes}
+\usepackage{physics}
+\usepackage{draftwatermark}
+\usepackage{ytableau}
+\usepackage[breakable, skins, most]{tcolorbox}
+\usepackage{Erik/Styles/colorboxes}
+\usepackage{natbib}
+\usepackage{url}
+
+% Bibliography setup
+\bibliographystyle{plainnat} % Specify bibliography style
+
+\pgfplotsset{compat=1.12}
+
+\lstdefinestyle{Sage}{
+    language        = Python,
+    frame           = lines,
+    basicstyle      = \ttfamily\footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily,
+    showstringspaces= false,
+    columns         = flexible,
+    keepspaces      = true,
+    breaklines      = true
+}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{UCI 2024}
+\newcommand\hwnumber{Ap\'ery Weights over Kunz Polyhedra}
+\newcommand\Name{Erik Imathiu-Jones}
+
+% Macros
+\usepackage{Erik/Styles/macros}
+
+\SetWatermarkText{} % Customize watermark text here
+\SetWatermarkScale{1}
+\SetWatermarkAngle{0}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\Name}
+\chead{\textbf{\Large \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\title{}
+\author{Erik Imathiu-Jones}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+
+Maximize
+\[F(x_1, \dots, x_{d}) = (x_1 + 1)\sum\limits_{j=1}^{d} (j - 1) x_j + \sum\limits_{i = 2}^d\limits\sum\limits_{j=i+1}^d (j - i) x_i x_j\]
+
+given constraints \[0 \le x_1 \le x_2 \le \dots \le x_{d -1}\] and \[x_d \ge 0\] \iffalse and \[1 + \sum\limits_{j = 1}^d x_j = m\]\fi and \[\sum\limits_{j=1}^d j x_j = g\] and condition \(d > 0, g > 0\).
+
+Task 1:
+
+For a specific choice of \(d\), we want to find the maximum value of \(F\) symbolically. The final answer should theoretically be an expression in \(g\).
+
+Write a SageMath Function/Script that gives the specific functional form of \(F\). It should be an equation in \(d\) variables. 
+
+\begin{lstlisting}[style=Sage]
+def F(d):
+    # Define the variables x_1, x_2, ..., x_d
+    x = var(['x{}'.format(i) for i in range(1, d + 1)])
+    
+    # First sum: sum of (j - 1) * x_j for j in 1..d
+    sum1 = sum((j - 1) * x[j - 1] for j in range(1, d + 1))
+    
+    # Multiply the first sum by (x_1 + 1)
+    term1 = (x[0] + 1) * sum1
+    
+    # Second sum: double summation
+    sum2 = sum((j - i) * x[i - 1] * x[j - 1] for i in range(2, d + 1) for j in range(i + 1, d + 1))
+    
+    # Return the symbolic function
+    return term1 + sum2
+\end{lstlisting}
+
+Then program the inequality constraints and conditions. and solve it and get a symbolic result in \(g\). The idea is we want to find the maximum value of \(F\) for a given value of \(d\). 
+
+Keep in mind \(F\) is a quadratic in the variables so this might help the optimization.
+
+It might be helpful to write functions that take \(d\) as an argument then specify \(d\) at the end.
+
+
+Solution:
+
+\newpage
+\begin{lstlisting}[style= Sage]
+import sympy as sp
+
+# Define the value of d
+d = 5 # Example value; adjust as needed
+
+# Define the variables x1, x2, ..., xd, the Lagrange multipliers, and slack variables
+x = sp.symbols('x1:%d' % (d+1))  # This creates variables x1, x2, ..., xd
+lam = sp.symbols('lambda1:%d' % d)  # Lagrange multipliers λ1, λ2, ..., λ(d-1)
+slack_vars = sp.symbols('s1:%d' % (d-1))  # Slack variables s1, s2, ..., s(d-2)
+extra_vars = sp.symbols('t1:%d w1:%d' % (d, d))  # Additional variables t1, t2, ..., t(d-1) and w1, w2, ..., w(d-1)
+
+# Define the function F
+F = (x[0] + 1) * sum((j - 1) * x[j-1] for j in range(1, d+1)) + \
+    sum((j - i) * x[i-1] * x[j-1] for i in range(2, d+1) for j in range(i+1, d+1))
+
+# Define the constraint x1_g
+g = sp.symbols('g')
+x1_g = g - sum(j * x[j-1] for j in range(2, d+1))
+
+# Substitute x1_g into F in place of x[0]
+F_substituted = F.subs(x[0], x1_g)
+
+# Simplify the resulting expression if needed
+F_substituted_simplified = sp.simplify(F_substituted)
+
+# Define the constraints
+constraints = []
+constraints.append(((g - sum(j * x[j-1] for j in range(2, d+1))) + extra_vars[0]**2) - x[1])
+
+for i in range(1, d-2):
+    constraints.append((x[i] + slack_vars[i-1]**2) - x[i+1])
+
+# Include additional constraint patterns if needed
+constraints.append((x[d-2] + extra_vars[1]**2) - x[d-1])
+
+# Define the Lagrangian L with all constraints
+L = F_substituted_simplified
+for i in range(d-2):
+    L += lam[i] * constraints[i]
+
+# Calculate the partial derivatives of L with respect to x1, x2, ..., xd, λ, s, and the additional variables
+gradients = [sp.diff(L, x[i-1]) for i in range(1, d+1)] + \
+            [sp.diff(L, lam[i]) for i in range(d-2)] + \
+            [sp.diff(L, slack_vars[i]) for i in range(d-2)] + \
+            [sp.diff(L, extra_vars[0]), sp.diff(L, extra_vars[1])]
+
+# Solve the system of equations
+solutions = sp.solve(gradients, x + tuple(lam) + tuple(slack_vars) + extra_vars, dict=True)
+
+# Evaluate F_substituted_simplified at the solutions
+max_values = [F_substituted_simplified.subs(solution).evalf() for solution in solutions]
+
+# Simplify the max_values : need to adjust the 2 in solutions[2] maybe 
+l = 2
+if len(solutions) == 1:
+  l = 0
+
+sub_dict = dict()
+for j in range(1, d):
+  sub_dict.update({x[j] : solutions[l][x[j]]})
+max_values = F_substituted_simplified.subs(sub_dict)
+max_values_simplified = max_values.simplify()
+
+print("\nSimplified:")
+display(max_values_simplified.simplify())
+print("\nExpanded:")
+display(max_values_simplified.expand())
+\end{lstlisting}
+
+
+
+\section*{Constrained Optimization Using Lagrange Multipliers}
+
+\subsection*{Problem Setup}
+
+Given the objective function \( F(x_1, x_2, \dots, x_d) \) and a set of constraints \( g_i(x_1, x_2, \dots, x_d) = 0 \), we wish to optimize \( F \) subject to these constraints using Lagrange multipliers.
+
+\subsection*{Steps}
+
+\begin{enumerate}
+    \item \textbf{Define the Variables:} 
+    Define the variables \( x_1, x_2, \dots, x_d \), Lagrange multipliers \( \lambda_1, \lambda_2, \dots \), and slack variables \( t_i \).
+
+    \item \textbf{Define the Objective Function:}
+    \begin{align*}
+    F(x_1, x_2, \dots, x_d) &= (x_1 + 1) \sum_{j=1}^{d} (j-1)x_j + \sum_{i=2}^{d} \sum_{j=i+1}^{d} (j-i) x_i x_j
+    \end{align*}
+
+    \item \textbf{Formulate the Constraints:}
+    \begin{align*}
+    g_1(x_1, x_2, \dots, x_d) &= x_2 - (x_1 + t_1^2 - \lambda_1) = 0 \\
+    g_2(x_1, x_2, \dots, x_d) &= x_3 - (x_2 + t_2^2 - \lambda_2) = 0
+    \end{align*}
+
+    \item \textbf{Construct the Lagrangian:}
+    \begin{align*}
+    \mathcal{L}(x_1, \dots, x_d, \lambda_1, \lambda_2, \dots) &= F(x_1, \dots, x_d) + \sum_{i} \lambda_i \cdot g_i(x_1, \dots, x_d)
+    \end{align*}
+
+    \item \textbf{Compute the Gradients:}
+    \begin{align*}
+    \frac{\partial \mathcal{L}}{\partial x_1} &= \text{Compute this gradient} \\
+    \frac{\partial \mathcal{L}}{\partial \lambda_1} &= \text{Compute this gradient}
+    \end{align*}
+
+    \item \textbf{Solve the System of Equations:}
+    Solve the system of equations where the gradients equal zero.
+
+    \item \textbf{Evaluate the Objective Function:}
+    Evaluate \( F \) at the solutions to find the maximum or minimum value.
+
+    \item \textbf{Interpret the Results:}
+    Determine if the solutions correspond to a maximum, minimum, or saddle point.
+\end{enumerate}
+
+\newpage
+Leads to \(x = x_1 = \dots x_{d-1}\) and \(y = x_d\). With this
+
+\begin{align*}
+    \sum\limits{j=1}^d j x_j &= g \\
+    \sum\limits_{j=1}^{d-1} j x  + d y &= g \\
+    \frac{x}{2}(d-1)d + dy &= g\\
+    \implies \frac{g}{d} - \frac{x}{2d}(d-1)d &= y  
+\end{align*}
+\begin{align*}
+    F_1(x_1, \dots, x_{d}) &= (x_1 + 1)\sum\limits_{j=1}^{d} (j - 1) x_j \\
+    &= (x + 1)\sum\limits_{j=1}^{d-1} (j - 1) x + (x + 1)(d - 1)y \\
+    &= x(x+1) \cdot \frac{1}{2}(d^2 - 3d + 2) + (x+1)(d - 1)y
+\end{align*}
+
+\begin{align*}
+    F_2(x_1, \dots, x_{d}) &= \sum\limits_{i = 2}^d\limits\sum\limits_{j=i+1}^d (j - i) x_i x_j \\
+    &= \sum\limits_{i = 2}^{d-1}\limits\sum\limits_{j=i+1}^d (j - i) x_i x_j \\
+    &= \sum\limits_{i = 2}^{d-1}\limits\sum\limits_{j=i+1}^d (j - i) x x_j \\
+    &= \sum\limits_{i = 2}^{d-1}\left( (d-i)xy + \sum\limits_{j=i+1}^{d-1}(j - i) x^2\right)\\
+    &= \sum\limits_{i = 2}^{d-1}\left( (d-i)xy + \frac{x^2}{2}(d-i-1)(d-i)\right)
+    &= \frac{1}{6}(d^2 - 3d + 2) \cdot x \left( ((d - 3)x + 3y) \right)
+\end{align*}
+
+\begin{align*}
+    F(x, y) &= x(x+1) \cdot \frac{1}{2}(d^2 - 3d + 2) + (x+1)(d - 1)y +  \frac{1}{6}(d^2 - 3d + 2) \cdot x \left( ((d - 3)x + 3y) \right) \\
+    &= \frac{1}{6}(d - 1)\left(d^2x^2 - 2dx^2 + 3dxy + 3dx - 6x + 6y\right)
+\end{align*}
+
+Use \(\frac{g}{d} - \frac{x}{2d}(d-1)d = y\) to get
+
+\[F(x) = \frac{(d - 1) \left( dx \left(-2d^2 x + 3dx(d - 1) + 4dx - 6g + 6 \right) - 12g \right)}{12d}
+\]
+This has critical value \[F(x_{\text{crit}}) = \frac{4d^2g + 3dg^2 - 6dg + 3d - 3g^2 + 2g - 3}{4d(d + 1)}
+\] which is equal to \[\frac{3(d - 1)}{4d(d+1)}\left(g^2 + \frac{(4d - 2)}{3}g + 1\right).
+\]
+
+\newpage 
+\section*{Differentiation of \( F(x_1, \dots, x_d) \) with Respect to \( x_i \)}
+
+Given the function
+\[
+F(x_1, \dots, x_d) = (x_1 + 1)\sum\limits_{j=1}^{d} (j - 1) x_j + \sum\limits_{i = 2}^d \sum\limits_{j=i+1}^d (j - i) x_i x_j,
+\]
+we aim to differentiate \( F \) with respect to \( x_i \) for \( 1 \leq i \leq d \).
+
+\subsection*{Step 1: Structure of \( F(x_1, \dots, x_d) \)}
+
+The function \( F(x_1, \dots, x_d) \) can be split into two parts:
+
+\[
+F(x_1, \dots, x_d) = F_1(x_1, \dots, x_d) + F_2(x_1, \dots, x_d),
+\]
+where
+\[
+F_1(x_1, \dots, x_d) = (x_1 + 1) \sum\limits_{j=1}^{d} (j - 1) x_j
+\]
+and
+\[
+F_2(x_1, \dots, x_d) = \sum\limits_{i = 2}^d \sum\limits_{j=i+1}^d (j - i) x_i x_j.
+\]
+
+\subsection*{Step 2: Differentiating \( F_1(x_1, \dots, x_d) \) with Respect to \( x_i \)}
+
+\textbf{Case 1: \( i = 1 \)}
+
+\[
+\frac{\partial F_1}{\partial x_1} = \sum\limits_{j=1}^{d} (j - 1) x_j + (x_1 + 1)(0) = \sum\limits_{j=1}^{d} (j - 1) x_j
+\]
+
+\textbf{Case 2: \( i \geq 2 \)}
+
+\[
+\frac{\partial F_1}{\partial x_i} = (x_1 + 1)(i - 1)
+\]
+since \( (x_1 + 1) \) is treated as a constant with respect to \( x_i \).
+
+\subsection*{Step 3: Differentiating \( F_2(x_1, \dots, x_d) \) with Respect to \( x_i \)}
+
+\textbf{Case 1: \( i = 1 \)}
+
+\[
+\frac{\partial F_2}{\partial x_1} = 0
+\]
+since \( x_1 \) does not appear in \( F_2 \).
+
+\textbf{Case 2: \( 2 \leq i \leq d \)}
+
+Differentiate \( F_2 \) with respect to \( x_i \). Notice that \( x_i \) appears in the terms where it multiplies \( x_j \) for \( j > i \). Therefore:
+\[
+\frac{\partial F_2}{\partial x_i} = \sum\limits_{j=i+1}^d (j - i) x_j
+\]
+as the derivative picks out the terms where \( x_i \) is a factor, and the sum runs over all \( j > i \).
+
+\subsection*{Step 4: Combining the Derivatives}
+
+Now, combine the derivatives obtained from \( F_1 \) and \( F_2 \).
+
+\textbf{For \( i = 1 \)}:
+\[
+\frac{\partial F}{\partial x_1} = \sum\limits_{j=1}^{d} (j - 1) x_j
+\]
+
+\textbf{For \( 2 \leq i \leq d \)}:
+\[
+\frac{\partial F}{\partial x_i} = (x_1 + 1)(i - 1) + \sum\limits_{j=i+1}^d (j - i) x_j
+\]
+
+\subsection*{Conclusion}
+
+The final expressions for the partial derivatives are:
+\[
+\frac{\partial F}{\partial x_1} = \sum\limits_{j=1}^{d} (j - 1) x_j
+\]
+and
+\[
+\frac{\partial F}{\partial x_i} = (x_1 + 1)(i - 1) + \sum\limits_{j=i+1}^d (j - i) x_j \quad \text{for } 2 \leq i \leq d.
+\]
+
+This analysis confirms the correct differentiation of the function \( F(x_1, \dots, x_d) \) with respect to \( x_i \).
+
+
+\end{document}

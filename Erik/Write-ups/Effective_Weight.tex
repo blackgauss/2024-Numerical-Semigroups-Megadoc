@@ -1,0 +1,124 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath, amsthm, amsfonts, amssymb, amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[capitalize, nameinlink, noabbrev]{cleveref}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{todonotes}
+\usepackage{physics}
+\usepackage{draftwatermark}
+\usetikzlibrary{arrows.meta, positioning, trees}
+\usepackage{pdflscape}
+\usepackage{ytableau}
+\usepackage[breakable, skins, most]{tcolorbox}
+\usepackage{Erik/Styles/colorboxes}
+\usepackage{natbib}
+\usepackage{url}
+
+% Bibliography setup
+\bibliographystyle{plainnat} % Specify bibliography style
+
+\pgfplotsset{compat=1.12}
+\lstdefinestyle{Python}{
+    language        = Python,
+    frame           = lines, 
+    basicstyle      = \footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily
+}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{UCI 2024}
+\newcommand\hwnumber{Depth 2 Plueger's Conjecture}
+\newcommand\Name{Erik Imathiu-Jones}
+
+% Macros
+\usepackage{Erik/Styles/macros}
+
+\SetWatermarkText{} 
+\SetWatermarkScale{1}
+\SetWatermarkAngle{0}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\Name}
+\chead{\textbf{\Large \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\title{}
+\author{Erik Imathiu-Jones}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+
+\section{Outline}
+\begin{tcolorbox}[title=TLDR]
+% TLDR content goes here
+\end{tcolorbox}
+
+\section{Notation}
+
+We call a minimal generator of \(S\) \emph{ineffective} if it is less than the Frobenius number \(F(S)\). Let \(\inef(S)\) denote the set of ineffective generators of \(S\). Define the effective weight of a minimal generator \(a\) of \(S\) as:
+\[
+\ew(a) = \#\{(l, a) \mid l \not\in S \text{ and } a < l\}.
+\]
+The effective weight of \(S\) is then given by:
+\[
+\ew(S) = \sum_{a \in \inef(S)} \ew(a).
+\]
+
+In what follows, \(m\) and \(F\) are the multiplicity and Frobenius number of \(S\), respectively.
+
+\section{Effective Weight of Numerical Semigroups}
+
+\begin{proposition}
+    If \(S\) is a numerical semigroup, then:
+    \[
+    \ew(S) = \sum_{i=0}^{N} \left(\ew(m) - \# \{(l, m) \mid l \not\in S \text{ and } m < l < a_i\}\right)
+    \]
+    where \(\{a_k\}_{i=0}^N\) are the ineffective generators of \(S\).
+\end{proposition}
+
+\begin{proof}
+Index the ineffective generators of \(S\) in increasing order so that \(a_0 = m\) and the full collection is \(\{a_i\}_{i=0}^N\). We derive the identity:
+\begin{align*}
+    \ew(a_{i+1}) &= \#\{(l, a_{i+1}) \mid l \not\in S \text{ and } a_{i+1} < l\} \\
+    &= \#\{(l, a_i) \mid l \not\in S \text{ and } a_i < l\} - \#\{(l, a_i) \mid l \not\in S \text{ and } a_i < l < a_{i+1}\} \\
+    &= \ew(a_i) - \#\{(l, a_i) \mid l \not\in S \text{ and } a_i < l < a_{i+1}\}.
+\end{align*}
+By induction, we claim:
+\[
+\ew(a_i) = \ew(m) - \# \{(l, m) \mid l \not\in S \text{ and } m < l < a_i\}.
+\]
+The inductive step follows from:
+\begin{align*}
+    \ew(a_{i+1}) &= \ew(a_i) - \#\{(l, a_i) \mid l \not\in S \text{ and } a_i < l < a_{i+1}\} \\
+    &= \left(\ew(m) - \# \{(l, m) \mid l \not\in S \text{ and } m < l < a_i\}\right) - \#\{(l, a_i) \mid l \not\in S \text{ and } a_i < l < a_{i+1}\} \\
+    &= \ew(m) - \# \{(l, m) \mid l \not\in S \text{ and } m < l < a_{i+1}\}.
+\end{align*}
+Summing over all ineffective generators gives:
+\[
+\ew(S) = \sum_{i=0}^{N} \left(\ew(m) - \# \{(l, m) \mid l \not\in S \text{ and } m < l < a_i\}\right).
+\]
+\end{proof}
+
+\end{document}

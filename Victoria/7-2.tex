@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper, total={6.5in, 9in}]{geometry}
+\usepackage{amssymb, amsmath, graphicx, wasysym, multirow, epsf, tikz, cancel, hyperref, marvosym, mathtools, amsthm, dcolumn,cases, array}
+
+\setlength{\parindent}{0pt} % No indents
+
+\newcommand{\ds}{\displaystyle}
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\C}{{\mathbb C}}
+\DeclareMathOperator{\Ap}{Ap}
+\DeclareMathOperator{\PF}{PF}
+
+
+\title{7-2-2024}
+\date{}
+
+\begin{document}
+
+\maketitle
+\begin{itemize}
+    \item We always know $S\subseteq A(S\cup I)$
+    \item It suffices to find order ideals $I$ such that $A(S\cup I)\subseteq S (*)$
+    \item If I is self-dual, $(*)$ is true
+    \item If I satisfies Thm 3.9, then $(*)$ is true
+    \item Theorem 3.9. Let $S$ be a numerical semigroup, $I\subseteq M(S),$ and $ T=I\cup S$. Then $T$ is a numerical set associated to $S$ iff
+    \begin{itemize}
+        \item $I$ is an order ideal of $(\mathcal{M}(S),\preceq)$, and 
+        \item for each $P\in I\cap \PF(S),$ one of the following conditions is satisfied:
+        \begin{itemize}
+            \item $2P\notin S,$
+            \item $F(S)-P\in I,$ or
+            \item there is a Frobenius triangle $(P,x,y)$ that is satisfied by $I$
+        \end{itemize}
+    \end{itemize}
+    \end{itemize}
+
+\end{document}

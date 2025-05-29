@@ -1,0 +1,49 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath, amssymb, amsthm}
+
+\begin{document}
+
+\section*{Actionable Plan for Addressing Pflueger's Conjecture}
+
+\subsection*{1. Understanding the Problem Setup}
+- We begin by considering a semigroup with an Apéry tuple of the form $(1,1,\dots,1,2,2,\dots,2,3,3,\dots,3)$ where there are $x$ 1s, $y$ 2s, and $z$ 3s.
+- The goal is to analyze the Apéry weight, particularly how it behaves when we fix the genus $g = x + 2y + 3z$ and allow the length of the tuple ($m-1$) to vary.
+
+\subsection*{2. Quadratic Maximization Approach}
+- Express $z$ in terms of $x$ and $y$ as $z = \frac{g-x-2y}{3}$, reducing the problem to maximizing a quadratic function in $x$ and $y$.
+- For a fixed $y$, this becomes a quadratic function in $x$, which can be maximized using standard techniques (derivatives, vertex formula).
+
+\subsection*{3. Specific Case Analysis}
+- Consider the case when $y = 0$. The Apéry tuple is then of the form $(1,1,1,\dots,1,3,3,\dots,3)$.
+- Calculate the Apéry weight in this case:
+  \[
+  \text{Apwt}(S) = \frac{2}{3}(x+1)(g-x).
+  \]
+- Maximize this quadratic expression with respect to $x$ and determine the optimal $x$ value, given by $x = \frac{g-1}{2}$, assuming $g$ is odd and $g \equiv 5 \mod 6$.
+
+\subsection*{4. Addressing the Bound from Pflueger's Conjecture}
+- Compare the maximum Apéry weight obtained to the desired upper bound from Pflueger's conjecture $(g+1)^2/8$.
+- Determine the range of $x$ where the obtained bound exceeds the conjectured bound and explore how large this range is.
+
+\subsection*{5. Addressing Permutation Issues in Apéry Tuples}
+- Analyze Apéry tuples where permuting the entries may lead to invalid tuples, such as $(3,3,1,1)$ vs. $(1,1,3,3)$.
+- Investigate the constraints imposed by the Kunz polyhedron inequalities, particularly how they limit the positions of entries (e.g., a 3 in position $r$ implies a restriction on the positions of 1s).
+
+\subsection*{6. Specific Observations for Right-most 3s}
+- For a tuple with $x$ 1s and $z$ 3s, consider the placement of the right-most 3.
+- Use the Pigeonhole principle to conclude that the right-most 3 must be in a position at most $2(z-1)+1$.
+- Adjust the Apéry weight calculation by considering this restriction, particularly in cases where $z$ is large.
+
+\subsection*{7. Special Cases and Generalization}
+- For cases where the number of 2s is small or zero, revisit the argument that the Apéry weight cannot reach the previously calculated maximum.
+- Use examples such as the "Evens" semigroup where the number of 1s is almost equal to the number of 3s, and they alternate in the tuple.
+
+\subsection*{8. Final Steps}
+- Validate the upper bound for the Apéry weight when the number of 2s is at least as large as the number of 1s.
+- In cases where the number of 2s is small, apply the argument that the Apéry weight should be smaller due to the constraints discussed.
+
+\subsection*{9. Next Steps}
+- Review the above plan and implement the calculations for specific cases, focusing on those where $y$ is small.
+- Discuss findings with the research group and refine the approach as needed.
+
+\end{document}

@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{definition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{prop}[thm]{Proposition}
+
+\title{on the order ideals of dual numerical sets}
+\date{Summer 2024}
+\begin{document}
+\maketitle
+
+\begin{defn}[Dual]
+    Let $T$ be a numerical set. The \textbf{dual} of $T$ is 
+    $$T^* = \{x \in \mathbb{Z} \mid F(T) - x \notin T \}.$$
+\end{defn}
+
+\begin{prop}
+    $T, T^*$ correspond to partitions that are conjugates of each other. 
+\end{prop}
+
+\begin{prop}
+    Let $S$ be a numerical semigroup with $F(S) = F$. Let $T$ be a numerical set such that $T = S\cup I$ for some order ideal $I$. Then we have $T^* = S\cup I^*$ for a unique order ideal $I^*$, where 
+    $$I^* = \{x \in \mathcal{M}(S) \mid F - x \notin I\}.$$
+
+    \textit{Proof.} $(\subseteq)$ Let $x \in T^*$. Then we know $x\in \mathbb{Z}$ and $F-x \notin T$. If $x\in S$, we are done, so suppose it is not. We already know that $F-x \notin T$, so $F-x \notin S$ and $F-x \notin I$. Then we have that $x \in \mathcal{M}(S)$ and $F-x \notin I$, so $x \in S \cup I^*$. Thus, $T^* \subseteq S\cup I^*$.
+
+    $(\supseteq)$ Let $x \in S\cup I^*$. First, suppose $x \in S$. We know $S \subseteq A(T)$ and $A(T) = A(T^*)$, so $S \subseteq T^*$. Then $x \in T^*$. Next, suppose $x \in I^*$. Then $x \in \mathcal{M}(S)$, so $x \notin S$ and $F-x \notin S$. We also know $F-x \notin I$, so $F-x \notin T$. So $x\in T^*$; that is, $S\cup I^* \subseteq T^*$. 
+    
+    Hence, $T^*= S \cup I^*$. Now it is left to see that $I^*$ is in fact an order ideal. It is clear that $I^* \subseteq \mathcal{M}(S)$, so suppose $x \in I^*$ and $x \preceq y$. Then $F-x \notin I$ and $y-x = s$ for some $s \in S$. We know that $(F-x) - (F-y) = s$, so $F-y \preceq F-x$. Since $I$ is an order ideal, this implies that $F-y \notin I$. So $y \in I^*$, and $I^*$ is an order ideal. Lastly, we note that given numerical set, its associated order ideal is unique, so $I^*$ is the only order ideal such that $T^* = S\cup I^*$. $\blacksquare$
+    
+\end{prop}
+
+\begin{prop}
+    If $I$ is self-dual, then $I^* = \mathcal{M}(S) \setminus I$.
+    \medskip
+
+    \textit{Proof.} $(\subseteq)$ Suppose $x \in I^*$. Then $F-x \notin I$. Since $I$ is self-dual, this implies that $x \notin I$. So $I^* \subseteq \mathcal{M}(S)\setminus I$. $(\supseteq)$ Suppose $x \in \mathcal{M}(S)\setminus I$. Then $x \notin I$, so $F-x \notin I$, since $I$ is self-dual. So $x \in \mathcal{M}(S) \setminus I$, that is, $\mathcal{M}(S) \setminus I \subseteq I^*$. Hence, $I^* = \mathcal{M}(S) \setminus I$. $\blacksquare$
+    
+\end{prop}
+
+\begin{prop}
+    If $I$ is self-dual, then $I\cup I^* = \mathcal{M}(S)$.
+    \medskip
+    
+    \textit{Proof.} This follows immediately from the previous proposition. $\blacksquare$
+    
+\end{prop}
+
+\begin{prop}
+    If $I$ is self-dual, then $I^*$ is self-dual. 
+    \medskip
+
+    \textit{Proof.} Since $I$ is self-dual, $x \notin I$ if and only if $F - x \notin I$. Since $I^* = \mathcal{M}(S) \setminus I$, we have $x\in I^*$ if and only if $F-x \in I^*$. So $I^*$ is self-dual. $\blacksquare$
+    
+\end{prop}
+    
+\end{document}

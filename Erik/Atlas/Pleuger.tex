@@ -1,0 +1,983 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{ytableau}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{titlesec}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{NumericalSemigroup Catalog}
+\fancyfoot[C]{\thepage}
+\titleformat{\section}{\normalfont\Large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing*{\subsection}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\begin{document}
+\tableofcontents
+\newpage
+\newpage\subsection{[2, 7]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+3 & 5 & 2 & 2 & 1 & 0 & 6 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {5};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {3};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {3};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-3.20) {1};
+  \node[minimum size=0.3cm] (3) at (0.00,-1.60) {3};
+  \node[draw, rectangle, minimum size=0.3cm] (5) at (0.00,0.00) {5};
+  % Draw the cover relations
+  \draw (3) -- (1);
+  \draw (5) -- (3);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[3, 5]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+4 & 7 & 3 & 3 & 1 & 0 & 8 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {7};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {4};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {2};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {4};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {2};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-3.20) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[draw, rectangle, minimum size=0.3cm] (7) at (0.00,0.00) {7};
+  % Draw the cover relations
+  \draw (7) -- (4);
+  \draw (4) -- (1);
+  \draw (7) -- (2);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[2, 9]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+4 & 7 & 2 & 3 & 1 & 0 & 10 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {7};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {5};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {3};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {5};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {3};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {3};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-4.80) {1};
+  \node[minimum size=0.3cm] (3) at (0.00,-3.20) {3};
+  \node[minimum size=0.3cm] (5) at (0.00,-1.60) {5};
+  \node[draw, rectangle, minimum size=0.3cm] (7) at (0.00,0.00) {7};
+  % Draw the cover relations
+  \draw (3) -- (1);
+  \draw (5) -- (3);
+  \draw (7) -- (5);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[4, 6, 7]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+5 & 9 & 4 & 4 & 1 & 0 & 10 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {9};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {5};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {3};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {2};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {5};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {3};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {2};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-3.20) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (3) at (1.60,-1.60) {3};
+  \node[minimum size=0.3cm] (5) at (3.20,-1.60) {5};
+  \node[draw, rectangle, minimum size=0.3cm] (9) at (0.00,0.00) {9};
+  % Draw the cover relations
+  \draw (9) -- (5);
+  \draw (9) -- (2);
+  \draw (5) -- (1);
+  \draw (9) -- (3);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[3, 7, 11]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+5 & 8 & 3 & 4 & 2 & 1 & 10 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {8};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {5};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {2};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {5};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {2};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {4};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {2};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-1.60) {1};
+  \node[minimum size=0.3cm] (5) at (1.60,-1.60) {5};
+  \node[minimum size=0.3cm] (2) at (1.60,-3.20) {2};
+  \node[minimum size=0.3cm] (4) at (0.00,0.00) {4};
+  \node[draw, rectangle, minimum size=0.3cm] (8) at (1.60,0.00) {8};
+  % Draw the cover relations
+  \draw (5) -- (2);
+  \draw (4) -- (1);
+  \draw (8) -- (5);
+  \draw (8) -- (1);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[draw, rectangle, minimum size=0.3cm] (4) at (0.00,0.00) {4};
+\end{tikzpicture}
+\end{minipage}
+\newpage\subsection{[2, 11]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+5 & 9 & 2 & 4 & 1 & 0 & 15 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {9};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {7};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {5};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {3};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {7};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {5};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {3};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {5};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {3};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {3};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (0.00,-4.80) {3};
+  \node[minimum size=0.3cm] (5) at (0.00,-3.20) {5};
+  \node[minimum size=0.3cm] (7) at (0.00,-1.60) {7};
+  \node[draw, rectangle, minimum size=0.3cm] (9) at (0.00,0.00) {9};
+  % Draw the cover relations
+  \draw (3) -- (1);
+  \draw (5) -- (3);
+  \draw (9) -- (7);
+  \draw (7) -- (5);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[4, 6, 9]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+6 & 11 & 4 & 6 & 1 & 0 & 14 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {11};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {7};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {5};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {3};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {2};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {7};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {3};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {5};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {3};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {2};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-3.20) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-3.20) {3};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (5) at (1.60,-1.60) {5};
+  \node[minimum size=0.3cm] (7) at (3.20,-1.60) {7};
+  \node[draw, rectangle, minimum size=0.3cm] (11) at (0.00,0.00) {11};
+  % Draw the cover relations
+  \draw (11) -- (7);
+  \draw (7) -- (1);
+  \draw (5) -- (1);
+  \draw (7) -- (3);
+  \draw (11) -- (2);
+  \draw (11) -- (5);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[4, 5]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+6 & 11 & 4 & 6 & 1 & 0 & 15 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {11};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {7};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {6};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {3};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {2};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {7};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {3};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {2};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {6};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {2};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {3};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {2};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-3.20) {1};
+  \node[minimum size=0.3cm] (2) at (1.60,-3.20) {2};
+  \node[minimum size=0.3cm] (3) at (3.20,-3.20) {3};
+  \node[minimum size=0.3cm] (6) at (0.00,-1.60) {6};
+  \node[minimum size=0.3cm] (7) at (1.60,-1.60) {7};
+  \node[draw, rectangle, minimum size=0.3cm] (11) at (0.00,0.00) {11};
+  % Draw the cover relations
+  \draw (11) -- (7);
+  \draw (6) -- (2);
+  \draw (6) -- (1);
+  \draw (11) -- (6);
+  \draw (7) -- (3);
+  \draw (7) -- (2);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[3, 7]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+6 & 11 & 3 & 6 & 1 & 0 & 16 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {11};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {8};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {5};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {4};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {2};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {8};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {5};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {2};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {5};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {2};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {4};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {2};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-3.20) {1};
+  \node[minimum size=0.3cm] (5) at (1.60,-3.20) {5};
+  \node[minimum size=0.3cm] (2) at (1.60,-4.80) {2};
+  \node[minimum size=0.3cm] (4) at (0.00,-1.60) {4};
+  \node[minimum size=0.3cm] (8) at (1.60,-1.60) {8};
+  \node[draw, rectangle, minimum size=0.3cm] (11) at (0.00,0.00) {11};
+  % Draw the cover relations
+  \draw (8) -- (1);
+  \draw (11) -- (4);
+  \draw (11) -- (8);
+  \draw (4) -- (1);
+  \draw (8) -- (5);
+  \draw (5) -- (2);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[4, 6, 11]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+7 & 13 & 4 & 8 & 1 & 0 & 19 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {13};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {9};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {7};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {5};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {3};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {2};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {9};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {5};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {3};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {7};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {3};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {5};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {3};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {2};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-4.80) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (7) at (1.60,-1.60) {7};
+  \node[minimum size=0.3cm] (9) at (3.20,-1.60) {9};
+  \node[minimum size=0.3cm] (3) at (0.00,-3.20) {3};
+  \node[minimum size=0.3cm] (5) at (1.60,-3.20) {5};
+  \node[draw, rectangle, minimum size=0.3cm] (13) at (0.00,0.00) {13};
+  % Draw the cover relations
+  \draw (7) -- (1);
+  \draw (9) -- (3);
+  \draw (13) -- (7);
+  \draw (5) -- (1);
+  \draw (7) -- (3);
+  \draw (9) -- (5);
+  \draw (13) -- (9);
+  \draw (13) -- (2);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[4, 6, 13]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+8 & 15 & 4 & 10 & 1 & 0 & 25 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {15};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {11};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {9};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {7};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {5};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {3};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {2};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {11};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {7};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {5};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {3};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {9};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {5};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {3};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {7};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {3};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {5};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {3};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {2};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-4.80) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-4.80) {3};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (9) at (1.60,-1.60) {9};
+  \node[minimum size=0.3cm] (11) at (3.20,-1.60) {11};
+  \node[minimum size=0.3cm] (5) at (0.00,-3.20) {5};
+  \node[minimum size=0.3cm] (7) at (1.60,-3.20) {7};
+  \node[draw, rectangle, minimum size=0.3cm] (15) at (0.00,0.00) {15};
+  % Draw the cover relations
+  \draw (11) -- (7);
+  \draw (15) -- (11);
+  \draw (7) -- (1);
+  \draw (9) -- (3);
+  \draw (5) -- (1);
+  \draw (7) -- (3);
+  \draw (9) -- (5);
+  \draw (11) -- (5);
+  \draw (15) -- (9);
+  \draw (15) -- (2);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[6, 7, 8]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+9 & 17 & 6 & 12 & 1 & 0 & 26 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {17};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {11};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {10};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {9};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {5};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {4};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {3};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {2};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {11};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {5};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {4};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {3};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {10};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {4};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {3};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {2};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {9};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {3};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {2};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {5};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {4};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {3};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {2};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-3.20) {1};
+  \node[minimum size=0.3cm] (2) at (1.60,-3.20) {2};
+  \node[minimum size=0.3cm] (3) at (3.20,-3.20) {3};
+  \node[minimum size=0.3cm] (4) at (4.80,-3.20) {4};
+  \node[minimum size=0.3cm] (5) at (6.40,-3.20) {5};
+  \node[minimum size=0.3cm] (9) at (0.00,-1.60) {9};
+  \node[minimum size=0.3cm] (10) at (1.60,-1.60) {10};
+  \node[minimum size=0.3cm] (11) at (3.20,-1.60) {11};
+  \node[draw, rectangle, minimum size=0.3cm] (17) at (0.00,0.00) {17};
+  % Draw the cover relations
+  \draw (9) -- (3);
+  \draw (17) -- (10);
+  \draw (10) -- (4);
+  \draw (11) -- (3);
+  \draw (9) -- (2);
+  \draw (17) -- (9);
+  \draw (11) -- (5);
+  \draw (10) -- (3);
+  \draw (17) -- (11);
+  \draw (9) -- (1);
+  \draw (11) -- (4);
+  \draw (10) -- (2);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[4, 6, 15]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+9 & 17 & 4 & 12 & 1 & 0 & 32 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {17};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {13};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {11};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {9};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {7};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {5};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {3};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {2};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {13};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {9};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {7};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {5};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {3};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {11};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {7};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {5};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {3};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {9};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {5};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {3};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {7};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {3};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {5};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {3};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {2};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (11) at (1.60,-1.60) {11};
+  \node[minimum size=0.3cm] (13) at (3.20,-1.60) {13};
+  \node[minimum size=0.3cm] (3) at (0.00,-4.80) {3};
+  \node[minimum size=0.3cm] (5) at (1.60,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (0.00,-3.20) {7};
+  \node[minimum size=0.3cm] (9) at (1.60,-3.20) {9};
+  \node[draw, rectangle, minimum size=0.3cm] (17) at (0.00,0.00) {17};
+  % Draw the cover relations
+  \draw (11) -- (7);
+  \draw (7) -- (1);
+  \draw (9) -- (3);
+  \draw (13) -- (7);
+  \draw (17) -- (13);
+  \draw (5) -- (1);
+  \draw (7) -- (3);
+  \draw (9) -- (5);
+  \draw (13) -- (9);
+  \draw (17) -- (2);
+  \draw (11) -- (5);
+  \draw (17) -- (11);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\end{document}

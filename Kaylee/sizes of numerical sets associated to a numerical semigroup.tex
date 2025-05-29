@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{definition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{corr}[thm]{Corollary}
+
+
+\title{sizes of numerical sets}
+\date{Summer 2024}
+\begin{document}
+\maketitle
+
+\begin{prop}
+    Let $T$ be a numerical set. Suppose $A(T) = S$. Then 
+    $$|\lambda(T)| = |\lambda(S)| + |A| - |B|,$$
+
+    where $A, B$ are defined as follows: 
+    $$A = \{(n, h)\mid n\in I, h\notin T, n <h\}$$
+    $$ B = \{(n, h)\mid n \in S, h\in I, n <h \}.$$
+
+    \textit{Proof.} We recall the following:
+    $$|\lambda(S)| = \#\{(n, h) \mid n \in S, h\notin S, n<h\}$$
+    $$|\lambda(T)| = \#\{(n, h)\mid n \in T, h\notin T, n<h\}.$$
+    Since $T= S\cup I$ for some order ideal $I$ with $S \cap I = \varnothing$, we have that 
+    $$|\lambda(T)| = \#\{(n,h)\mid n\in S, h\notin T, n<h\} + \#\{(n,h)\mid n\in I, h\notin T, n<h\},$$
+that is, 
+    $$|\lambda(T)| = \#\{(n,h)\mid n\in S, h\notin T, n<h\} + |A|.$$
+We further note that $h \notin T$ if and only if $h\notin S$ and $h\notin I$, and realize that
+    
+    $$|\lambda(T)| = \#\{(n,h)\mid n\in S, h\notin S, n<h\} - \#\{(n, h)\mid n\in S, h\in I, n<h\} + |A|.$$
+Lastly, we recall the definitions above, and obtain 
+    $$|\lambda(T)| = |\lambda(S)| + |A| - |B|,$$
+    as desired. $\blacksquare$
+    
+\end{prop}
+
+\begin{corr}
+    $|\lambda(T)| < |\lambda(S)|$ if and only if $|A| < |B|.$
+\end{corr}
+
+\begin{corr}
+    Let $T$ be a numerical set. Suppose $A(T) = S$. Then 
+    $$|\lambda(T)| = |\lambda(S)| + \#\{(n, h)\mid n\in I, h\notin S, n <h\} - \#\{(n, h)\mid n \in T, h\in I, n <h \}.$$
+
+    \textit{Proof.} We only need to note that 
+    $$|A| = \#\{(n, h) \mid n \in I, h \notin S, n<h\} - \#\{(n, h) \mid n\in T, h \in T, n< h\}.$$
+    Rearranging thereafter leads to the stated equality. $\blacksquare$
+\end{corr}
+
+\begin{corr}
+    $|\lambda(T)|=|\lambda(S)| + g(S)\cdot|I|-\frac{1}{2}|I|\cdot(|I|-1) - \sum I_j$
+\end{corr}
+
+
+\end{document}

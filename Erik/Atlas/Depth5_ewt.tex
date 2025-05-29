@@ -1,0 +1,4111 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{ytableau}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{titlesec}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{NumericalSemigroup Catalog}
+\fancyfoot[C]{\thepage}
+\titleformat{\section}{\normalfont\Large\bfseries}{}{0em}{}
+\titleformat{\subsection}{\normalfont\large\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\titlespacing*{\subsection}{0pt}{12pt plus 4pt minus 2pt}{0pt plus 2pt minus 2pt}
+\begin{document}
+\tableofcontents
+\newpage
+\newpage\subsection{[2, 11]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+5 & 9 & 2 & 4 & 1 & 0 & 15 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {9};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {7};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {5};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {3};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {7};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {5};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {3};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {5};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {3};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {3};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (0.00,-4.80) {3};
+  \node[minimum size=0.3cm] (5) at (0.00,-3.20) {5};
+  \node[minimum size=0.3cm] (7) at (0.00,-1.60) {7};
+  \node[draw, rectangle, minimum size=0.3cm] (9) at (0.00,0.00) {9};
+  % Draw the cover relations
+  \draw (3) -- (1);
+  \draw (5) -- (3);
+  \draw (9) -- (7);
+  \draw (7) -- (5);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[3, 8]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+7 & 13 & 3 & 7 & 1 & 0 & 21 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {13};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {10};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {7};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {5};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {4};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {2};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {10};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {7};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {4};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {2};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {7};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {4};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {5};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {2};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {4};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {2};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-3.20) {2};
+  \node[minimum size=0.3cm] (7) at (1.60,-3.20) {7};
+  \node[minimum size=0.3cm] (4) at (1.60,-4.80) {4};
+  \node[minimum size=0.3cm] (5) at (0.00,-1.60) {5};
+  \node[minimum size=0.3cm] (10) at (1.60,-1.60) {10};
+  \node[draw, rectangle, minimum size=0.3cm] (13) at (0.00,0.00) {13};
+  % Draw the cover relations
+  \draw (7) -- (4);
+  \draw (4) -- (1);
+  \draw (13) -- (10);
+  \draw (10) -- (7);
+  \draw (13) -- (5);
+  \draw (10) -- (2);
+  \draw (5) -- (2);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[3, 10, 17]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+8 & 14 & 3 & 8 & 2 & 1 & 24 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {14};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {11};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {8};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {5};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {4};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {2};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {11};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {8};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {5};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {2};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {8};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {5};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {2};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {7};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {4};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {5};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {2};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {4};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {2};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-3.20) {1};
+  \node[minimum size=0.3cm] (8) at (1.60,-3.20) {8};
+  \node[minimum size=0.3cm] (2) at (0.00,-6.40) {2};
+  \node[minimum size=0.3cm] (4) at (0.00,-1.60) {4};
+  \node[minimum size=0.3cm] (11) at (1.60,-1.60) {11};
+  \node[minimum size=0.3cm] (5) at (1.60,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (0.00,0.00) {7};
+  \node[draw, rectangle, minimum size=0.3cm] (14) at (1.60,0.00) {14};
+  % Draw the cover relations
+  \draw (11) -- (1);
+  \draw (7) -- (4);
+  \draw (14) -- (4);
+  \draw (14) -- (11);
+  \draw (11) -- (8);
+  \draw (4) -- (1);
+  \draw (8) -- (5);
+  \draw (5) -- (2);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[draw, rectangle, minimum size=0.3cm] (7) at (0.00,0.00) {7};
+\end{tikzpicture}
+\end{minipage}
+\newpage\subsection{[4, 6, 15]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+9 & 17 & 4 & 12 & 1 & 0 & 32 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {17};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {13};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {11};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {9};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {7};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {5};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {3};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {2};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {13};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {9};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {7};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {5};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {3};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {11};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {7};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {5};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {3};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {9};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {5};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {3};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {7};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {3};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {5};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {3};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {2};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (11) at (1.60,-1.60) {11};
+  \node[minimum size=0.3cm] (13) at (3.20,-1.60) {13};
+  \node[minimum size=0.3cm] (3) at (0.00,-4.80) {3};
+  \node[minimum size=0.3cm] (5) at (1.60,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (0.00,-3.20) {7};
+  \node[minimum size=0.3cm] (9) at (1.60,-3.20) {9};
+  \node[draw, rectangle, minimum size=0.3cm] (17) at (0.00,0.00) {17};
+  % Draw the cover relations
+  \draw (11) -- (7);
+  \draw (7) -- (1);
+  \draw (9) -- (3);
+  \draw (13) -- (7);
+  \draw (17) -- (13);
+  \draw (5) -- (1);
+  \draw (7) -- (3);
+  \draw (9) -- (5);
+  \draw (13) -- (9);
+  \draw (17) -- (2);
+  \draw (11) -- (5);
+  \draw (17) -- (11);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[4, 6, 17]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+10 & 19 & 4 & 14 & 1 & 0 & 40 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {19};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {15};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {13};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {11};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {9};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {7};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {5};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {3};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {2};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {15};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {11};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {9};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {7};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {5};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {3};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {13};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {9};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {7};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {5};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {3};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {11};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {7};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {5};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {3};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {9};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {5};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {3};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {7};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {3};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {5};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {3};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {2};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-6.40) {3};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (13) at (1.60,-1.60) {13};
+  \node[minimum size=0.3cm] (15) at (3.20,-1.60) {15};
+  \node[minimum size=0.3cm] (5) at (0.00,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (1.60,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (0.00,-3.20) {9};
+  \node[minimum size=0.3cm] (11) at (1.60,-3.20) {11};
+  \node[draw, rectangle, minimum size=0.3cm] (19) at (0.00,0.00) {19};
+  % Draw the cover relations
+  \draw (11) -- (7);
+  \draw (15) -- (11);
+  \draw (7) -- (1);
+  \draw (9) -- (3);
+  \draw (13) -- (7);
+  \draw (5) -- (1);
+  \draw (7) -- (3);
+  \draw (19) -- (13);
+  \draw (9) -- (5);
+  \draw (13) -- (9);
+  \draw (11) -- (5);
+  \draw (15) -- (9);
+  \draw (19) -- (2);
+  \draw (19) -- (15);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[4, 6, 21, 23]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+11 & 19 & 4 & 15 & 3 & 2 & 47 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {19};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {15};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {13};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {11};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {9};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {7};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {5};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {3};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {17};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {13};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {11};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {9};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {7};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {5};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {3};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {15};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {11};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {9};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {7};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {5};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {3};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {13};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {9};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {7};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {5};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {3};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {11};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {7};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {5};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {3};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {9};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {5};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {3};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {7};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {3};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {5};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {3};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {2};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-6.40) {3};
+  \node[minimum size=0.3cm] (2) at (0.00,0.00) {2};
+  \node[minimum size=0.3cm] (17) at (1.60,0.00) {17};
+  \node[draw, rectangle, minimum size=0.3cm] (19) at (3.20,0.00) {19};
+  \node[minimum size=0.3cm] (5) at (0.00,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (1.60,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (0.00,-3.20) {9};
+  \node[minimum size=0.3cm] (11) at (1.60,-3.20) {11};
+  \node[minimum size=0.3cm] (13) at (0.00,-1.60) {13};
+  \node[minimum size=0.3cm] (15) at (1.60,-1.60) {15};
+  % Draw the cover relations
+  \draw (11) -- (7);
+  \draw (15) -- (11);
+  \draw (7) -- (1);
+  \draw (9) -- (3);
+  \draw (13) -- (7);
+  \draw (17) -- (13);
+  \draw (5) -- (1);
+  \draw (7) -- (3);
+  \draw (19) -- (13);
+  \draw (9) -- (5);
+  \draw (13) -- (9);
+  \draw (11) -- (5);
+  \draw (15) -- (9);
+  \draw (17) -- (11);
+  \draw (19) -- (15);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[draw, rectangle, minimum size=0.3cm] (17) at (0.00,0.00) {17};
+  \node[minimum size=0.3cm] (2) at (1.60,0.00) {2};
+\end{tikzpicture}
+\end{minipage}
+\newpage\subsection{[5, 11, 14, 17]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+12 & 23 & 5 & 16 & 1 & 0 & 40 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {23};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {18};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {13};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {12};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {9};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {8};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {7};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {6};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {4};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {3};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {2};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {18};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {13};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {8};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {7};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {4};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {3};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {2};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {13};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {8};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {3};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {2};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {12};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {7};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {2};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {9};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {4};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {8};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {3};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {7};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {2};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {6};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {4};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {3};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {2};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-3.20) {1};
+  \node[minimum size=0.3cm] (4) at (1.60,-3.20) {4};
+  \node[minimum size=0.3cm] (7) at (3.20,-3.20) {7};
+  \node[minimum size=0.3cm] (13) at (4.80,-3.20) {13};
+  \node[minimum size=0.3cm] (2) at (3.20,-4.80) {2};
+  \node[minimum size=0.3cm] (8) at (4.80,-4.80) {8};
+  \node[minimum size=0.3cm] (3) at (4.80,-6.40) {3};
+  \node[minimum size=0.3cm] (6) at (0.00,-1.60) {6};
+  \node[minimum size=0.3cm] (9) at (1.60,-1.60) {9};
+  \node[minimum size=0.3cm] (12) at (3.20,-1.60) {12};
+  \node[minimum size=0.3cm] (18) at (4.80,-1.60) {18};
+  \node[draw, rectangle, minimum size=0.3cm] (23) at (0.00,0.00) {23};
+  % Draw the cover relations
+  \draw (13) -- (8);
+  \draw (18) -- (4);
+  \draw (12) -- (1);
+  \draw (12) -- (7);
+  \draw (18) -- (1);
+  \draw (18) -- (7);
+  \draw (6) -- (1);
+  \draw (18) -- (13);
+  \draw (23) -- (9);
+  \draw (8) -- (3);
+  \draw (23) -- (6);
+  \draw (23) -- (12);
+  \draw (23) -- (18);
+  \draw (7) -- (2);
+  \draw (13) -- (2);
+  \draw (9) -- (4);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[5, 9, 13]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+12 & 21 & 5 & 16 & 2 & 2 & 42 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {21};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {16};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {12};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {11};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {8};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {7};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {6};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {3};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {2};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {17};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {12};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {8};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {7};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {4};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {3};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {2};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {16};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {11};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {7};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {6};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {3};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {2};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {12};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {7};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {3};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {2};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {11};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {6};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {2};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {8};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {3};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {7};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {2};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {6};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {4};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {3};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {2};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-4.80) {2};
+  \node[minimum size=0.3cm] (6) at (1.60,-4.80) {6};
+  \node[minimum size=0.3cm] (3) at (0.00,-3.20) {3};
+  \node[minimum size=0.3cm] (7) at (1.60,-3.20) {7};
+  \node[minimum size=0.3cm] (11) at (3.20,-3.20) {11};
+  \node[minimum size=0.3cm] (4) at (0.00,-1.60) {4};
+  \node[minimum size=0.3cm] (8) at (1.60,-1.60) {8};
+  \node[minimum size=0.3cm] (12) at (3.20,-1.60) {12};
+  \node[minimum size=0.3cm] (16) at (4.80,-1.60) {16};
+  \node[minimum size=0.3cm] (17) at (0.00,0.00) {17};
+  \node[draw, rectangle, minimum size=0.3cm] (21) at (1.60,0.00) {21};
+  % Draw the cover relations
+  \draw (16) -- (7);
+  \draw (12) -- (7);
+  \draw (21) -- (16);
+  \draw (6) -- (1);
+  \draw (16) -- (3);
+  \draw (12) -- (3);
+  \draw (21) -- (12);
+  \draw (11) -- (6);
+  \draw (11) -- (2);
+  \draw (17) -- (12);
+  \draw (8) -- (3);
+  \draw (7) -- (2);
+  \draw (21) -- (8);
+  \draw (17) -- (8);
+  \draw (16) -- (11);
+  \draw (17) -- (4);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[draw, rectangle, minimum size=0.3cm] (17) at (0.00,0.00) {17};
+  \node[minimum size=0.3cm] (4) at (0.00,-1.60) {4};
+  % Draw the cover relations
+  \draw (17) -- (4);
+\end{tikzpicture}
+\end{minipage}
+\newpage\subsection{[6, 8, 10, 21, 23]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+13 & 25 & 6 & 23 & 1 & 0 & 53 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {25};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {19};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {17};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {15};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {13};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {11};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {9};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {7};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {5};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {4};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {3};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {2};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {19};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {13};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {11};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {9};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {7};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {5};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {3};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {17};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {11};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {9};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {7};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {5};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {3};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {15};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {9};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {7};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {5};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {3};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {13};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {7};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {5};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {3};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {11};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {5};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {3};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {9};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {3};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {7};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {5};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {4};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {3};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {2};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (15) at (3.20,-1.60) {15};
+  \node[minimum size=0.3cm] (17) at (4.80,-1.60) {17};
+  \node[minimum size=0.3cm] (19) at (6.40,-1.60) {19};
+  \node[minimum size=0.3cm] (3) at (0.00,-4.80) {3};
+  \node[minimum size=0.3cm] (5) at (1.60,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (3.20,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (0.00,-3.20) {9};
+  \node[minimum size=0.3cm] (11) at (1.60,-3.20) {11};
+  \node[minimum size=0.3cm] (13) at (3.20,-3.20) {13};
+  \node[draw, rectangle, minimum size=0.3cm] (25) at (0.00,0.00) {25};
+  % Draw the cover relations
+  \draw (17) -- (9);
+  \draw (19) -- (9);
+  \draw (11) -- (5);
+  \draw (13) -- (5);
+  \draw (25) -- (4);
+  \draw (15) -- (5);
+  \draw (7) -- (1);
+  \draw (25) -- (19);
+  \draw (17) -- (11);
+  \draw (9) -- (1);
+  \draw (19) -- (11);
+  \draw (11) -- (1);
+  \draw (13) -- (7);
+  \draw (15) -- (7);
+  \draw (25) -- (15);
+  \draw (17) -- (7);
+  \draw (9) -- (3);
+  \draw (11) -- (3);
+  \draw (25) -- (2);
+  \draw (19) -- (13);
+  \draw (13) -- (3);
+  \draw (15) -- (9);
+  \draw (25) -- (17);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[6, 8, 10, 23, 25]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+14 & 27 & 6 & 26 & 1 & 0 & 63 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {27};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {21};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {19};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {17};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {15};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {13};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {11};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {9};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {7};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {5};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {4};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {3};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {2};
+  \draw (5.20, 0.00) rectangle (5.60, -0.40);
+  \node[font=\tiny] at (5.40, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {21};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {15};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {13};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {11};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {9};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {7};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {5};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {3};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {19};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {13};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {11};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {9};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {7};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {5};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {3};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {17};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {11};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {9};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {7};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {5};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {3};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {15};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {9};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {7};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {5};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {3};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {13};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {7};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {5};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {3};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {11};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {5};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {3};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {9};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {3};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {7};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {5};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {4};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {3};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {2};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-6.40) {3};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (17) at (3.20,-1.60) {17};
+  \node[minimum size=0.3cm] (19) at (4.80,-1.60) {19};
+  \node[minimum size=0.3cm] (21) at (6.40,-1.60) {21};
+  \node[minimum size=0.3cm] (5) at (0.00,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (1.60,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (3.20,-4.80) {9};
+  \node[minimum size=0.3cm] (11) at (0.00,-3.20) {11};
+  \node[minimum size=0.3cm] (13) at (1.60,-3.20) {13};
+  \node[minimum size=0.3cm] (15) at (3.20,-3.20) {15};
+  \node[draw, rectangle, minimum size=0.3cm] (27) at (0.00,0.00) {27};
+  % Draw the cover relations
+  \draw (21) -- (13);
+  \draw (27) -- (4);
+  \draw (17) -- (9);
+  \draw (19) -- (9);
+  \draw (11) -- (5);
+  \draw (27) -- (19);
+  \draw (13) -- (5);
+  \draw (15) -- (5);
+  \draw (7) -- (1);
+  \draw (21) -- (15);
+  \draw (17) -- (11);
+  \draw (9) -- (1);
+  \draw (19) -- (11);
+  \draw (11) -- (1);
+  \draw (27) -- (21);
+  \draw (13) -- (7);
+  \draw (15) -- (7);
+  \draw (21) -- (11);
+  \draw (27) -- (2);
+  \draw (17) -- (7);
+  \draw (9) -- (3);
+  \draw (11) -- (3);
+  \draw (27) -- (17);
+  \draw (19) -- (13);
+  \draw (13) -- (3);
+  \draw (15) -- (9);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[6, 8, 10, 21]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+14 & 25 & 6 & 26 & 2 & 2 & 63 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {25};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {19};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {17};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {15};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {13};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {11};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {9};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {7};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {5};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {4};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {3};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {23};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {17};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {15};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {13};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {11};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {9};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {7};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {5};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {3};
+  \draw (3.60, -0.40) rectangle (4.00, -0.80);
+  \node[font=\tiny] at (3.80, -0.60) {2};
+  \draw (4.00, -0.40) rectangle (4.40, -0.80);
+  \node[font=\tiny] at (4.20, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {19};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {13};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {11};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {9};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {7};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {5};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {3};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {17};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {11};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {9};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {7};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {5};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {3};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {15};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {9};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {7};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {5};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {3};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {13};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {7};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {5};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {3};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {11};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {5};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {3};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {9};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {3};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {7};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {5};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {4};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {3};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {2};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (15) at (3.20,-1.60) {15};
+  \node[minimum size=0.3cm] (17) at (4.80,-1.60) {17};
+  \node[minimum size=0.3cm] (19) at (6.40,-1.60) {19};
+  \node[minimum size=0.3cm] (3) at (0.00,-4.80) {3};
+  \node[minimum size=0.3cm] (5) at (1.60,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (3.20,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (0.00,-3.20) {9};
+  \node[minimum size=0.3cm] (11) at (1.60,-3.20) {11};
+  \node[minimum size=0.3cm] (13) at (3.20,-3.20) {13};
+  \node[minimum size=0.3cm] (23) at (0.00,0.00) {23};
+  \node[draw, rectangle, minimum size=0.3cm] (25) at (1.60,0.00) {25};
+  % Draw the cover relations
+  \draw (23) -- (13);
+  \draw (17) -- (9);
+  \draw (19) -- (9);
+  \draw (11) -- (5);
+  \draw (13) -- (5);
+  \draw (25) -- (4);
+  \draw (15) -- (5);
+  \draw (7) -- (1);
+  \draw (25) -- (19);
+  \draw (23) -- (15);
+  \draw (17) -- (11);
+  \draw (9) -- (1);
+  \draw (19) -- (11);
+  \draw (11) -- (1);
+  \draw (13) -- (7);
+  \draw (15) -- (7);
+  \draw (25) -- (15);
+  \draw (23) -- (2);
+  \draw (23) -- (17);
+  \draw (17) -- (7);
+  \draw (9) -- (3);
+  \draw (11) -- (3);
+  \draw (19) -- (13);
+  \draw (13) -- (3);
+  \draw (15) -- (9);
+  \draw (25) -- (17);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[draw, rectangle, minimum size=0.3cm] (23) at (0.00,0.00) {23};
+  % Draw the cover relations
+  \draw (23) -- (2);
+\end{tikzpicture}
+\end{minipage}
+\newpage\subsection{[6, 8, 10, 25, 27]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+15 & 29 & 6 & 29 & 1 & 0 & 74 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {29};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {23};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {21};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {19};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {17};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {15};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {13};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {11};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {9};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {7};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {5};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {4};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {3};
+  \draw (5.20, 0.00) rectangle (5.60, -0.40);
+  \node[font=\tiny] at (5.40, -0.20) {2};
+  \draw (5.60, 0.00) rectangle (6.00, -0.40);
+  \node[font=\tiny] at (5.80, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {23};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {17};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {15};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {13};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {11};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {9};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {7};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {5};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {3};
+  \draw (3.60, -0.40) rectangle (4.00, -0.80);
+  \node[font=\tiny] at (3.80, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {21};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {15};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {13};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {11};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {9};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {7};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {5};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {3};
+  \draw (3.20, -0.80) rectangle (3.60, -1.20);
+  \node[font=\tiny] at (3.40, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {19};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {13};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {11};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {9};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {7};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {5};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {3};
+  \draw (2.80, -1.20) rectangle (3.20, -1.60);
+  \node[font=\tiny] at (3.00, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {17};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {11};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {9};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {7};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {5};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {3};
+  \draw (2.40, -1.60) rectangle (2.80, -2.00);
+  \node[font=\tiny] at (2.60, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {15};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {9};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {7};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {5};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {3};
+  \draw (2.00, -2.00) rectangle (2.40, -2.40);
+  \node[font=\tiny] at (2.20, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {13};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {7};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {5};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {3};
+  \draw (1.60, -2.40) rectangle (2.00, -2.80);
+  \node[font=\tiny] at (1.80, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {11};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {5};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {3};
+  \draw (1.20, -2.80) rectangle (1.60, -3.20);
+  \node[font=\tiny] at (1.40, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {9};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {3};
+  \draw (0.80, -3.20) rectangle (1.20, -3.60);
+  \node[font=\tiny] at (1.00, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {7};
+  \draw (0.40, -3.60) rectangle (0.80, -4.00);
+  \node[font=\tiny] at (0.60, -3.80) {1};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {5};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {4};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {3};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {2};
+  \draw (0.00, -5.60) rectangle (0.40, -6.00);
+  \node[font=\tiny] at (0.20, -5.80) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-6.40) {3};
+  \node[minimum size=0.3cm] (5) at (3.20,-6.40) {5};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (19) at (3.20,-1.60) {19};
+  \node[minimum size=0.3cm] (21) at (4.80,-1.60) {21};
+  \node[minimum size=0.3cm] (23) at (6.40,-1.60) {23};
+  \node[minimum size=0.3cm] (7) at (0.00,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (1.60,-4.80) {9};
+  \node[minimum size=0.3cm] (11) at (3.20,-4.80) {11};
+  \node[minimum size=0.3cm] (13) at (0.00,-3.20) {13};
+  \node[minimum size=0.3cm] (15) at (1.60,-3.20) {15};
+  \node[minimum size=0.3cm] (17) at (3.20,-3.20) {17};
+  \node[draw, rectangle, minimum size=0.3cm] (29) at (0.00,0.00) {29};
+  % Draw the cover relations
+  \draw (29) -- (23);
+  \draw (21) -- (13);
+  \draw (23) -- (13);
+  \draw (17) -- (9);
+  \draw (19) -- (9);
+  \draw (11) -- (5);
+  \draw (13) -- (5);
+  \draw (15) -- (5);
+  \draw (29) -- (4);
+  \draw (7) -- (1);
+  \draw (29) -- (19);
+  \draw (21) -- (15);
+  \draw (23) -- (15);
+  \draw (17) -- (11);
+  \draw (9) -- (1);
+  \draw (19) -- (11);
+  \draw (11) -- (1);
+  \draw (13) -- (7);
+  \draw (15) -- (7);
+  \draw (29) -- (21);
+  \draw (21) -- (11);
+  \draw (23) -- (17);
+  \draw (17) -- (7);
+  \draw (29) -- (2);
+  \draw (9) -- (3);
+  \draw (11) -- (3);
+  \draw (19) -- (13);
+  \draw (13) -- (3);
+  \draw (15) -- (9);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[6, 8, 10, 23]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+15 & 27 & 6 & 29 & 2 & 2 & 74 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {27};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {21};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {19};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {17};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {15};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {13};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {11};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {9};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {7};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {5};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {4};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {3};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {25};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {19};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {17};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {15};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {13};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {11};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {9};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {7};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {5};
+  \draw (3.60, -0.40) rectangle (4.00, -0.80);
+  \node[font=\tiny] at (3.80, -0.60) {3};
+  \draw (4.00, -0.40) rectangle (4.40, -0.80);
+  \node[font=\tiny] at (4.20, -0.60) {2};
+  \draw (4.40, -0.40) rectangle (4.80, -0.80);
+  \node[font=\tiny] at (4.60, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {21};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {15};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {13};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {11};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {9};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {7};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {5};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {3};
+  \draw (3.20, -0.80) rectangle (3.60, -1.20);
+  \node[font=\tiny] at (3.40, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {19};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {13};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {11};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {9};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {7};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {5};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {3};
+  \draw (2.80, -1.20) rectangle (3.20, -1.60);
+  \node[font=\tiny] at (3.00, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {17};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {11};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {9};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {7};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {5};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {3};
+  \draw (2.40, -1.60) rectangle (2.80, -2.00);
+  \node[font=\tiny] at (2.60, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {15};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {9};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {7};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {5};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {3};
+  \draw (2.00, -2.00) rectangle (2.40, -2.40);
+  \node[font=\tiny] at (2.20, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {13};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {7};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {5};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {3};
+  \draw (1.60, -2.40) rectangle (2.00, -2.80);
+  \node[font=\tiny] at (1.80, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {11};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {5};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {3};
+  \draw (1.20, -2.80) rectangle (1.60, -3.20);
+  \node[font=\tiny] at (1.40, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {9};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {3};
+  \draw (0.80, -3.20) rectangle (1.20, -3.60);
+  \node[font=\tiny] at (1.00, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {7};
+  \draw (0.40, -3.60) rectangle (0.80, -4.00);
+  \node[font=\tiny] at (0.60, -3.80) {1};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {5};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {4};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {3};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {2};
+  \draw (0.00, -5.60) rectangle (0.40, -6.00);
+  \node[font=\tiny] at (0.20, -5.80) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-6.40) {3};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (17) at (3.20,-1.60) {17};
+  \node[minimum size=0.3cm] (19) at (4.80,-1.60) {19};
+  \node[minimum size=0.3cm] (21) at (6.40,-1.60) {21};
+  \node[minimum size=0.3cm] (5) at (0.00,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (1.60,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (3.20,-4.80) {9};
+  \node[minimum size=0.3cm] (11) at (0.00,-3.20) {11};
+  \node[minimum size=0.3cm] (13) at (1.60,-3.20) {13};
+  \node[minimum size=0.3cm] (15) at (3.20,-3.20) {15};
+  \node[minimum size=0.3cm] (25) at (0.00,0.00) {25};
+  \node[draw, rectangle, minimum size=0.3cm] (27) at (1.60,0.00) {27};
+  % Draw the cover relations
+  \draw (21) -- (13);
+  \draw (27) -- (4);
+  \draw (17) -- (9);
+  \draw (19) -- (9);
+  \draw (11) -- (5);
+  \draw (27) -- (19);
+  \draw (13) -- (5);
+  \draw (15) -- (5);
+  \draw (7) -- (1);
+  \draw (25) -- (19);
+  \draw (21) -- (15);
+  \draw (17) -- (11);
+  \draw (9) -- (1);
+  \draw (19) -- (11);
+  \draw (11) -- (1);
+  \draw (27) -- (21);
+  \draw (13) -- (7);
+  \draw (15) -- (7);
+  \draw (25) -- (15);
+  \draw (21) -- (11);
+  \draw (17) -- (7);
+  \draw (9) -- (3);
+  \draw (11) -- (3);
+  \draw (25) -- (2);
+  \draw (27) -- (17);
+  \draw (19) -- (13);
+  \draw (13) -- (3);
+  \draw (15) -- (9);
+  \draw (25) -- (17);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[draw, rectangle, minimum size=0.3cm] (25) at (0.00,0.00) {25};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  % Draw the cover relations
+  \draw (25) -- (2);
+\end{tikzpicture}
+\end{minipage}
+\newpage\subsection{[6, 8, 10, 25]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+16 & 29 & 6 & 32 & 2 & 2 & 86 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {29};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {23};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {21};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {19};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {17};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {15};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {13};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {11};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {9};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {7};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {5};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {4};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {3};
+  \draw (5.20, 0.00) rectangle (5.60, -0.40);
+  \node[font=\tiny] at (5.40, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {27};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {21};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {19};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {17};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {15};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {13};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {11};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {9};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {7};
+  \draw (3.60, -0.40) rectangle (4.00, -0.80);
+  \node[font=\tiny] at (3.80, -0.60) {5};
+  \draw (4.00, -0.40) rectangle (4.40, -0.80);
+  \node[font=\tiny] at (4.20, -0.60) {3};
+  \draw (4.40, -0.40) rectangle (4.80, -0.80);
+  \node[font=\tiny] at (4.60, -0.60) {2};
+  \draw (4.80, -0.40) rectangle (5.20, -0.80);
+  \node[font=\tiny] at (5.00, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {23};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {17};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {15};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {13};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {11};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {9};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {7};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {5};
+  \draw (3.20, -0.80) rectangle (3.60, -1.20);
+  \node[font=\tiny] at (3.40, -1.00) {3};
+  \draw (3.60, -0.80) rectangle (4.00, -1.20);
+  \node[font=\tiny] at (3.80, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {21};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {15};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {13};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {11};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {9};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {7};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {5};
+  \draw (2.80, -1.20) rectangle (3.20, -1.60);
+  \node[font=\tiny] at (3.00, -1.40) {3};
+  \draw (3.20, -1.20) rectangle (3.60, -1.60);
+  \node[font=\tiny] at (3.40, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {19};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {13};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {11};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {9};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {7};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {5};
+  \draw (2.40, -1.60) rectangle (2.80, -2.00);
+  \node[font=\tiny] at (2.60, -1.80) {3};
+  \draw (2.80, -1.60) rectangle (3.20, -2.00);
+  \node[font=\tiny] at (3.00, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {17};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {11};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {9};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {7};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {5};
+  \draw (2.00, -2.00) rectangle (2.40, -2.40);
+  \node[font=\tiny] at (2.20, -2.20) {3};
+  \draw (2.40, -2.00) rectangle (2.80, -2.40);
+  \node[font=\tiny] at (2.60, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {15};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {9};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {7};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {5};
+  \draw (1.60, -2.40) rectangle (2.00, -2.80);
+  \node[font=\tiny] at (1.80, -2.60) {3};
+  \draw (2.00, -2.40) rectangle (2.40, -2.80);
+  \node[font=\tiny] at (2.20, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {13};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {7};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {5};
+  \draw (1.20, -2.80) rectangle (1.60, -3.20);
+  \node[font=\tiny] at (1.40, -3.00) {3};
+  \draw (1.60, -2.80) rectangle (2.00, -3.20);
+  \node[font=\tiny] at (1.80, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {11};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {5};
+  \draw (0.80, -3.20) rectangle (1.20, -3.60);
+  \node[font=\tiny] at (1.00, -3.40) {3};
+  \draw (1.20, -3.20) rectangle (1.60, -3.60);
+  \node[font=\tiny] at (1.40, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {9};
+  \draw (0.40, -3.60) rectangle (0.80, -4.00);
+  \node[font=\tiny] at (0.60, -3.80) {3};
+  \draw (0.80, -3.60) rectangle (1.20, -4.00);
+  \node[font=\tiny] at (1.00, -3.80) {1};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {7};
+  \draw (0.40, -4.00) rectangle (0.80, -4.40);
+  \node[font=\tiny] at (0.60, -4.20) {1};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {5};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {4};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {3};
+  \draw (0.00, -5.60) rectangle (0.40, -6.00);
+  \node[font=\tiny] at (0.20, -5.80) {2};
+  \draw (0.00, -6.00) rectangle (0.40, -6.40);
+  \node[font=\tiny] at (0.20, -6.20) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-6.40) {3};
+  \node[minimum size=0.3cm] (5) at (3.20,-6.40) {5};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (19) at (3.20,-1.60) {19};
+  \node[minimum size=0.3cm] (21) at (4.80,-1.60) {21};
+  \node[minimum size=0.3cm] (23) at (6.40,-1.60) {23};
+  \node[minimum size=0.3cm] (7) at (0.00,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (1.60,-4.80) {9};
+  \node[minimum size=0.3cm] (11) at (3.20,-4.80) {11};
+  \node[minimum size=0.3cm] (13) at (0.00,-3.20) {13};
+  \node[minimum size=0.3cm] (15) at (1.60,-3.20) {15};
+  \node[minimum size=0.3cm] (17) at (3.20,-3.20) {17};
+  \node[minimum size=0.3cm] (27) at (0.00,0.00) {27};
+  \node[draw, rectangle, minimum size=0.3cm] (29) at (1.60,0.00) {29};
+  % Draw the cover relations
+  \draw (29) -- (23);
+  \draw (21) -- (13);
+  \draw (23) -- (13);
+  \draw (17) -- (9);
+  \draw (19) -- (9);
+  \draw (11) -- (5);
+  \draw (27) -- (19);
+  \draw (13) -- (5);
+  \draw (15) -- (5);
+  \draw (29) -- (4);
+  \draw (7) -- (1);
+  \draw (29) -- (19);
+  \draw (21) -- (15);
+  \draw (23) -- (15);
+  \draw (17) -- (11);
+  \draw (9) -- (1);
+  \draw (19) -- (11);
+  \draw (11) -- (1);
+  \draw (27) -- (21);
+  \draw (13) -- (7);
+  \draw (15) -- (7);
+  \draw (29) -- (21);
+  \draw (21) -- (11);
+  \draw (27) -- (2);
+  \draw (23) -- (17);
+  \draw (17) -- (7);
+  \draw (9) -- (3);
+  \draw (11) -- (3);
+  \draw (27) -- (17);
+  \draw (19) -- (13);
+  \draw (13) -- (3);
+  \draw (15) -- (9);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[draw, rectangle, minimum size=0.3cm] (27) at (0.00,0.00) {27};
+  % Draw the cover relations
+  \draw (27) -- (2);
+\end{tikzpicture}
+\end{minipage}
+\newpage\subsection{[8, 10, 12, 14, 27, 29, 31]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+17 & 33 & 8 & 37 & 1 & 0 & 78 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {33};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {25};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {23};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {21};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {19};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {17};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {15};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {13};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {11};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {9};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {7};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {6};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {5};
+  \draw (5.20, 0.00) rectangle (5.60, -0.40);
+  \node[font=\tiny] at (5.40, -0.20) {4};
+  \draw (5.60, 0.00) rectangle (6.00, -0.40);
+  \node[font=\tiny] at (5.80, -0.20) {3};
+  \draw (6.00, 0.00) rectangle (6.40, -0.40);
+  \node[font=\tiny] at (6.20, -0.20) {2};
+  \draw (6.40, 0.00) rectangle (6.80, -0.40);
+  \node[font=\tiny] at (6.60, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {25};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {17};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {15};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {13};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {11};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {9};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {7};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {5};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {3};
+  \draw (3.60, -0.40) rectangle (4.00, -0.80);
+  \node[font=\tiny] at (3.80, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {23};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {15};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {13};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {11};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {9};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {7};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {5};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {3};
+  \draw (3.20, -0.80) rectangle (3.60, -1.20);
+  \node[font=\tiny] at (3.40, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {21};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {13};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {11};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {9};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {7};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {5};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {3};
+  \draw (2.80, -1.20) rectangle (3.20, -1.60);
+  \node[font=\tiny] at (3.00, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {19};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {11};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {9};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {7};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {5};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {3};
+  \draw (2.40, -1.60) rectangle (2.80, -2.00);
+  \node[font=\tiny] at (2.60, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {17};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {9};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {7};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {5};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {3};
+  \draw (2.00, -2.00) rectangle (2.40, -2.40);
+  \node[font=\tiny] at (2.20, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {15};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {7};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {5};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {3};
+  \draw (1.60, -2.40) rectangle (2.00, -2.80);
+  \node[font=\tiny] at (1.80, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {13};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {5};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {3};
+  \draw (1.20, -2.80) rectangle (1.60, -3.20);
+  \node[font=\tiny] at (1.40, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {11};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {3};
+  \draw (0.80, -3.20) rectangle (1.20, -3.60);
+  \node[font=\tiny] at (1.00, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {9};
+  \draw (0.40, -3.60) rectangle (0.80, -4.00);
+  \node[font=\tiny] at (0.60, -3.80) {1};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {7};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {6};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {5};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {4};
+  \draw (0.00, -5.60) rectangle (0.40, -6.00);
+  \node[font=\tiny] at (0.20, -5.80) {3};
+  \draw (0.00, -6.00) rectangle (0.40, -6.40);
+  \node[font=\tiny] at (0.20, -6.20) {2};
+  \draw (0.00, -6.40) rectangle (0.40, -6.80);
+  \node[font=\tiny] at (0.20, -6.60) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (6) at (3.20,-1.60) {6};
+  \node[minimum size=0.3cm] (19) at (4.80,-1.60) {19};
+  \node[minimum size=0.3cm] (21) at (6.40,-1.60) {21};
+  \node[minimum size=0.3cm] (23) at (8.00,-1.60) {23};
+  \node[minimum size=0.3cm] (25) at (9.60,-1.60) {25};
+  \node[minimum size=0.3cm] (3) at (0.00,-4.80) {3};
+  \node[minimum size=0.3cm] (5) at (1.60,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (3.20,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (4.80,-4.80) {9};
+  \node[draw, rectangle, minimum size=0.3cm] (33) at (0.00,0.00) {33};
+  \node[minimum size=0.3cm] (11) at (0.00,-3.20) {11};
+  \node[minimum size=0.3cm] (13) at (1.60,-3.20) {13};
+  \node[minimum size=0.3cm] (15) at (3.20,-3.20) {15};
+  \node[minimum size=0.3cm] (17) at (4.80,-3.20) {17};
+  % Draw the cover relations
+  \draw (21) -- (13);
+  \draw (23) -- (13);
+  \draw (17) -- (3);
+  \draw (17) -- (9);
+  \draw (19) -- (9);
+  \draw (33) -- (2);
+  \draw (13) -- (5);
+  \draw (15) -- (5);
+  \draw (33) -- (23);
+  \draw (25) -- (13);
+  \draw (21) -- (9);
+  \draw (23) -- (9);
+  \draw (23) -- (15);
+  \draw (17) -- (5);
+  \draw (9) -- (1);
+  \draw (19) -- (5);
+  \draw (19) -- (11);
+  \draw (33) -- (4);
+  \draw (11) -- (1);
+  \draw (13) -- (1);
+  \draw (33) -- (19);
+  \draw (15) -- (7);
+  \draw (15) -- (1);
+  \draw (25) -- (15);
+  \draw (33) -- (25);
+  \draw (23) -- (11);
+  \draw (21) -- (11);
+  \draw (17) -- (7);
+  \draw (19) -- (7);
+  \draw (11) -- (3);
+  \draw (33) -- (6);
+  \draw (13) -- (3);
+  \draw (33) -- (21);
+  \draw (15) -- (3);
+  \draw (25) -- (11);
+  \draw (25) -- (17);
+  \draw (21) -- (7);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[8, 10, 12, 14, 27, 29]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+18 & 33 & 8 & 42 & 2 & 2 & 92 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {33};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {25};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {23};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {21};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {19};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {17};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {15};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {13};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {11};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {9};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {7};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {6};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {5};
+  \draw (5.20, 0.00) rectangle (5.60, -0.40);
+  \node[font=\tiny] at (5.40, -0.20) {4};
+  \draw (5.60, 0.00) rectangle (6.00, -0.40);
+  \node[font=\tiny] at (5.80, -0.20) {3};
+  \draw (6.00, 0.00) rectangle (6.40, -0.40);
+  \node[font=\tiny] at (6.20, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {31};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {23};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {21};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {19};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {17};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {15};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {13};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {11};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {9};
+  \draw (3.60, -0.40) rectangle (4.00, -0.80);
+  \node[font=\tiny] at (3.80, -0.60) {7};
+  \draw (4.00, -0.40) rectangle (4.40, -0.80);
+  \node[font=\tiny] at (4.20, -0.60) {5};
+  \draw (4.40, -0.40) rectangle (4.80, -0.80);
+  \node[font=\tiny] at (4.60, -0.60) {4};
+  \draw (4.80, -0.40) rectangle (5.20, -0.80);
+  \node[font=\tiny] at (5.00, -0.60) {3};
+  \draw (5.20, -0.40) rectangle (5.60, -0.80);
+  \node[font=\tiny] at (5.40, -0.60) {2};
+  \draw (5.60, -0.40) rectangle (6.00, -0.80);
+  \node[font=\tiny] at (5.80, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {25};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {17};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {15};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {13};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {11};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {9};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {7};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {5};
+  \draw (3.20, -0.80) rectangle (3.60, -1.20);
+  \node[font=\tiny] at (3.40, -1.00) {3};
+  \draw (3.60, -0.80) rectangle (4.00, -1.20);
+  \node[font=\tiny] at (3.80, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {23};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {15};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {13};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {11};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {9};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {7};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {5};
+  \draw (2.80, -1.20) rectangle (3.20, -1.60);
+  \node[font=\tiny] at (3.00, -1.40) {3};
+  \draw (3.20, -1.20) rectangle (3.60, -1.60);
+  \node[font=\tiny] at (3.40, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {21};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {13};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {11};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {9};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {7};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {5};
+  \draw (2.40, -1.60) rectangle (2.80, -2.00);
+  \node[font=\tiny] at (2.60, -1.80) {3};
+  \draw (2.80, -1.60) rectangle (3.20, -2.00);
+  \node[font=\tiny] at (3.00, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {19};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {11};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {9};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {7};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {5};
+  \draw (2.00, -2.00) rectangle (2.40, -2.40);
+  \node[font=\tiny] at (2.20, -2.20) {3};
+  \draw (2.40, -2.00) rectangle (2.80, -2.40);
+  \node[font=\tiny] at (2.60, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {17};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {9};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {7};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {5};
+  \draw (1.60, -2.40) rectangle (2.00, -2.80);
+  \node[font=\tiny] at (1.80, -2.60) {3};
+  \draw (2.00, -2.40) rectangle (2.40, -2.80);
+  \node[font=\tiny] at (2.20, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {15};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {7};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {5};
+  \draw (1.20, -2.80) rectangle (1.60, -3.20);
+  \node[font=\tiny] at (1.40, -3.00) {3};
+  \draw (1.60, -2.80) rectangle (2.00, -3.20);
+  \node[font=\tiny] at (1.80, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {13};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {5};
+  \draw (0.80, -3.20) rectangle (1.20, -3.60);
+  \node[font=\tiny] at (1.00, -3.40) {3};
+  \draw (1.20, -3.20) rectangle (1.60, -3.60);
+  \node[font=\tiny] at (1.40, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {11};
+  \draw (0.40, -3.60) rectangle (0.80, -4.00);
+  \node[font=\tiny] at (0.60, -3.80) {3};
+  \draw (0.80, -3.60) rectangle (1.20, -4.00);
+  \node[font=\tiny] at (1.00, -3.80) {1};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {9};
+  \draw (0.40, -4.00) rectangle (0.80, -4.40);
+  \node[font=\tiny] at (0.60, -4.20) {1};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {7};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {6};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {5};
+  \draw (0.00, -5.60) rectangle (0.40, -6.00);
+  \node[font=\tiny] at (0.20, -5.80) {4};
+  \draw (0.00, -6.00) rectangle (0.40, -6.40);
+  \node[font=\tiny] at (0.20, -6.20) {3};
+  \draw (0.00, -6.40) rectangle (0.40, -6.80);
+  \node[font=\tiny] at (0.20, -6.60) {2};
+  \draw (0.00, -6.80) rectangle (0.40, -7.20);
+  \node[font=\tiny] at (0.20, -7.00) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (6) at (3.20,-1.60) {6};
+  \node[minimum size=0.3cm] (19) at (4.80,-1.60) {19};
+  \node[minimum size=0.3cm] (21) at (6.40,-1.60) {21};
+  \node[minimum size=0.3cm] (23) at (8.00,-1.60) {23};
+  \node[minimum size=0.3cm] (25) at (9.60,-1.60) {25};
+  \node[minimum size=0.3cm] (3) at (0.00,-4.80) {3};
+  \node[minimum size=0.3cm] (5) at (1.60,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (3.20,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (4.80,-4.80) {9};
+  \node[draw, rectangle, minimum size=0.3cm] (33) at (0.00,0.00) {33};
+  \node[minimum size=0.3cm] (31) at (1.60,0.00) {31};
+  \node[minimum size=0.3cm] (11) at (0.00,-3.20) {11};
+  \node[minimum size=0.3cm] (13) at (1.60,-3.20) {13};
+  \node[minimum size=0.3cm] (15) at (3.20,-3.20) {15};
+  \node[minimum size=0.3cm] (17) at (4.80,-3.20) {17};
+  % Draw the cover relations
+  \draw (21) -- (13);
+  \draw (31) -- (17);
+  \draw (31) -- (23);
+  \draw (23) -- (13);
+  \draw (17) -- (3);
+  \draw (17) -- (9);
+  \draw (19) -- (9);
+  \draw (13) -- (5);
+  \draw (15) -- (5);
+  \draw (33) -- (23);
+  \draw (25) -- (13);
+  \draw (31) -- (4);
+  \draw (21) -- (9);
+  \draw (23) -- (9);
+  \draw (31) -- (19);
+  \draw (23) -- (15);
+  \draw (17) -- (5);
+  \draw (9) -- (1);
+  \draw (19) -- (5);
+  \draw (19) -- (11);
+  \draw (33) -- (4);
+  \draw (11) -- (1);
+  \draw (13) -- (1);
+  \draw (33) -- (19);
+  \draw (15) -- (7);
+  \draw (15) -- (1);
+  \draw (25) -- (15);
+  \draw (33) -- (25);
+  \draw (23) -- (11);
+  \draw (21) -- (11);
+  \draw (31) -- (21);
+  \draw (17) -- (7);
+  \draw (19) -- (7);
+  \draw (11) -- (3);
+  \draw (33) -- (6);
+  \draw (13) -- (3);
+  \draw (33) -- (21);
+  \draw (15) -- (3);
+  \draw (25) -- (11);
+  \draw (25) -- (17);
+  \draw (31) -- (2);
+  \draw (21) -- (7);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[draw, rectangle, minimum size=0.3cm] (31) at (0.00,0.00) {31};
+  % Draw the cover relations
+  \draw (31) -- (2);
+\end{tikzpicture}
+\end{minipage}
+\newpage\subsection{[8, 10, 12, 14, 29, 31]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+19 & 35 & 8 & 46 & 2 & 2 & 105 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {35};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {27};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {25};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {23};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {21};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {19};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {17};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {15};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {13};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {11};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {9};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {7};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {6};
+  \draw (5.20, 0.00) rectangle (5.60, -0.40);
+  \node[font=\tiny] at (5.40, -0.20) {5};
+  \draw (5.60, 0.00) rectangle (6.00, -0.40);
+  \node[font=\tiny] at (5.80, -0.20) {4};
+  \draw (6.00, 0.00) rectangle (6.40, -0.40);
+  \node[font=\tiny] at (6.20, -0.20) {3};
+  \draw (6.40, 0.00) rectangle (6.80, -0.40);
+  \node[font=\tiny] at (6.60, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {33};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {25};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {23};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {21};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {19};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {17};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {15};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {13};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {11};
+  \draw (3.60, -0.40) rectangle (4.00, -0.80);
+  \node[font=\tiny] at (3.80, -0.60) {9};
+  \draw (4.00, -0.40) rectangle (4.40, -0.80);
+  \node[font=\tiny] at (4.20, -0.60) {7};
+  \draw (4.40, -0.40) rectangle (4.80, -0.80);
+  \node[font=\tiny] at (4.60, -0.60) {5};
+  \draw (4.80, -0.40) rectangle (5.20, -0.80);
+  \node[font=\tiny] at (5.00, -0.60) {4};
+  \draw (5.20, -0.40) rectangle (5.60, -0.80);
+  \node[font=\tiny] at (5.40, -0.60) {3};
+  \draw (5.60, -0.40) rectangle (6.00, -0.80);
+  \node[font=\tiny] at (5.80, -0.60) {2};
+  \draw (6.00, -0.40) rectangle (6.40, -0.80);
+  \node[font=\tiny] at (6.20, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {27};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {19};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {17};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {15};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {13};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {11};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {9};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {7};
+  \draw (3.20, -0.80) rectangle (3.60, -1.20);
+  \node[font=\tiny] at (3.40, -1.00) {5};
+  \draw (3.60, -0.80) rectangle (4.00, -1.20);
+  \node[font=\tiny] at (3.80, -1.00) {3};
+  \draw (4.00, -0.80) rectangle (4.40, -1.20);
+  \node[font=\tiny] at (4.20, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {25};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {17};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {15};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {13};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {11};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {9};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {7};
+  \draw (2.80, -1.20) rectangle (3.20, -1.60);
+  \node[font=\tiny] at (3.00, -1.40) {5};
+  \draw (3.20, -1.20) rectangle (3.60, -1.60);
+  \node[font=\tiny] at (3.40, -1.40) {3};
+  \draw (3.60, -1.20) rectangle (4.00, -1.60);
+  \node[font=\tiny] at (3.80, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {23};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {15};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {13};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {11};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {9};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {7};
+  \draw (2.40, -1.60) rectangle (2.80, -2.00);
+  \node[font=\tiny] at (2.60, -1.80) {5};
+  \draw (2.80, -1.60) rectangle (3.20, -2.00);
+  \node[font=\tiny] at (3.00, -1.80) {3};
+  \draw (3.20, -1.60) rectangle (3.60, -2.00);
+  \node[font=\tiny] at (3.40, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {21};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {13};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {11};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {9};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {7};
+  \draw (2.00, -2.00) rectangle (2.40, -2.40);
+  \node[font=\tiny] at (2.20, -2.20) {5};
+  \draw (2.40, -2.00) rectangle (2.80, -2.40);
+  \node[font=\tiny] at (2.60, -2.20) {3};
+  \draw (2.80, -2.00) rectangle (3.20, -2.40);
+  \node[font=\tiny] at (3.00, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {19};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {11};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {9};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {7};
+  \draw (1.60, -2.40) rectangle (2.00, -2.80);
+  \node[font=\tiny] at (1.80, -2.60) {5};
+  \draw (2.00, -2.40) rectangle (2.40, -2.80);
+  \node[font=\tiny] at (2.20, -2.60) {3};
+  \draw (2.40, -2.40) rectangle (2.80, -2.80);
+  \node[font=\tiny] at (2.60, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {17};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {9};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {7};
+  \draw (1.20, -2.80) rectangle (1.60, -3.20);
+  \node[font=\tiny] at (1.40, -3.00) {5};
+  \draw (1.60, -2.80) rectangle (2.00, -3.20);
+  \node[font=\tiny] at (1.80, -3.00) {3};
+  \draw (2.00, -2.80) rectangle (2.40, -3.20);
+  \node[font=\tiny] at (2.20, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {15};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {7};
+  \draw (0.80, -3.20) rectangle (1.20, -3.60);
+  \node[font=\tiny] at (1.00, -3.40) {5};
+  \draw (1.20, -3.20) rectangle (1.60, -3.60);
+  \node[font=\tiny] at (1.40, -3.40) {3};
+  \draw (1.60, -3.20) rectangle (2.00, -3.60);
+  \node[font=\tiny] at (1.80, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {13};
+  \draw (0.40, -3.60) rectangle (0.80, -4.00);
+  \node[font=\tiny] at (0.60, -3.80) {5};
+  \draw (0.80, -3.60) rectangle (1.20, -4.00);
+  \node[font=\tiny] at (1.00, -3.80) {3};
+  \draw (1.20, -3.60) rectangle (1.60, -4.00);
+  \node[font=\tiny] at (1.40, -3.80) {1};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {11};
+  \draw (0.40, -4.00) rectangle (0.80, -4.40);
+  \node[font=\tiny] at (0.60, -4.20) {3};
+  \draw (0.80, -4.00) rectangle (1.20, -4.40);
+  \node[font=\tiny] at (1.00, -4.20) {1};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {9};
+  \draw (0.40, -4.40) rectangle (0.80, -4.80);
+  \node[font=\tiny] at (0.60, -4.60) {1};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {7};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {6};
+  \draw (0.00, -5.60) rectangle (0.40, -6.00);
+  \node[font=\tiny] at (0.20, -5.80) {5};
+  \draw (0.00, -6.00) rectangle (0.40, -6.40);
+  \node[font=\tiny] at (0.20, -6.20) {4};
+  \draw (0.00, -6.40) rectangle (0.40, -6.80);
+  \node[font=\tiny] at (0.20, -6.60) {3};
+  \draw (0.00, -6.80) rectangle (0.40, -7.20);
+  \node[font=\tiny] at (0.20, -7.00) {2};
+  \draw (0.00, -7.20) rectangle (0.40, -7.60);
+  \node[font=\tiny] at (0.20, -7.40) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-6.40) {3};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (6) at (3.20,-1.60) {6};
+  \node[minimum size=0.3cm] (21) at (4.80,-1.60) {21};
+  \node[minimum size=0.3cm] (23) at (6.40,-1.60) {23};
+  \node[minimum size=0.3cm] (25) at (8.00,-1.60) {25};
+  \node[minimum size=0.3cm] (27) at (9.60,-1.60) {27};
+  \node[minimum size=0.3cm] (5) at (0.00,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (1.60,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (3.20,-4.80) {9};
+  \node[minimum size=0.3cm] (11) at (4.80,-4.80) {11};
+  \node[minimum size=0.3cm] (13) at (0.00,-3.20) {13};
+  \node[minimum size=0.3cm] (15) at (1.60,-3.20) {15};
+  \node[minimum size=0.3cm] (17) at (3.20,-3.20) {17};
+  \node[minimum size=0.3cm] (19) at (4.80,-3.20) {19};
+  \node[minimum size=0.3cm] (33) at (0.00,0.00) {33};
+  \node[draw, rectangle, minimum size=0.3cm] (35) at (1.60,0.00) {35};
+  % Draw the cover relations
+  \draw (35) -- (27);
+  \draw (21) -- (13);
+  \draw (23) -- (13);
+  \draw (17) -- (3);
+  \draw (17) -- (9);
+  \draw (27) -- (13);
+  \draw (19) -- (9);
+  \draw (33) -- (2);
+  \draw (27) -- (19);
+  \draw (13) -- (5);
+  \draw (15) -- (5);
+  \draw (33) -- (23);
+  \draw (25) -- (13);
+  \draw (35) -- (23);
+  \draw (21) -- (9);
+  \draw (23) -- (9);
+  \draw (23) -- (15);
+  \draw (17) -- (5);
+  \draw (9) -- (1);
+  \draw (19) -- (5);
+  \draw (19) -- (11);
+  \draw (33) -- (4);
+  \draw (11) -- (1);
+  \draw (27) -- (15);
+  \draw (35) -- (4);
+  \draw (13) -- (1);
+  \draw (33) -- (19);
+  \draw (15) -- (7);
+  \draw (15) -- (1);
+  \draw (25) -- (15);
+  \draw (35) -- (25);
+  \draw (33) -- (25);
+  \draw (23) -- (11);
+  \draw (21) -- (11);
+  \draw (17) -- (7);
+  \draw (19) -- (7);
+  \draw (11) -- (3);
+  \draw (27) -- (17);
+  \draw (35) -- (6);
+  \draw (13) -- (3);
+  \draw (33) -- (21);
+  \draw (15) -- (3);
+  \draw (25) -- (11);
+  \draw (25) -- (17);
+  \draw (35) -- (21);
+  \draw (21) -- (7);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[draw, rectangle, minimum size=0.3cm] (33) at (0.00,0.00) {33};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  % Draw the cover relations
+  \draw (33) -- (2);
+\end{tikzpicture}
+\end{minipage}
+\newpage\subsection{[8, 10, 12, 14, 31, 33]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+20 & 37 & 8 & 50 & 2 & 2 & 119 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {37};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {29};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {27};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {25};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {23};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {21};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {19};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {17};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {15};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {13};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {11};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {9};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {7};
+  \draw (5.20, 0.00) rectangle (5.60, -0.40);
+  \node[font=\tiny] at (5.40, -0.20) {6};
+  \draw (5.60, 0.00) rectangle (6.00, -0.40);
+  \node[font=\tiny] at (5.80, -0.20) {5};
+  \draw (6.00, 0.00) rectangle (6.40, -0.40);
+  \node[font=\tiny] at (6.20, -0.20) {4};
+  \draw (6.40, 0.00) rectangle (6.80, -0.40);
+  \node[font=\tiny] at (6.60, -0.20) {3};
+  \draw (6.80, 0.00) rectangle (7.20, -0.40);
+  \node[font=\tiny] at (7.00, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {35};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {27};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {25};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {23};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {21};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {19};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {17};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {15};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {13};
+  \draw (3.60, -0.40) rectangle (4.00, -0.80);
+  \node[font=\tiny] at (3.80, -0.60) {11};
+  \draw (4.00, -0.40) rectangle (4.40, -0.80);
+  \node[font=\tiny] at (4.20, -0.60) {9};
+  \draw (4.40, -0.40) rectangle (4.80, -0.80);
+  \node[font=\tiny] at (4.60, -0.60) {7};
+  \draw (4.80, -0.40) rectangle (5.20, -0.80);
+  \node[font=\tiny] at (5.00, -0.60) {5};
+  \draw (5.20, -0.40) rectangle (5.60, -0.80);
+  \node[font=\tiny] at (5.40, -0.60) {4};
+  \draw (5.60, -0.40) rectangle (6.00, -0.80);
+  \node[font=\tiny] at (5.80, -0.60) {3};
+  \draw (6.00, -0.40) rectangle (6.40, -0.80);
+  \node[font=\tiny] at (6.20, -0.60) {2};
+  \draw (6.40, -0.40) rectangle (6.80, -0.80);
+  \node[font=\tiny] at (6.60, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {29};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {21};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {19};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {17};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {15};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {13};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {11};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {9};
+  \draw (3.20, -0.80) rectangle (3.60, -1.20);
+  \node[font=\tiny] at (3.40, -1.00) {7};
+  \draw (3.60, -0.80) rectangle (4.00, -1.20);
+  \node[font=\tiny] at (3.80, -1.00) {5};
+  \draw (4.00, -0.80) rectangle (4.40, -1.20);
+  \node[font=\tiny] at (4.20, -1.00) {3};
+  \draw (4.40, -0.80) rectangle (4.80, -1.20);
+  \node[font=\tiny] at (4.60, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {27};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {19};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {17};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {15};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {13};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {11};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {9};
+  \draw (2.80, -1.20) rectangle (3.20, -1.60);
+  \node[font=\tiny] at (3.00, -1.40) {7};
+  \draw (3.20, -1.20) rectangle (3.60, -1.60);
+  \node[font=\tiny] at (3.40, -1.40) {5};
+  \draw (3.60, -1.20) rectangle (4.00, -1.60);
+  \node[font=\tiny] at (3.80, -1.40) {3};
+  \draw (4.00, -1.20) rectangle (4.40, -1.60);
+  \node[font=\tiny] at (4.20, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {25};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {17};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {15};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {13};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {11};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {9};
+  \draw (2.40, -1.60) rectangle (2.80, -2.00);
+  \node[font=\tiny] at (2.60, -1.80) {7};
+  \draw (2.80, -1.60) rectangle (3.20, -2.00);
+  \node[font=\tiny] at (3.00, -1.80) {5};
+  \draw (3.20, -1.60) rectangle (3.60, -2.00);
+  \node[font=\tiny] at (3.40, -1.80) {3};
+  \draw (3.60, -1.60) rectangle (4.00, -2.00);
+  \node[font=\tiny] at (3.80, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {23};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {15};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {13};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {11};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {9};
+  \draw (2.00, -2.00) rectangle (2.40, -2.40);
+  \node[font=\tiny] at (2.20, -2.20) {7};
+  \draw (2.40, -2.00) rectangle (2.80, -2.40);
+  \node[font=\tiny] at (2.60, -2.20) {5};
+  \draw (2.80, -2.00) rectangle (3.20, -2.40);
+  \node[font=\tiny] at (3.00, -2.20) {3};
+  \draw (3.20, -2.00) rectangle (3.60, -2.40);
+  \node[font=\tiny] at (3.40, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {21};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {13};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {11};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {9};
+  \draw (1.60, -2.40) rectangle (2.00, -2.80);
+  \node[font=\tiny] at (1.80, -2.60) {7};
+  \draw (2.00, -2.40) rectangle (2.40, -2.80);
+  \node[font=\tiny] at (2.20, -2.60) {5};
+  \draw (2.40, -2.40) rectangle (2.80, -2.80);
+  \node[font=\tiny] at (2.60, -2.60) {3};
+  \draw (2.80, -2.40) rectangle (3.20, -2.80);
+  \node[font=\tiny] at (3.00, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {19};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {11};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {9};
+  \draw (1.20, -2.80) rectangle (1.60, -3.20);
+  \node[font=\tiny] at (1.40, -3.00) {7};
+  \draw (1.60, -2.80) rectangle (2.00, -3.20);
+  \node[font=\tiny] at (1.80, -3.00) {5};
+  \draw (2.00, -2.80) rectangle (2.40, -3.20);
+  \node[font=\tiny] at (2.20, -3.00) {3};
+  \draw (2.40, -2.80) rectangle (2.80, -3.20);
+  \node[font=\tiny] at (2.60, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {17};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {9};
+  \draw (0.80, -3.20) rectangle (1.20, -3.60);
+  \node[font=\tiny] at (1.00, -3.40) {7};
+  \draw (1.20, -3.20) rectangle (1.60, -3.60);
+  \node[font=\tiny] at (1.40, -3.40) {5};
+  \draw (1.60, -3.20) rectangle (2.00, -3.60);
+  \node[font=\tiny] at (1.80, -3.40) {3};
+  \draw (2.00, -3.20) rectangle (2.40, -3.60);
+  \node[font=\tiny] at (2.20, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {15};
+  \draw (0.40, -3.60) rectangle (0.80, -4.00);
+  \node[font=\tiny] at (0.60, -3.80) {7};
+  \draw (0.80, -3.60) rectangle (1.20, -4.00);
+  \node[font=\tiny] at (1.00, -3.80) {5};
+  \draw (1.20, -3.60) rectangle (1.60, -4.00);
+  \node[font=\tiny] at (1.40, -3.80) {3};
+  \draw (1.60, -3.60) rectangle (2.00, -4.00);
+  \node[font=\tiny] at (1.80, -3.80) {1};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {13};
+  \draw (0.40, -4.00) rectangle (0.80, -4.40);
+  \node[font=\tiny] at (0.60, -4.20) {5};
+  \draw (0.80, -4.00) rectangle (1.20, -4.40);
+  \node[font=\tiny] at (1.00, -4.20) {3};
+  \draw (1.20, -4.00) rectangle (1.60, -4.40);
+  \node[font=\tiny] at (1.40, -4.20) {1};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {11};
+  \draw (0.40, -4.40) rectangle (0.80, -4.80);
+  \node[font=\tiny] at (0.60, -4.60) {3};
+  \draw (0.80, -4.40) rectangle (1.20, -4.80);
+  \node[font=\tiny] at (1.00, -4.60) {1};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {9};
+  \draw (0.40, -4.80) rectangle (0.80, -5.20);
+  \node[font=\tiny] at (0.60, -5.00) {1};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {7};
+  \draw (0.00, -5.60) rectangle (0.40, -6.00);
+  \node[font=\tiny] at (0.20, -5.80) {6};
+  \draw (0.00, -6.00) rectangle (0.40, -6.40);
+  \node[font=\tiny] at (0.20, -6.20) {5};
+  \draw (0.00, -6.40) rectangle (0.40, -6.80);
+  \node[font=\tiny] at (0.20, -6.60) {4};
+  \draw (0.00, -6.80) rectangle (0.40, -7.20);
+  \node[font=\tiny] at (0.20, -7.00) {3};
+  \draw (0.00, -7.20) rectangle (0.40, -7.60);
+  \node[font=\tiny] at (0.20, -7.40) {2};
+  \draw (0.00, -7.60) rectangle (0.40, -8.00);
+  \node[font=\tiny] at (0.20, -7.80) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-6.40) {3};
+  \node[minimum size=0.3cm] (5) at (3.20,-6.40) {5};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (6) at (3.20,-1.60) {6};
+  \node[minimum size=0.3cm] (23) at (4.80,-1.60) {23};
+  \node[minimum size=0.3cm] (25) at (6.40,-1.60) {25};
+  \node[minimum size=0.3cm] (27) at (8.00,-1.60) {27};
+  \node[minimum size=0.3cm] (29) at (9.60,-1.60) {29};
+  \node[minimum size=0.3cm] (7) at (0.00,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (1.60,-4.80) {9};
+  \node[minimum size=0.3cm] (11) at (3.20,-4.80) {11};
+  \node[minimum size=0.3cm] (13) at (4.80,-4.80) {13};
+  \node[minimum size=0.3cm] (15) at (0.00,-3.20) {15};
+  \node[minimum size=0.3cm] (17) at (1.60,-3.20) {17};
+  \node[minimum size=0.3cm] (19) at (3.20,-3.20) {19};
+  \node[minimum size=0.3cm] (21) at (4.80,-3.20) {21};
+  \node[minimum size=0.3cm] (35) at (0.00,0.00) {35};
+  \node[draw, rectangle, minimum size=0.3cm] (37) at (1.60,0.00) {37};
+  % Draw the cover relations
+  \draw (35) -- (27);
+  \draw (29) -- (17);
+  \draw (21) -- (13);
+  \draw (37) -- (6);
+  \draw (17) -- (3);
+  \draw (23) -- (13);
+  \draw (17) -- (9);
+  \draw (27) -- (13);
+  \draw (19) -- (9);
+  \draw (35) -- (2);
+  \draw (27) -- (19);
+  \draw (37) -- (27);
+  \draw (13) -- (5);
+  \draw (15) -- (5);
+  \draw (25) -- (13);
+  \draw (35) -- (23);
+  \draw (21) -- (9);
+  \draw (29) -- (19);
+  \draw (23) -- (9);
+  \draw (23) -- (15);
+  \draw (17) -- (5);
+  \draw (9) -- (1);
+  \draw (37) -- (23);
+  \draw (19) -- (11);
+  \draw (19) -- (5);
+  \draw (11) -- (1);
+  \draw (27) -- (15);
+  \draw (35) -- (4);
+  \draw (37) -- (29);
+  \draw (13) -- (1);
+  \draw (15) -- (1);
+  \draw (15) -- (7);
+  \draw (25) -- (15);
+  \draw (35) -- (25);
+  \draw (29) -- (15);
+  \draw (37) -- (4);
+  \draw (29) -- (21);
+  \draw (21) -- (11);
+  \draw (23) -- (11);
+  \draw (17) -- (7);
+  \draw (19) -- (7);
+  \draw (11) -- (3);
+  \draw (27) -- (17);
+  \draw (37) -- (25);
+  \draw (13) -- (3);
+  \draw (15) -- (3);
+  \draw (25) -- (11);
+  \draw (25) -- (17);
+  \draw (35) -- (21);
+  \draw (21) -- (7);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[draw, rectangle, minimum size=0.3cm] (35) at (0.00,0.00) {35};
+  % Draw the cover relations
+  \draw (35) -- (2);
+\end{tikzpicture}
+\end{minipage}
+\newpage\subsection{[10, 12, 14, 16, 18, 33, 35, 37, 39]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+21 & 41 & 10 & 54 & 1 & 0 & 107 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {41};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {31};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {29};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {27};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {25};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {23};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {21};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {19};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {17};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {15};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {13};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {11};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {9};
+  \draw (5.20, 0.00) rectangle (5.60, -0.40);
+  \node[font=\tiny] at (5.40, -0.20) {8};
+  \draw (5.60, 0.00) rectangle (6.00, -0.40);
+  \node[font=\tiny] at (5.80, -0.20) {7};
+  \draw (6.00, 0.00) rectangle (6.40, -0.40);
+  \node[font=\tiny] at (6.20, -0.20) {6};
+  \draw (6.40, 0.00) rectangle (6.80, -0.40);
+  \node[font=\tiny] at (6.60, -0.20) {5};
+  \draw (6.80, 0.00) rectangle (7.20, -0.40);
+  \node[font=\tiny] at (7.00, -0.20) {4};
+  \draw (7.20, 0.00) rectangle (7.60, -0.40);
+  \node[font=\tiny] at (7.40, -0.20) {3};
+  \draw (7.60, 0.00) rectangle (8.00, -0.40);
+  \node[font=\tiny] at (7.80, -0.20) {2};
+  \draw (8.00, 0.00) rectangle (8.40, -0.40);
+  \node[font=\tiny] at (8.20, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {31};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {21};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {19};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {17};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {15};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {13};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {11};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {9};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {7};
+  \draw (3.60, -0.40) rectangle (4.00, -0.80);
+  \node[font=\tiny] at (3.80, -0.60) {5};
+  \draw (4.00, -0.40) rectangle (4.40, -0.80);
+  \node[font=\tiny] at (4.20, -0.60) {3};
+  \draw (4.40, -0.40) rectangle (4.80, -0.80);
+  \node[font=\tiny] at (4.60, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {29};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {19};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {17};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {15};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {13};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {11};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {9};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {7};
+  \draw (3.20, -0.80) rectangle (3.60, -1.20);
+  \node[font=\tiny] at (3.40, -1.00) {5};
+  \draw (3.60, -0.80) rectangle (4.00, -1.20);
+  \node[font=\tiny] at (3.80, -1.00) {3};
+  \draw (4.00, -0.80) rectangle (4.40, -1.20);
+  \node[font=\tiny] at (4.20, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {27};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {17};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {15};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {13};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {11};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {9};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {7};
+  \draw (2.80, -1.20) rectangle (3.20, -1.60);
+  \node[font=\tiny] at (3.00, -1.40) {5};
+  \draw (3.20, -1.20) rectangle (3.60, -1.60);
+  \node[font=\tiny] at (3.40, -1.40) {3};
+  \draw (3.60, -1.20) rectangle (4.00, -1.60);
+  \node[font=\tiny] at (3.80, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {25};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {15};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {13};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {11};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {9};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {7};
+  \draw (2.40, -1.60) rectangle (2.80, -2.00);
+  \node[font=\tiny] at (2.60, -1.80) {5};
+  \draw (2.80, -1.60) rectangle (3.20, -2.00);
+  \node[font=\tiny] at (3.00, -1.80) {3};
+  \draw (3.20, -1.60) rectangle (3.60, -2.00);
+  \node[font=\tiny] at (3.40, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {23};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {13};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {11};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {9};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {7};
+  \draw (2.00, -2.00) rectangle (2.40, -2.40);
+  \node[font=\tiny] at (2.20, -2.20) {5};
+  \draw (2.40, -2.00) rectangle (2.80, -2.40);
+  \node[font=\tiny] at (2.60, -2.20) {3};
+  \draw (2.80, -2.00) rectangle (3.20, -2.40);
+  \node[font=\tiny] at (3.00, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {21};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {11};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {9};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {7};
+  \draw (1.60, -2.40) rectangle (2.00, -2.80);
+  \node[font=\tiny] at (1.80, -2.60) {5};
+  \draw (2.00, -2.40) rectangle (2.40, -2.80);
+  \node[font=\tiny] at (2.20, -2.60) {3};
+  \draw (2.40, -2.40) rectangle (2.80, -2.80);
+  \node[font=\tiny] at (2.60, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {19};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {9};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {7};
+  \draw (1.20, -2.80) rectangle (1.60, -3.20);
+  \node[font=\tiny] at (1.40, -3.00) {5};
+  \draw (1.60, -2.80) rectangle (2.00, -3.20);
+  \node[font=\tiny] at (1.80, -3.00) {3};
+  \draw (2.00, -2.80) rectangle (2.40, -3.20);
+  \node[font=\tiny] at (2.20, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {17};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {7};
+  \draw (0.80, -3.20) rectangle (1.20, -3.60);
+  \node[font=\tiny] at (1.00, -3.40) {5};
+  \draw (1.20, -3.20) rectangle (1.60, -3.60);
+  \node[font=\tiny] at (1.40, -3.40) {3};
+  \draw (1.60, -3.20) rectangle (2.00, -3.60);
+  \node[font=\tiny] at (1.80, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {15};
+  \draw (0.40, -3.60) rectangle (0.80, -4.00);
+  \node[font=\tiny] at (0.60, -3.80) {5};
+  \draw (0.80, -3.60) rectangle (1.20, -4.00);
+  \node[font=\tiny] at (1.00, -3.80) {3};
+  \draw (1.20, -3.60) rectangle (1.60, -4.00);
+  \node[font=\tiny] at (1.40, -3.80) {1};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {13};
+  \draw (0.40, -4.00) rectangle (0.80, -4.40);
+  \node[font=\tiny] at (0.60, -4.20) {3};
+  \draw (0.80, -4.00) rectangle (1.20, -4.40);
+  \node[font=\tiny] at (1.00, -4.20) {1};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {11};
+  \draw (0.40, -4.40) rectangle (0.80, -4.80);
+  \node[font=\tiny] at (0.60, -4.60) {1};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {9};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {8};
+  \draw (0.00, -5.60) rectangle (0.40, -6.00);
+  \node[font=\tiny] at (0.20, -5.80) {7};
+  \draw (0.00, -6.00) rectangle (0.40, -6.40);
+  \node[font=\tiny] at (0.20, -6.20) {6};
+  \draw (0.00, -6.40) rectangle (0.40, -6.80);
+  \node[font=\tiny] at (0.20, -6.60) {5};
+  \draw (0.00, -6.80) rectangle (0.40, -7.20);
+  \node[font=\tiny] at (0.20, -7.00) {4};
+  \draw (0.00, -7.20) rectangle (0.40, -7.60);
+  \node[font=\tiny] at (0.20, -7.40) {3};
+  \draw (0.00, -7.60) rectangle (0.40, -8.00);
+  \node[font=\tiny] at (0.20, -7.80) {2};
+  \draw (0.00, -8.00) rectangle (0.40, -8.40);
+  \node[font=\tiny] at (0.20, -8.20) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (6) at (3.20,-1.60) {6};
+  \node[minimum size=0.3cm] (8) at (4.80,-1.60) {8};
+  \node[minimum size=0.3cm] (23) at (6.40,-1.60) {23};
+  \node[minimum size=0.3cm] (25) at (8.00,-1.60) {25};
+  \node[minimum size=0.3cm] (27) at (9.60,-1.60) {27};
+  \node[minimum size=0.3cm] (29) at (11.20,-1.60) {29};
+  \node[minimum size=0.3cm] (31) at (12.80,-1.60) {31};
+  \node[minimum size=0.3cm] (3) at (0.00,-4.80) {3};
+  \node[minimum size=0.3cm] (5) at (1.60,-4.80) {5};
+  \node[minimum size=0.3cm] (7) at (3.20,-4.80) {7};
+  \node[minimum size=0.3cm] (9) at (4.80,-4.80) {9};
+  \node[minimum size=0.3cm] (11) at (6.40,-4.80) {11};
+  \node[minimum size=0.3cm] (13) at (0.00,-3.20) {13};
+  \node[minimum size=0.3cm] (15) at (1.60,-3.20) {15};
+  \node[minimum size=0.3cm] (17) at (3.20,-3.20) {17};
+  \node[minimum size=0.3cm] (19) at (4.80,-3.20) {19};
+  \node[minimum size=0.3cm] (21) at (6.40,-3.20) {21};
+  \node[draw, rectangle, minimum size=0.3cm] (41) at (0.00,0.00) {41};
+  % Draw the cover relations
+  \draw (29) -- (17);
+  \draw (23) -- (7);
+  \draw (31) -- (17);
+  \draw (23) -- (13);
+  \draw (17) -- (3);
+  \draw (27) -- (13);
+  \draw (41) -- (6);
+  \draw (19) -- (3);
+  \draw (19) -- (9);
+  \draw (25) -- (7);
+  \draw (15) -- (5);
+  \draw (25) -- (13);
+  \draw (41) -- (27);
+  \draw (21) -- (3);
+  \draw (21) -- (9);
+  \draw (31) -- (13);
+  \draw (29) -- (13);
+  \draw (29) -- (19);
+  \draw (23) -- (9);
+  \draw (31) -- (19);
+  \draw (17) -- (5);
+  \draw (41) -- (2);
+  \draw (27) -- (9);
+  \draw (19) -- (5);
+  \draw (11) -- (1);
+  \draw (41) -- (8);
+  \draw (27) -- (15);
+  \draw (13) -- (1);
+  \draw (25) -- (9);
+  \draw (41) -- (23);
+  \draw (15) -- (1);
+  \draw (25) -- (15);
+  \draw (41) -- (29);
+  \draw (21) -- (5);
+  \draw (29) -- (15);
+  \draw (23) -- (5);
+  \draw (23) -- (11);
+  \draw (21) -- (11);
+  \draw (31) -- (15);
+  \draw (31) -- (21);
+  \draw (17) -- (1);
+  \draw (17) -- (7);
+  \draw (41) -- (4);
+  \draw (27) -- (11);
+  \draw (19) -- (1);
+  \draw (19) -- (7);
+  \draw (27) -- (17);
+  \draw (13) -- (3);
+  \draw (41) -- (25);
+  \draw (15) -- (3);
+  \draw (25) -- (11);
+  \draw (41) -- (31);
+  \draw (29) -- (11);
+  \draw (21) -- (7);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\end{minipage}
+\newpage\subsection{[8, 10, 12, 14, 33, 35]}
+\noindent\begin{minipage}{0.6\textwidth}
+\subsubsection*{Invariants}
+\centering
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\toprule
+g & F & m & ewt & t & \(|M|\) & \(|\lambda|\) \\
+\midrule
+21 & 39 & 8 & 54 & 2 & 2 & 134 \\
+\bottomrule
+\end{tabular}
+\end{minipage}%
+\begin{minipage}{0.4\textwidth}
+\subsubsection*{Partition}
+\centering
+\begin{tikzpicture}
+  \draw (0.00, 0.00) rectangle (0.40, -0.40);
+  \node[font=\tiny] at (0.20, -0.20) {39};
+  \draw (0.40, 0.00) rectangle (0.80, -0.40);
+  \node[font=\tiny] at (0.60, -0.20) {31};
+  \draw (0.80, 0.00) rectangle (1.20, -0.40);
+  \node[font=\tiny] at (1.00, -0.20) {29};
+  \draw (1.20, 0.00) rectangle (1.60, -0.40);
+  \node[font=\tiny] at (1.40, -0.20) {27};
+  \draw (1.60, 0.00) rectangle (2.00, -0.40);
+  \node[font=\tiny] at (1.80, -0.20) {25};
+  \draw (2.00, 0.00) rectangle (2.40, -0.40);
+  \node[font=\tiny] at (2.20, -0.20) {23};
+  \draw (2.40, 0.00) rectangle (2.80, -0.40);
+  \node[font=\tiny] at (2.60, -0.20) {21};
+  \draw (2.80, 0.00) rectangle (3.20, -0.40);
+  \node[font=\tiny] at (3.00, -0.20) {19};
+  \draw (3.20, 0.00) rectangle (3.60, -0.40);
+  \node[font=\tiny] at (3.40, -0.20) {17};
+  \draw (3.60, 0.00) rectangle (4.00, -0.40);
+  \node[font=\tiny] at (3.80, -0.20) {15};
+  \draw (4.00, 0.00) rectangle (4.40, -0.40);
+  \node[font=\tiny] at (4.20, -0.20) {13};
+  \draw (4.40, 0.00) rectangle (4.80, -0.40);
+  \node[font=\tiny] at (4.60, -0.20) {11};
+  \draw (4.80, 0.00) rectangle (5.20, -0.40);
+  \node[font=\tiny] at (5.00, -0.20) {9};
+  \draw (5.20, 0.00) rectangle (5.60, -0.40);
+  \node[font=\tiny] at (5.40, -0.20) {7};
+  \draw (5.60, 0.00) rectangle (6.00, -0.40);
+  \node[font=\tiny] at (5.80, -0.20) {6};
+  \draw (6.00, 0.00) rectangle (6.40, -0.40);
+  \node[font=\tiny] at (6.20, -0.20) {5};
+  \draw (6.40, 0.00) rectangle (6.80, -0.40);
+  \node[font=\tiny] at (6.60, -0.20) {4};
+  \draw (6.80, 0.00) rectangle (7.20, -0.40);
+  \node[font=\tiny] at (7.00, -0.20) {3};
+  \draw (7.20, 0.00) rectangle (7.60, -0.40);
+  \node[font=\tiny] at (7.40, -0.20) {1};
+  \draw (0.00, -0.40) rectangle (0.40, -0.80);
+  \node[font=\tiny] at (0.20, -0.60) {37};
+  \draw (0.40, -0.40) rectangle (0.80, -0.80);
+  \node[font=\tiny] at (0.60, -0.60) {29};
+  \draw (0.80, -0.40) rectangle (1.20, -0.80);
+  \node[font=\tiny] at (1.00, -0.60) {27};
+  \draw (1.20, -0.40) rectangle (1.60, -0.80);
+  \node[font=\tiny] at (1.40, -0.60) {25};
+  \draw (1.60, -0.40) rectangle (2.00, -0.80);
+  \node[font=\tiny] at (1.80, -0.60) {23};
+  \draw (2.00, -0.40) rectangle (2.40, -0.80);
+  \node[font=\tiny] at (2.20, -0.60) {21};
+  \draw (2.40, -0.40) rectangle (2.80, -0.80);
+  \node[font=\tiny] at (2.60, -0.60) {19};
+  \draw (2.80, -0.40) rectangle (3.20, -0.80);
+  \node[font=\tiny] at (3.00, -0.60) {17};
+  \draw (3.20, -0.40) rectangle (3.60, -0.80);
+  \node[font=\tiny] at (3.40, -0.60) {15};
+  \draw (3.60, -0.40) rectangle (4.00, -0.80);
+  \node[font=\tiny] at (3.80, -0.60) {13};
+  \draw (4.00, -0.40) rectangle (4.40, -0.80);
+  \node[font=\tiny] at (4.20, -0.60) {11};
+  \draw (4.40, -0.40) rectangle (4.80, -0.80);
+  \node[font=\tiny] at (4.60, -0.60) {9};
+  \draw (4.80, -0.40) rectangle (5.20, -0.80);
+  \node[font=\tiny] at (5.00, -0.60) {7};
+  \draw (5.20, -0.40) rectangle (5.60, -0.80);
+  \node[font=\tiny] at (5.40, -0.60) {5};
+  \draw (5.60, -0.40) rectangle (6.00, -0.80);
+  \node[font=\tiny] at (5.80, -0.60) {4};
+  \draw (6.00, -0.40) rectangle (6.40, -0.80);
+  \node[font=\tiny] at (6.20, -0.60) {3};
+  \draw (6.40, -0.40) rectangle (6.80, -0.80);
+  \node[font=\tiny] at (6.60, -0.60) {2};
+  \draw (6.80, -0.40) rectangle (7.20, -0.80);
+  \node[font=\tiny] at (7.00, -0.60) {1};
+  \draw (0.00, -0.80) rectangle (0.40, -1.20);
+  \node[font=\tiny] at (0.20, -1.00) {31};
+  \draw (0.40, -0.80) rectangle (0.80, -1.20);
+  \node[font=\tiny] at (0.60, -1.00) {23};
+  \draw (0.80, -0.80) rectangle (1.20, -1.20);
+  \node[font=\tiny] at (1.00, -1.00) {21};
+  \draw (1.20, -0.80) rectangle (1.60, -1.20);
+  \node[font=\tiny] at (1.40, -1.00) {19};
+  \draw (1.60, -0.80) rectangle (2.00, -1.20);
+  \node[font=\tiny] at (1.80, -1.00) {17};
+  \draw (2.00, -0.80) rectangle (2.40, -1.20);
+  \node[font=\tiny] at (2.20, -1.00) {15};
+  \draw (2.40, -0.80) rectangle (2.80, -1.20);
+  \node[font=\tiny] at (2.60, -1.00) {13};
+  \draw (2.80, -0.80) rectangle (3.20, -1.20);
+  \node[font=\tiny] at (3.00, -1.00) {11};
+  \draw (3.20, -0.80) rectangle (3.60, -1.20);
+  \node[font=\tiny] at (3.40, -1.00) {9};
+  \draw (3.60, -0.80) rectangle (4.00, -1.20);
+  \node[font=\tiny] at (3.80, -1.00) {7};
+  \draw (4.00, -0.80) rectangle (4.40, -1.20);
+  \node[font=\tiny] at (4.20, -1.00) {5};
+  \draw (4.40, -0.80) rectangle (4.80, -1.20);
+  \node[font=\tiny] at (4.60, -1.00) {3};
+  \draw (4.80, -0.80) rectangle (5.20, -1.20);
+  \node[font=\tiny] at (5.00, -1.00) {1};
+  \draw (0.00, -1.20) rectangle (0.40, -1.60);
+  \node[font=\tiny] at (0.20, -1.40) {29};
+  \draw (0.40, -1.20) rectangle (0.80, -1.60);
+  \node[font=\tiny] at (0.60, -1.40) {21};
+  \draw (0.80, -1.20) rectangle (1.20, -1.60);
+  \node[font=\tiny] at (1.00, -1.40) {19};
+  \draw (1.20, -1.20) rectangle (1.60, -1.60);
+  \node[font=\tiny] at (1.40, -1.40) {17};
+  \draw (1.60, -1.20) rectangle (2.00, -1.60);
+  \node[font=\tiny] at (1.80, -1.40) {15};
+  \draw (2.00, -1.20) rectangle (2.40, -1.60);
+  \node[font=\tiny] at (2.20, -1.40) {13};
+  \draw (2.40, -1.20) rectangle (2.80, -1.60);
+  \node[font=\tiny] at (2.60, -1.40) {11};
+  \draw (2.80, -1.20) rectangle (3.20, -1.60);
+  \node[font=\tiny] at (3.00, -1.40) {9};
+  \draw (3.20, -1.20) rectangle (3.60, -1.60);
+  \node[font=\tiny] at (3.40, -1.40) {7};
+  \draw (3.60, -1.20) rectangle (4.00, -1.60);
+  \node[font=\tiny] at (3.80, -1.40) {5};
+  \draw (4.00, -1.20) rectangle (4.40, -1.60);
+  \node[font=\tiny] at (4.20, -1.40) {3};
+  \draw (4.40, -1.20) rectangle (4.80, -1.60);
+  \node[font=\tiny] at (4.60, -1.40) {1};
+  \draw (0.00, -1.60) rectangle (0.40, -2.00);
+  \node[font=\tiny] at (0.20, -1.80) {27};
+  \draw (0.40, -1.60) rectangle (0.80, -2.00);
+  \node[font=\tiny] at (0.60, -1.80) {19};
+  \draw (0.80, -1.60) rectangle (1.20, -2.00);
+  \node[font=\tiny] at (1.00, -1.80) {17};
+  \draw (1.20, -1.60) rectangle (1.60, -2.00);
+  \node[font=\tiny] at (1.40, -1.80) {15};
+  \draw (1.60, -1.60) rectangle (2.00, -2.00);
+  \node[font=\tiny] at (1.80, -1.80) {13};
+  \draw (2.00, -1.60) rectangle (2.40, -2.00);
+  \node[font=\tiny] at (2.20, -1.80) {11};
+  \draw (2.40, -1.60) rectangle (2.80, -2.00);
+  \node[font=\tiny] at (2.60, -1.80) {9};
+  \draw (2.80, -1.60) rectangle (3.20, -2.00);
+  \node[font=\tiny] at (3.00, -1.80) {7};
+  \draw (3.20, -1.60) rectangle (3.60, -2.00);
+  \node[font=\tiny] at (3.40, -1.80) {5};
+  \draw (3.60, -1.60) rectangle (4.00, -2.00);
+  \node[font=\tiny] at (3.80, -1.80) {3};
+  \draw (4.00, -1.60) rectangle (4.40, -2.00);
+  \node[font=\tiny] at (4.20, -1.80) {1};
+  \draw (0.00, -2.00) rectangle (0.40, -2.40);
+  \node[font=\tiny] at (0.20, -2.20) {25};
+  \draw (0.40, -2.00) rectangle (0.80, -2.40);
+  \node[font=\tiny] at (0.60, -2.20) {17};
+  \draw (0.80, -2.00) rectangle (1.20, -2.40);
+  \node[font=\tiny] at (1.00, -2.20) {15};
+  \draw (1.20, -2.00) rectangle (1.60, -2.40);
+  \node[font=\tiny] at (1.40, -2.20) {13};
+  \draw (1.60, -2.00) rectangle (2.00, -2.40);
+  \node[font=\tiny] at (1.80, -2.20) {11};
+  \draw (2.00, -2.00) rectangle (2.40, -2.40);
+  \node[font=\tiny] at (2.20, -2.20) {9};
+  \draw (2.40, -2.00) rectangle (2.80, -2.40);
+  \node[font=\tiny] at (2.60, -2.20) {7};
+  \draw (2.80, -2.00) rectangle (3.20, -2.40);
+  \node[font=\tiny] at (3.00, -2.20) {5};
+  \draw (3.20, -2.00) rectangle (3.60, -2.40);
+  \node[font=\tiny] at (3.40, -2.20) {3};
+  \draw (3.60, -2.00) rectangle (4.00, -2.40);
+  \node[font=\tiny] at (3.80, -2.20) {1};
+  \draw (0.00, -2.40) rectangle (0.40, -2.80);
+  \node[font=\tiny] at (0.20, -2.60) {23};
+  \draw (0.40, -2.40) rectangle (0.80, -2.80);
+  \node[font=\tiny] at (0.60, -2.60) {15};
+  \draw (0.80, -2.40) rectangle (1.20, -2.80);
+  \node[font=\tiny] at (1.00, -2.60) {13};
+  \draw (1.20, -2.40) rectangle (1.60, -2.80);
+  \node[font=\tiny] at (1.40, -2.60) {11};
+  \draw (1.60, -2.40) rectangle (2.00, -2.80);
+  \node[font=\tiny] at (1.80, -2.60) {9};
+  \draw (2.00, -2.40) rectangle (2.40, -2.80);
+  \node[font=\tiny] at (2.20, -2.60) {7};
+  \draw (2.40, -2.40) rectangle (2.80, -2.80);
+  \node[font=\tiny] at (2.60, -2.60) {5};
+  \draw (2.80, -2.40) rectangle (3.20, -2.80);
+  \node[font=\tiny] at (3.00, -2.60) {3};
+  \draw (3.20, -2.40) rectangle (3.60, -2.80);
+  \node[font=\tiny] at (3.40, -2.60) {1};
+  \draw (0.00, -2.80) rectangle (0.40, -3.20);
+  \node[font=\tiny] at (0.20, -3.00) {21};
+  \draw (0.40, -2.80) rectangle (0.80, -3.20);
+  \node[font=\tiny] at (0.60, -3.00) {13};
+  \draw (0.80, -2.80) rectangle (1.20, -3.20);
+  \node[font=\tiny] at (1.00, -3.00) {11};
+  \draw (1.20, -2.80) rectangle (1.60, -3.20);
+  \node[font=\tiny] at (1.40, -3.00) {9};
+  \draw (1.60, -2.80) rectangle (2.00, -3.20);
+  \node[font=\tiny] at (1.80, -3.00) {7};
+  \draw (2.00, -2.80) rectangle (2.40, -3.20);
+  \node[font=\tiny] at (2.20, -3.00) {5};
+  \draw (2.40, -2.80) rectangle (2.80, -3.20);
+  \node[font=\tiny] at (2.60, -3.00) {3};
+  \draw (2.80, -2.80) rectangle (3.20, -3.20);
+  \node[font=\tiny] at (3.00, -3.00) {1};
+  \draw (0.00, -3.20) rectangle (0.40, -3.60);
+  \node[font=\tiny] at (0.20, -3.40) {19};
+  \draw (0.40, -3.20) rectangle (0.80, -3.60);
+  \node[font=\tiny] at (0.60, -3.40) {11};
+  \draw (0.80, -3.20) rectangle (1.20, -3.60);
+  \node[font=\tiny] at (1.00, -3.40) {9};
+  \draw (1.20, -3.20) rectangle (1.60, -3.60);
+  \node[font=\tiny] at (1.40, -3.40) {7};
+  \draw (1.60, -3.20) rectangle (2.00, -3.60);
+  \node[font=\tiny] at (1.80, -3.40) {5};
+  \draw (2.00, -3.20) rectangle (2.40, -3.60);
+  \node[font=\tiny] at (2.20, -3.40) {3};
+  \draw (2.40, -3.20) rectangle (2.80, -3.60);
+  \node[font=\tiny] at (2.60, -3.40) {1};
+  \draw (0.00, -3.60) rectangle (0.40, -4.00);
+  \node[font=\tiny] at (0.20, -3.80) {17};
+  \draw (0.40, -3.60) rectangle (0.80, -4.00);
+  \node[font=\tiny] at (0.60, -3.80) {9};
+  \draw (0.80, -3.60) rectangle (1.20, -4.00);
+  \node[font=\tiny] at (1.00, -3.80) {7};
+  \draw (1.20, -3.60) rectangle (1.60, -4.00);
+  \node[font=\tiny] at (1.40, -3.80) {5};
+  \draw (1.60, -3.60) rectangle (2.00, -4.00);
+  \node[font=\tiny] at (1.80, -3.80) {3};
+  \draw (2.00, -3.60) rectangle (2.40, -4.00);
+  \node[font=\tiny] at (2.20, -3.80) {1};
+  \draw (0.00, -4.00) rectangle (0.40, -4.40);
+  \node[font=\tiny] at (0.20, -4.20) {15};
+  \draw (0.40, -4.00) rectangle (0.80, -4.40);
+  \node[font=\tiny] at (0.60, -4.20) {7};
+  \draw (0.80, -4.00) rectangle (1.20, -4.40);
+  \node[font=\tiny] at (1.00, -4.20) {5};
+  \draw (1.20, -4.00) rectangle (1.60, -4.40);
+  \node[font=\tiny] at (1.40, -4.20) {3};
+  \draw (1.60, -4.00) rectangle (2.00, -4.40);
+  \node[font=\tiny] at (1.80, -4.20) {1};
+  \draw (0.00, -4.40) rectangle (0.40, -4.80);
+  \node[font=\tiny] at (0.20, -4.60) {13};
+  \draw (0.40, -4.40) rectangle (0.80, -4.80);
+  \node[font=\tiny] at (0.60, -4.60) {5};
+  \draw (0.80, -4.40) rectangle (1.20, -4.80);
+  \node[font=\tiny] at (1.00, -4.60) {3};
+  \draw (1.20, -4.40) rectangle (1.60, -4.80);
+  \node[font=\tiny] at (1.40, -4.60) {1};
+  \draw (0.00, -4.80) rectangle (0.40, -5.20);
+  \node[font=\tiny] at (0.20, -5.00) {11};
+  \draw (0.40, -4.80) rectangle (0.80, -5.20);
+  \node[font=\tiny] at (0.60, -5.00) {3};
+  \draw (0.80, -4.80) rectangle (1.20, -5.20);
+  \node[font=\tiny] at (1.00, -5.00) {1};
+  \draw (0.00, -5.20) rectangle (0.40, -5.60);
+  \node[font=\tiny] at (0.20, -5.40) {9};
+  \draw (0.40, -5.20) rectangle (0.80, -5.60);
+  \node[font=\tiny] at (0.60, -5.40) {1};
+  \draw (0.00, -5.60) rectangle (0.40, -6.00);
+  \node[font=\tiny] at (0.20, -5.80) {7};
+  \draw (0.00, -6.00) rectangle (0.40, -6.40);
+  \node[font=\tiny] at (0.20, -6.20) {6};
+  \draw (0.00, -6.40) rectangle (0.40, -6.80);
+  \node[font=\tiny] at (0.20, -6.60) {5};
+  \draw (0.00, -6.80) rectangle (0.40, -7.20);
+  \node[font=\tiny] at (0.20, -7.00) {4};
+  \draw (0.00, -7.20) rectangle (0.40, -7.60);
+  \node[font=\tiny] at (0.20, -7.40) {3};
+  \draw (0.00, -7.60) rectangle (0.40, -8.00);
+  \node[font=\tiny] at (0.20, -7.80) {2};
+  \draw (0.00, -8.00) rectangle (0.40, -8.40);
+  \node[font=\tiny] at (0.20, -8.20) {1};
+\end{tikzpicture}
+\end{minipage}
+\vspace{1cm}
+\noindent \newline\begin{minipage}{0.48\textwidth}
+\subsubsection*{Gap Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (1) at (0.00,-6.40) {1};
+  \node[minimum size=0.3cm] (3) at (1.60,-6.40) {3};
+  \node[minimum size=0.3cm] (5) at (3.20,-6.40) {5};
+  \node[minimum size=0.3cm] (7) at (4.80,-6.40) {7};
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[minimum size=0.3cm] (4) at (1.60,-1.60) {4};
+  \node[minimum size=0.3cm] (6) at (3.20,-1.60) {6};
+  \node[minimum size=0.3cm] (25) at (4.80,-1.60) {25};
+  \node[minimum size=0.3cm] (27) at (6.40,-1.60) {27};
+  \node[minimum size=0.3cm] (29) at (8.00,-1.60) {29};
+  \node[minimum size=0.3cm] (31) at (9.60,-1.60) {31};
+  \node[minimum size=0.3cm] (9) at (0.00,-4.80) {9};
+  \node[minimum size=0.3cm] (11) at (1.60,-4.80) {11};
+  \node[minimum size=0.3cm] (13) at (3.20,-4.80) {13};
+  \node[minimum size=0.3cm] (15) at (4.80,-4.80) {15};
+  \node[minimum size=0.3cm] (17) at (0.00,-3.20) {17};
+  \node[minimum size=0.3cm] (19) at (1.60,-3.20) {19};
+  \node[minimum size=0.3cm] (21) at (3.20,-3.20) {21};
+  \node[minimum size=0.3cm] (23) at (4.80,-3.20) {23};
+  \node[minimum size=0.3cm] (37) at (0.00,0.00) {37};
+  \node[draw, rectangle, minimum size=0.3cm] (39) at (1.60,0.00) {39};
+  % Draw the cover relations
+  \draw (29) -- (17);
+  \draw (21) -- (13);
+  \draw (39) -- (27);
+  \draw (31) -- (17);
+  \draw (31) -- (23);
+  \draw (23) -- (13);
+  \draw (17) -- (3);
+  \draw (17) -- (9);
+  \draw (27) -- (13);
+  \draw (19) -- (9);
+  \draw (27) -- (19);
+  \draw (37) -- (27);
+  \draw (13) -- (5);
+  \draw (15) -- (5);
+  \draw (25) -- (13);
+  \draw (21) -- (9);
+  \draw (37) -- (2);
+  \draw (29) -- (19);
+  \draw (23) -- (9);
+  \draw (31) -- (19);
+  \draw (23) -- (15);
+  \draw (17) -- (5);
+  \draw (39) -- (29);
+  \draw (9) -- (1);
+  \draw (37) -- (23);
+  \draw (19) -- (11);
+  \draw (19) -- (5);
+  \draw (11) -- (1);
+  \draw (27) -- (15);
+  \draw (37) -- (29);
+  \draw (13) -- (1);
+  \draw (15) -- (1);
+  \draw (15) -- (7);
+  \draw (25) -- (15);
+  \draw (39) -- (4);
+  \draw (29) -- (15);
+  \draw (37) -- (4);
+  \draw (29) -- (21);
+  \draw (21) -- (11);
+  \draw (39) -- (25);
+  \draw (39) -- (6);
+  \draw (31) -- (21);
+  \draw (23) -- (11);
+  \draw (17) -- (7);
+  \draw (39) -- (31);
+  \draw (19) -- (7);
+  \draw (11) -- (3);
+  \draw (27) -- (17);
+  \draw (37) -- (25);
+  \draw (13) -- (3);
+  \draw (15) -- (3);
+  \draw (25) -- (11);
+  \draw (25) -- (17);
+  \draw (21) -- (7);
+\end{tikzpicture}
+\end{minipage}%
+\hfill\begin{minipage}{0.48\textwidth}
+\subsubsection*{Void Poset}
+\centering
+\begin{tikzpicture}
+  \node[minimum size=0.3cm] (2) at (0.00,-1.60) {2};
+  \node[draw, rectangle, minimum size=0.3cm] (37) at (0.00,0.00) {37};
+  % Draw the cover relations
+  \draw (37) -- (2);
+\end{tikzpicture}
+\end{minipage}
+\end{document}

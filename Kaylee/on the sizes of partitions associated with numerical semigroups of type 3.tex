@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{definition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{prop}[thm]{Proposition}
+
+\title{on the sizes of partitions associated to numerical semigroups of type 3}
+\date{Summer 2024}
+\begin{document}
+\maketitle
+
+\textit{Background.} Let $S$ be a numerical semigroup with $t(S) = 3$ and $F(S) = F$. Then we can say that $PF(S) = \{P, Q, F\}$ with $P < Q < F$. We know that there are four cases for the value of $P(S)$, which are as follows:
+
+\begin{enumerate}
+    \item[(1)] If $P+Q-F \notin S$, then $P(S) = 4$.
+    \item[(2)] If $P+Q-F \in S$ and $Q-P \notin \mathcal{M}(S)$, then $P(S) = 2$.
+    \item[(3)] If $P+Q-F \in S$, $Q-P \in \mathcal{M}(S)$, and $F+P = 2Q$, then $P(S) = 3$.
+    \item[(4)] If $P+Q-F \in S, Q-P \in \mathcal{M}(S)$, and $F+P \neq 2Q$, then $P(S) = 4$.
+\end{enumerate}
+
+(See enumerating numerical sets paper for more info). We examine the relative sizes of $|\lambda(S)|$ and $\min \mathcal{P}(S)$ in each of these cases.
+
+\textit{Case 1}. In case 1, we note that the four associated numerical sets all have self-dual order ideals. Hence, $\min \mathcal{P}(S) = |\lambda (S)|$.
+
+\textit{Case 2}. In case 2, we note that the two numerical sets associated to $S$ correspond to $\lambda(S)$ and its conjugate. Hence, $\min \mathcal{P}(S) = |\lambda (S)|$.
+
+\textit{Case 3}. NEVERMIND LEMME FIX In case 3, we see that $S$ itself and $S^*$ are two of the three numerical sets associated to $S$. Then we know that the last numerical set must be of the form $S \cup I$, where $I$ is a self-dual order ideal. Hence, $\min \mathcal{P}(S) = |\lambda (S)|$.
+
+\textit{Case 4}. insert proof here
+
+
+\textit{A note on numerical semigroups of higher type}. We note that $S= \langle 9, 10, 11, 12, 13 \rangle$ has $t(S) = 4$. 
+
+\end{document}

@@ -1,0 +1,181 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath, amsthm, amsfonts, amssymb, amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[capitalize, nameinlink, noabbrev]{cleveref}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{todonotes}
+\usepackage{physics}
+\usepackage{draftwatermark}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{trees}
+\usepackage{pdflscape}
+\usepackage{ytableau}
+\usepackage[breakable, skins, most]{tcolorbox}
+\usepackage{Erik/Styles/colorboxes}
+\usepackage{natbib}
+\usepackage{url}
+
+% Bibliography setup
+\usepackage{natbib} % For more flexible citations
+\bibliographystyle{plainnat} % Specify bibliography style
+\usepackage{url} % To include URLs in bibliography
+
+
+\pgfplotsset{compat=1.12}
+\lstdefinestyle{Python}{
+    language        = Python,
+    frame           = lines, 
+    basicstyle      = \footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily
+}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{UCI 2024}
+\newcommand\hwnumber{Depth 2 Plueger's Conjecture}
+\newcommand\Name{Erik Imathiu-Jones}
+
+% Macros
+\usepackage{Erik/Styles/macros}
+
+\SetWatermarkText{} % \emoji{rose}} % \emoji{smiling-face-with-horns}}
+\SetWatermarkScale{1}
+\SetWatermarkAngle{0}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\Name}
+\chead{\textbf{\Large \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\title{}
+\author{Erik Imathiu-Jones}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+
+\section{Outline}
+\begin{tcolorbox}[title=TLDR]
+    This document summarizes some discussion from Tuesday July 17 on Pfleuger's conjecture for depth 2 semigroups. I give a slightly different method than the one we discussed but I hope it still works. The main results takeaways:
+\begin{enumerate}
+    \item A formula for computing the effective weight of a numerical semigroup \(S\) with multiplicity \(m\) and Frobenius number \(F\) such that \(m < F < 2m\).
+    \item A proof showing that the effective weight of such semigroups is bounded above by \(\frac{(g+1)^2}{8}\), where \(g\) is the genus of the semigroup.
+    \item The identification of a specific ``flag-pole" semigroup that maximizes effective weight under the given conditions.
+\end{enumerate}
+\end{tcolorbox}
+\section{Notation}
+
+This notation is by no means permanent, I just need some temporary terms to make reading this easier.
+
+
+We call a minimal generator of \(S\) \emph{ineffective} if it is less than the Frobenius number \(F(S)\) and by \(\inef(S)\) we mean the set of ineffective generators of \(S\). Finally, for convenience's sake, define the effective weight of a single minimal generator \(a\) of \(S\) to be 
+\[
+\ew(a) = \#\{(l, a) \mid l \not\in S \text{ and } l > a\}.
+\]
+
+With these definitions the effective weight of \(S\) becomes \[\ew(S) = \sum\limits_{a \in \inef(S)} \ew(a).\]
+
+In what follows, \(m\) and \(F\) are the multiplicity and Frobenius number of \(S\) respectively.
+
+\newpage
+\section{Effective Weight of Numerical Semigroups of Depth 2}
+
+\begin{proposition}
+    If \(S\) is a numerical semigroup of multiplicity \(m\) such that \(m < F < 2 m\) then 
+    \[\ew(S) = \sum\limits_{i = 0}^n \ew(m) - \sum\limits_{i = 0}^n (a_i - m - i)\]
+
+    where \(\{a_k\}_{i=0}^n\) are the ineffective generators of \(S\).
+\end{proposition}
+
+\begin{proof}
+First note that \(m < F < 2m\) implies that every element \(a\) of \(S\) smaller than \(F\) is a minimal generator of \(S\) since \(m \le a < F < 2m\). In other words, every small element of \(S\) is an ineffective generator. Index these ineffective generators in increasing order so that \(a_0 = m\) and the full collection is denoted by \(\{a_i\}_{i=1}^n\). Since every small element is an ineffective generator we have a nice identity,
+    \begin{align*}
+    \ew(a_{i+1}) &= \#\{(l, a_{i+1}) \mid l \not\in S \text{ and } l > a_{i+1}\} \\
+    &= \#\{(l, a_{i}) \mid l \not\in S \text{ and } l > a_i\} - \#\{(l, a_{i}) \mid l \not\in S \text{ and } a_{i+1} > l > a_{i}\} \\
+    &= \ew(a_i) - (a_{i+1} - a_i - 1).
+    \end{align*}
+
+Since there are no elements of \(S\) in between \(a_i\) and \(a_{i+1}\) the set  \(\{(l, a_{i}) \mid l \not\in S \text{ and } a_{i+1} > l > a_{i}\}\) contains every integer between \(a_i\) and \(a_{i+1}\). There are exactly \( (a_{i+1} - a_i - 1)\) many of these integers. By induction we see that \[\ew(a_i) = \ew(m) - (a_i - m - i).\] Finally, we can sum over all ineffective generators to yield the result.
+\end{proof}
+
+\newpage
+\begin{proposition}
+    If \(S\) is a numerical semigroup of multiplicity \(m\) and genus \(g\) such that \(m < F < 2 m\) then 
+    \[\ew(S) \le \frac{(g+1)^2}{8}.\]
+\end{proposition}
+\begin{proof}
+If we only consider the residue classes of each \(a_i\) modulo \(m\) then we get a nicer effective weight identity. Towards this goal, let \(a_i = m + r_i\) where \(0 < r_i < m - 1\). The previous proposition becomes
+
+\[\ew(S) = \sum\limits_{i=0}^n \ew(m) - \sum\limits_{i=0}^n (r_i - i).\]
+
+Now, fixing the genus of \(S\) to be \(g\) we see that \((n + 1) + g = F\). Since \(n + g + 1 = F\) and \(S\) is depth 2 we see \(0 < n < 2m - g - 1\).
+We can now maximize the right and side by taking \(r_i = i\) and \(n = 2m - g - 2\) to find 
+
+\[\ew(S_{\text{max}}) = ((2m - g - 2) + 1) \cdot \ew(m).\]
+
+
+Note \(\ew(m) = (g - (m-1))\) since there are \(g - (m-1)\) many gaps larger than \(m\). Thus, 
+
+\begin{align*}
+    \ew(S) &\le (2m -g - 1) \cdot (g - (m-1)) \\
+    &= (2(m-1) -g + 1) \cdot (g - (m-1))  \\
+    &= -2(m-1)^2 + (3g - 1) (m-1) + g - g^2
+\end{align*}
+
+Considering the right hand side as a function in \((m-1)\), we see it is a concave down parabola. The maximizing \((m - 1)\) value is given by the vertex of the parabola,
+
+\[m_{\text{max}} - 1 = -\frac{3g - 1}{2 \cdot (-2)} = \frac{3g - 1}{4} \implies m_{\text{max}} = \frac{3(g+1)}{4}.\]
+
+Substituting this back to the right hand side yields,
+
+\begin{align*}
+    \ew(S) &\le -2(m-1)^2 + (3g - 1) (m-1) + g - g^2\\
+    &\le \frac{(g+1)^2}{8}.
+\end{align*}
+\end{proof}
+
+Note this also tells us that the numerical semigroup with ineffective generators \(\{m + i\}_{i=0}^{2m-g-1}\) is the maximizing such semigroup of depth 2. This is the ``flag-pole" semigroup.
+
+\begin{corollary}
+    Pleuger's conjecture is true for all numerical semigroups of depth 2.
+\end{corollary}
+
+For convenience, here is Pflueger's conjecture.
+
+\begin{conjecture}[\cite{Pflueger_2018}]
+    Let \( S \) be a semigroup with \( g(S) = g \). Then
+    \[
+    \text{ewt}(S) \leq \left\lfloor \frac{(g + 1)^2}{8} \right\rfloor.
+    \]
+\end{conjecture}
+
+
+\bibliography{Erik/bibtex/references}
+
+
+
+
+
+\end{document}

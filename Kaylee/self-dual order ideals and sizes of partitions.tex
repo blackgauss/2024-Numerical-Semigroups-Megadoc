@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{thm}{Theorem}[section]
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{Definition}
+\theoremstyle{definition}
+\newtheorem{ex}[thm]{Example}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{corr}[thm]{Corrollary}
+
+\title{self-dual order ideals and stuff}
+\date{Summer 2024}
+\begin{document}
+\maketitle
+
+\begin{prop}
+    Let $T$ be a numerical set such that $A(T) = S$. Then we know that $T = S\cup I$ for some order ideal $I$. If $I$ is self dual, then $|\lambda(T)| \geq |\lambda(S)|$. In particular, $|\lambda(T)| = |\lambda(S)|$ if and only if $I=\varnothing$ or $I = \mathcal{M}(S)$.
+\bigskip
+
+\textit{Proof.} Let $F= F(S)$ and $g = g(S)$.  We start with the case where $I$ is of the form
+$$I =\{x_1, x_2, ..., x_k, F-x_k, F-x_{k-1}, ..., F-x_1\}.$$
+We recall that $|\lambda(T)| = |\lambda(S)| + |A| - |B|$, where 
+    $$A = \{(n, h)\mid n\in I, h\notin T, n <h\},$$
+    $$B = \{(n, h)\mid n \in S, h\in I, n <h \}.$$
+We sum over $x_1, ..., x_k$ and see that
+$$|A| = \sum\limits_{i=1}^k \Biggl(\#\{h\notin T\mid h > x_i\} + \#\{h \notin T \mid h > F-x_i\}\Biggr).$$
+Notice that the number of gaps of $T$ greater than $x_i$ is the total number of gaps in $S$ minus the number of elements in $I$ greater than or equal to $x_i$ and the number of gaps of $S$ less than $x_i$. That is, 
+\begin{equation}
+    \#\{h\notin T\mid h > x_i\} = g - (2k-i+1) - \#\{h \notin S \mid h < x_i\} \tag{$*$}
+\end{equation}
+and
+$$\#\{h \notin T \mid n > F-x_i\} = g - i -\#\{h \notin S \mid h<F- x_i\}.$$
+So we are left with 
+$$|A| = \sum\limits_{i=1}^k \Biggl(2g -  (2k+1) - \#\{h \notin S \mid h < x_i\} - \#\{h \notin S \mid h<F- x_i\}\Biggr).$$
+Now, again summing over $x_1, ..., x_k$, we see that
+$$|B| = \sum\limits_{i=1}^k \Biggl(\#\{y \in S \mid y < x_i \} + \#\{y \in S \mid y < F-x_i \}\Biggr)$$
+Notice that the number of elements of $S$ less than $x_i$ can be counted in terms of the gaps less than $x_i$, that is,
+\begin{equation}
+    \#\{y \in S \mid y < x_i \} = x_i - \#\{h \notin S \mid h<x_i\}\tag{$**$}
+\end{equation}
+and 
+$$\#\{y \in S \mid y < F-x_i \} = x_i - \#\{h \notin S \mid h<F-x_i\}.$$
+But we have seen these terms before, and putting it all together, we conclude that 
+$$|A|-|B| = \sum\limits_{i=1}^k\Biggl(2g-F-1-2k\Biggr).$$
+Recalling that $|\mathcal{M}(S)| = 2g-F-1$ and $|I| = 2k$, we conclude that 
+    $$|A|-|B| = k\cdot(|\mathcal{M}(S)|-|I|).$$
+$I \subseteq \mathcal{M}(S)$, so $|A|-|B| \geq 0$, and we have that $|\lambda(T)| \geq |\lambda(S)|$. Finally, we note that $|A-B| = 0$ if and only if $k=0$ or $|\mathcal{M}(S)| = |I|$. So $|\lambda(T)| = |\lambda(S)|$ if and only if $I = \varnothing$ or $I = \mathcal{M}(S)$. 
+
+Now we consider the case where $\frac{F}{2} \in \mathcal{M}(S)$. We recall that if $T = S\cup I$, $T^* = S \cup I^*$ where 
+$$I^* = \{x \in \mathcal{M}(S) \mid F-x \notin I\}.$$
+It is clear that if $\frac{F}{2} \in I$, $\frac{F}{2}\notin I^*$. We apply the above to $I^*$ and note that $|\lambda(T^*)| = |\lambda(T)|$ to finish the proof. $\blacksquare$
+
+\end{prop}
+
+\end{document}

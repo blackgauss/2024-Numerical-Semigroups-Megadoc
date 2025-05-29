@@ -1,0 +1,204 @@
+\documentclass{amsart}
+
+%---------[Basic things]-------------------
+%\usepackage[margin=1in]{geometry} % set margin
+
+	% math packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{upgreek}
+\usepackage{IEEEtrantools}
+
+\usepackage{youngtab}
+
+
+	% TIKZ!!!
+\usepackage{tikz}
+
+	% usual math Blackboard symbols
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\cc}[1]{\mathcal{#1}}
+\newcommand{\ff}[1]{\mathfrak{#1}}
+
+\newcommand{\ud}{\,\mathrm{d}}
+\newcommand{\sminus}{\smallsetminus}
+\newcommand{\Mod}{\!\!\pmod}
+\DeclareMathOperator{\imp}{im}
+\DeclareMathOperator{\Ap}{Ap}
+
+\DeclareMathOperator{\Apw}{Apw}
+
+\DeclareMathOperator{\ewt}{ewt}
+
+\DeclareMathOperator{\F}{F}
+
+
+
+\newcommand{\C}{{\mathbb C}}
+\newcommand{\Q}{{\mathbb Q}}
+\newcommand{\Z}{{\mathbb Z}}
+\newcommand{\N}{{\mathbb N}}
+\newcommand{\R}{{\mathbb R}}
+
+
+	% change enumerate around a bit
+\usepackage{enumerate}
+\let\oldenumerate\enumerate
+\renewcommand{\enumerate}
+	{
+	\oldenumerate
+	\setlength{\itemsep}{20pt}
+	\setlength{\parskip}{2pt}
+	\setlength{\parsep}{2pt}
+	\setlength{\parindent}{1cm}
+	}
+
+\makeatletter
+\let\@@pmod\pmod
+\DeclareRobustCommand{\pmod}{\@ifstar\@pmods\@@pmod}
+\def\@pmods#1{\mkern4mu({\operator@font mod}\mkern 6mu#1)}
+\makeatother
+
+\theoremstyle{plain}\newtheorem{proposition}{Proposition}[section]
+	\newtheorem{theorem}[proposition]{Theorem}
+	\newtheorem{defn}[proposition]{Definition}
+	\newtheorem{cor}[proposition]{Corollary}
+	\newtheorem{lem}[proposition]{Lemma}
+	\newtheorem{conj}[proposition]{Conjecture}
+	\newtheorem{problem}[proposition]{Problem}
+	\newtheorem{question}[proposition]{Question}
+	\newtheorem{prop}[proposition]{Proposition}
+
+\theoremstyle{remark}\newtheorem{example}[proposition]{Example}
+	\newtheorem*{remark}{Remark}
+
+%\newtheorem{problem}{Problem}
+
+
+% to prevent any widows or orphans
+\widowpenalty10000
+\clubpenalty10000
+%-------------------------------------------
+
+
+\title{Some ideas related to Pflueger's conjecture}
+
+\begin{document}
+
+\maketitle
+
+\begin{defn}
+Let $S$ be a numerical semigroup with $m(S) = m$ and Kunz coordinate vector $(k_1,\ldots, k_{m-1})$.  Let 
+\[
+\Ap'(S) = (\Ap(S;m) \setminus \{0\})\cup\{m\} = \{m\} \cup \bigcup_{i=1}^{m-1} k_i m + i.
+\]
+The Ap\'ery weight of $S$ is defined as
+\[
+\Apw(S) = \#\{(x,h)\colon x \in \Ap(S)',\ h \ge \N_0\setminus S,\ h > x\}.
+\]
+\end{defn}
+It is clear that $\ewt(S) \le \Apw(S) \le w(S)$.
+
+We know that $\Apw(S)$ is a function of the entries of the Kunz coordinate vector.
+\begin{prop}\label{Apw_prop}
+We have 
+\[
+\Apw(S) = (g(S)-(m-1)) + \sum_{1 \le i < j \le m-1} \max\{k_j - k_i, 0\} +  \sum_{1 \le i < j \le m-1} \max\{k_i - k_j - 1, 0\}.
+\]
+\end{prop}
+Note that $g(S) = \sum_{i=1}^{m-1} k_i$.
+
+
+\begin{prop}
+Suppose $g(S) = g$.  We have $w(S) \le \frac{g(g-1)}{2}$ where equality holds if and only if $S = \langle 2,2g+1\rangle$.
+\end{prop}
+
+\begin{conj}[Pflueger]
+We have $\ewt(S) \le \left\lfloor \frac{(g+1)^2}{8} \right\rfloor$.  Moreover, the for $g \ge 10$ the only equality cases have depth $2$.
+\end{conj}
+
+\begin{question}
+How can we bound $\Apw(S)$ as a function of $g$?
+\end{question}
+For semigroups of depth $2$ we have $\ewt(S) = \Apw(S)$.  We focus on the case of semigroups of depth $3$.
+
+Let's consider the set $\mathcal{S}_g$ of all semigroups of genus $g$ and depth $3$.  Suppose $S \in \mathcal{S}_g$ and $S$ has Kunz coordinate vector $(k_1,\ldots, k_{m-1})$.  So each $k_i \in \{1,2,3\}$ and $g = \sum_{i=1}^{m-1} k_i$.  Suppose that 
+\begin{eqnarray*}
+x & = & \#\{i\colon k_i = 1\}\\
+y & = &  \#\{i\colon k_i = 2\}\\
+ z & = & \#\{i\colon k_i = 3\}.
+\end{eqnarray*}
+Therefore, $g = x+2y+3z$ and $m = x+y+z+1$, and $g-(m-1) = y+2z$.
+
+Proposition \ref{Apw_prop} shows that for a fixed $x,y,z$
+\[
+\Apw(S) \le (g-(m-1)) + x(y+2z) + yz.
+\]
+We can write $z$ as a function of $g$ and treat this as a function of the two variables $x$ and $y$.  We have $z = \frac{g-x-2y}{3}$, and therefore,
+\begin{eqnarray*}
+\Apw(S) & \le & (x+1) (y+\frac{2}{3} (g-x-2y)) + \frac{y(g-x-2y)}{3} \\
+& = &  \left(\frac{1}{3}\right) \cdot (-2 x^{2} - (2y-2g+2)x - 2 y^{2} + y g  - y + 2 g).
+\end{eqnarray*}
+For each fixed $y$, this is a quadratic function of $x$ with a negative leading coefficient.  The maximum value comes at the value $x = \frac{-b}{2a}$, which in this case means that the maximum occurs at $x= \frac{g-y-1}{2}$.
+
+Therefore, for a fixed value of $y \in [0,\frac{g}{2}]$ we have 
+\[
+\Apw(S) \le \frac{(g+1)^2 -3y^2}{6}.
+\]
+
+When $y = 0$ this bound is $\frac{(g+1)^2}{6}$.  But, when $y$ is not too small, this bound will be much lower.  In particular, if $\frac{y^2}{2} \ge \frac{(g+1)^2}{24}$, then 
+\[
+\Apw(S) \le \frac{(g+1)^2}{6} - \frac{y^2}{2} \le \frac{(g+1)^2}{8}.
+\]
+
+Therefore, the only case we really need to think hard about is where $y \le \frac{g+1}{2\sqrt{3}}$.  For example, when $y = 0$ we have to use the fact that if the index $k_r = 3$, then none of the pairs $(k_1, k_{r-1}), (k_2,k_{r-2}),\ldots, (k_{\lfloor{r/2}\rfloor},k_{\lceil r/2 \rceil})$ can be equal to $(1,1)$.  This will imply that in fact, $x$ cannot be near the maximum $(g-y-1)/2 = (g-1)/2$ that we used to get the upper bound above.
+
+\newpage
+
+In a different direction, we talked about what a counterexample to Pflueger's conjecture of depth $3$ with minimal genus would have to look like.  Suppose $S$ is this minimal counterexample and that $S$ has Kunz coordinate vector $(k_1,\ldots, k_{m-1})$.  We will use the fact that $(k_1, k_2,\ldots, k_{m-2})$ is also the Kunz coordinate vector of a numerical semigroup $S'$.  By assumption, we know that $S'$ does satisfy Pflueger's conjecture.  
+
+We know that $\ewt(S) \ge \frac{(g+1)^2}{8}$.  As above, suppose that
+\begin{eqnarray*}
+x & = & \#\{i\colon k_i = 1\}\\
+y & = &  \#\{i\colon k_i = 2\}\\
+ z & = & \#\{i\colon k_i = 3\}.
+\end{eqnarray*}
+We claim that $\ewt(S) - \ewt(S') = x + 2y$ since the only difference in the Kunz coordinate vectors is the final $3$ that we added at the end.  We note that whenever $k_i = 1$ we have that $m(S)+i$ is a minimal generator of $S$ and $m(S') + i$ is a minimal generator of $S'$.  Similarly, whenever $k_i = 2$ we see that $2m(S) + i$ is a minimal generator of $S$ if and only if $2m(S') + i$ is a minimal generator of $S'$.
+
+By assumption, we have 
+\[
+x + 2y \ge \frac{(g+1)^2}{8} - \frac{(g+1-k_{m-1})^2}{8}.
+\]
+There are three cases to consider based on the value of $k_{m-1}$.  I believe that $k_{m-1} = 1$ should be pretty easy to deal with, and that the most interesting case will be where $k_{m-1} = 3$.  We assume this for now.  So we have 
+\[
+x+2y \ge \frac{3g}{4} - \frac{3}{8}.
+\]
+This means that $x$ and $y$ cannot both be small relative to $g$.  
+
+Since $(k_1,\ldots, k_{m-1})$ is the Kunz coordinate vector of a numerical semigroup none of the pairs $(k_1, k_{m-2}), (k_2,k_{m-3}),\ldots, (k_{\lfloor{(m-1)/2}\rfloor},k_{\lceil (m-1)/2 \rceil})$ can be equal to $(1,1)$.  For ease of notation, let's assume that $m$ is odd so that we don't have to keep writing the floors and ceilings.
+
+Therefore, 
+\[
+g = k_{m-1} + (k_1+k_{m-2}) + (k_2+k_{m-3}) + \cdots + (k_{(m-1)/2}+k_{(m+1)/2}) \ge \frac{3(m-1)}{2} +3
+\]
+Since $m-1 = x+y+z$ and $g = x+2y+3z$ we have 
+\[
+x+2y+3z \ge \frac{3}{2} x + \frac{3}{2} y + \frac{3}{2} z + 3,
+\]
+which means 
+\[
+3z = g-x-2y \ge x-y +3,
+\]
+which then implies that $g\ge 2x+y +3$.
+
+We now have two equations involving the two variables $x$ and $y$.  Taken together, I think they imply that $x$ cannot be `too big' and $y$ cannot be `too small'.  For example it is clear that $x \le \frac{g}{2}$, which then implies something like $y \ge \frac{g}{8}$.   These equations give us some constraints involving $x$ and $y$.  Hopefully these constraints are not compatible with the kinds of things we need in order to have $\Apw(S) \ge \frac{(g+1)^2}{8}$, the kinds of things we saw in the first part of this document.
+
+\begin{question}
+What can we say here?
+\end{question}
+
+
+
+
+\end{document}

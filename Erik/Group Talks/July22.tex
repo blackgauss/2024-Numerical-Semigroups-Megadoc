@@ -75,7 +75,7 @@
 \pagestyle{fancyplain}
 \headheight 35pt
 \lhead{\Name}
-\chead{\textbf{\Large Journal \hwnumber}}
+\chead{\textbf{\Large July 22 Team Talk \hwnumber}}
 \rhead{\course}
 \lfoot{}
 \cfoot{}
@@ -92,16 +92,47 @@
 %\maketitle
 
 \newpage
-\section{Preface}
-\input{Erik/Napkin/Parts/Preface}
-\tableofcontents
-\newpage
-\part{Research Log}
-\section{Week 1: June 24 - June 28}
-\input{Erik/Napkin/Parts/Week1}
-\section{Week 2: June 28 - July 5}
-\input{Erik/Napkin/Parts/Week2}
+\section{Outline}[2 mins]
+\begin{enumerate}
+    \item Background (depth) [1 min]
+    \item Depth 2 - Partitions [4 min]
+    \item Why its easy [3 mins]
+    \item Counting depth 2 [2 mins]
+    \item Plueger's in the depth 2 [4 mins]
+    \item Depth 3 an onward [3 mins]
+\end{enumerate}
 
-\bibliography{Erik/bibtex/references}
+\section{So... what is depth again?}
+\begin{tcolorbox}[title=TLDR]
+    The depth of a numerical semigroup captures a lot.
+\end{tcolorbox}
+
+Let's look at the nonzero elements of a numerical semigroup \(S\).
+
+Smallest thing in it: multiplicity \(m(S)\)
+Largest thing not in it: Frobenius number \(F(S)\)
+
+In other words, everything before \(m(S)\) is not in it (except 0).
+everything after \(F(S)\) is in it. (show duality in picture with infinite line excluding 0.
+
+So fixing \(F(S)\) and \(m(S)\) restricts a lot. What really matters is relative size, we call this the depth.
+
+\begin{definition}
+    The depth of a numerical semigroup is the unique integer \(d\) satisfying \[(d - 1) \cdot m(S) < F(S) < d \cdot m(S).\] Equivalently, \(d = \lceil \frac{F(S) + 1}{m(S)} \rceil\).
+\end{definition}
+
+\begin{tcolorbox}[title=Trivia!]
+    Characterize all numerical semigroups with \(\depth(S) = 1\).
+\end{tcolorbox}
+
+What about depth 2?
+
+\section{Depth 2}
+
+I like to use the partition picture. Let's recall what makes a partition the one associated to a numerical semigroup.
+
+Hookset = gapset. So we need every hook to appear in the first column, then we are safe!
+
+
 
 \end{document}

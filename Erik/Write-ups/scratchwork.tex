@@ -1,0 +1,201 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{amsmath, amsthm, amsfonts, amssymb, amscd}
+\usepackage{lastpage}
+\usepackage{enumerate}
+\usepackage{fancyhdr}
+\usepackage{mathrsfs}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage[capitalize, nameinlink, noabbrev]{cleveref}
+\usepackage{tikz-cd}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{todonotes}
+\usepackage{physics}
+\usepackage{draftwatermark}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{positioning}
+\usetikzlibrary{trees}
+\usepackage{pdflscape}
+\usepackage{ytableau}
+\usepackage[breakable, skins, most]{tcolorbox}
+\usepackage{Erik/Styles/colorboxes}
+\usepackage{natbib}
+\usepackage{url}
+
+\pgfplotsset{compat=1.12}
+\lstdefinestyle{Python}{
+    language        = Python,
+    frame           = lines, 
+    basicstyle      = \footnotesize,
+    keywordstyle    = \color{blue},
+    stringstyle     = \color{green},
+    commentstyle    = \color{red}\ttfamily
+}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0.05in}
+
+% Edit these as appropriate
+\newcommand\course{UCI 2024}
+\newcommand\hwnumber{}
+\newcommand\Name{Erik Imathiu-Jones}
+
+% Macros
+\usepackage{Erik/Styles/macros}
+
+\SetWatermarkText{} % \emoji{rose}} % \emoji{smiling-face-with-horns}}
+\SetWatermarkScale{1}
+\SetWatermarkAngle{0}
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\Name}
+\chead{\textbf{\Large \hwnumber}}
+\rhead{\course}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\title{}
+\author{Erik Imathiu-Jones}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+
+\maketitle
+
+\section{Refresher}
+
+Recall that the \emph{depth} of a numerical semigroup \(S\) is defined to be the integer \(q\) such that \[(q - 1) \cdot m(S) < F(S) < q \cdot m(S).\] In other words, \[\text{depth}(S) = \lceil \frac{F(S)+1}{m(S)} \rceil.\]
+
+We consider numerical semigroups of depth \(2\) so that \(m(S) < F(S) < 2 m(S)\).
+
+This implies that \(0 < F(S) - m(S) < m(S)\). Then \(f - s < F(S) - m(S)\) for all gaps \(f\) and 
+
+Denote the numerical semigroup \(S_{m, k} := \langle m, \dots, m + k\rangle\). We claim that \[\text{ew}(S_{m, k}) \le \lfloor \frac{(g+1)^2}{8} \rfloor.\] for all \(m,k\) and that this is an upperbound on all numerical semigroups of depth 2.
+
+\begin{lemma}
+    Denote the numerical semigroup \(S_{m, k} := \langle m, \dots, m + k, g + k + 2, \dots, \rangle\). The effective weight is bounded by \[\text{ew}(S_{m, k}) \le \lfloor \frac{(g+1)^2}{8} \rfloor\] and equality holds when \(m = \lfloor \frac{3(g+1)}{4} \rfloor\) and \(k = \lfloor \frac{g-1}{2} \rfloor\).
+\end{lemma}
+\begin{proof}
+    The minimal generators of \(S_{m, k}\) are exactly \(\{m, m + 1, \dots, m + k\}\) and \(S_{m, k}\) has Frobenius number \(g + (k + 1) = g + k + 1\). 
+
+Then \((m + r) - (m + k) = (r - k)\) for all \(r > k\) is a gap, and the effective weight is given by how many \(r - k\) are in \(\{1, \dots, m - 1\}\).
+
+Take \((g + k + 1) - (m + k) = g - m + 1\) as height.
+
+Then \((k + 1) \cdot (g - (m - 1)) = \text{ew}(S)\).
+
+The second largest hook is given by \((k + 1) + (g - (m - 1)) - 1 = k + g - m + 1\). We need that
+\(k + g - m + 1 < m\) so that \(0 < k < 2m - g - 1\).
+
+The largest such \(k\) is \(2m - g - 2\), so the largest effective weight is
+
+\[
+\text{ew}(S) = (2(m - 1) - g + 1)(g - (m - 1)) = -2(m-1)^2 + 3g(m - 1) - g^2 + g - (m-1).
+\]
+
+\[
+= -2(m-1)^2 + (3g - 1)(m-1) - (g^2 - g)
+\]
+
+We want to optimize this as a function of \(m\).
+
+This parabola is concave downwards with vertex
+
+\[m - 1 = \frac{(3g-1)}{-2 \cdot 2} = \frac{(3g-1)}{4}\] so that \[m = \frac{3(g + 1)}{4}\]
+
+\[
+-2\left(\frac{(3g-1)}{4}\right)^2 + (3g-1)\left(\frac{(3g-1)}{4}\right) - (g^2 - g) = \frac{(g+1)^2}{8}
+\]
+\end{proof}
+
+given some element \(a\) of \(S\) is a minimal generator and depth is 2. Suppose \(a > F(S)\) so that \(0 < f - a < m(S)\) for all gaps \(f\) above \(a\). Thus \(f - m(S) < a\). Now, \(f - m(S)\) is some gap in the column of \(m(S)\) so that 
+
+Since this is minimal, there is no relations between \(f\) and \(m(S)\). That is no \(f'\) such that \(f - f' \in S\) and \(f' - m(S) \in S\).
+
+Nothing in the column of \(m(S)\) and column of 
+
+\begin{proposition}
+    Pflueger's Conjecture is true for all numerical semigroups with depth 2.
+\end{proposition}
+
+Since \(m(S) < F(S) < 2m(S)\) we see that any \(a \in S\) with \(a < F(S)\) must be a minimal generator of \(S\). Thus the effective weight is less than \(n(S) \cdot (g - (m - 1))\). The 
+
+We also have \(\) \(0 < F(S) - m(S) < m(S)\)
+
+\[E_{i+1} = E_{i} + (a_{i+1} - a_{i})\]
+
+
+\begin{align*}
+    E_{i + 2} &= E_{i+1} + (a_{i+2} - a_{i+1}) \\
+    &= E_{i} + (a_{i+1} - a_{i}) +  (a_{i+2} - a_{i+1})  \\
+    &= E_i + (a_{i+2} - a_{i})
+\end{align*}
+
+So \[E_{i + k} = E_{i} + (a_{i+k} - a_i)\]
+
+and \[E_{i} = E_0 + (a_i - a_0)\].
+
+note, \(a_0 = m(S)\)
+Thus we can evaluation this sum
+
+\begin{align*}
+    \sum\limits_{i=0}^{n} E_i &= \sum\limits_{i=1}^n (E_0 + (a_i - a_0)) \\
+    &= n (E_0 - m(S)) + \sum\limits_{i=0}^n a_i \\
+    &= n ((g - (m-1) - m) + \sum\limits_{i=0}^n a_i \\
+    &= n (g - 2m + 1) + \sum\limits_{i=0}^n a_i
+\end{align*}
+
+Say \(a_i = m + r_i\) so that 
+
+Suppose \(S = \langle m, m + r_1, \dots, m + r_k \rangle\) has depth 2 and \(\{m, m + r_1, \dots, m + r_n\}\) are the small elements.
+
+Let \(E_i := \# \{(f, m + r_i) : G(S) \ni f > m + r_i\}\)
+
+Define the effective weight of a single minimal generator to be \[\ew(a) = \#\{(l, a) \ssep l \not\in S \text{ and } l > a\}.\]
+
+Then the effective weight of \(S\) is \[\sum\limits_{F(S) > a \in \mgs(S)} \ew(a)\]
+
+In the case that \(S\) has depth 2, all ineffective generators of \(S\) are a subset of \(\{m, \dots, 2m -2 \}\)
+
+Index the gens in increasing order \(a_i\). Then \begin{align*}
+    \ew(a_{i+1}) &= \#\{(l, a_{i+1}) \ssep l \not\in S \text{ and } l > a_{i+1}\} \\
+    &= \#\{(l, a_{i}) \ssep l \not\in S \text{ and } l > a_i\} - \#\{(l, a_{i}) \ssep l \not\in S \text{ and } a_{i+1} > l > a_{i}\}\\
+    &= \ew(a_i) - (a_{i+1} - a_i - 1)
+\end{align*}
+
+Since all integers between \(a_i\) and \(a_{i+1}\) must be gaps and there is \(a_{i+1} - a_i - 1\) such integers.
+
+We use induction to see
+
+\begin{align*}
+    \ew(a_{k}) &= \ew(a_0) - (a_{k} - a_0 - 1)
+\end{align*}
+
+Note \(a_0 = m\) so that 
+
+\begin{align*}
+    \ew(a_{k}) &= \ew(m) - (a_{k} - m - 1)
+\end{align*}
+
+Then 
+
+\begin{align*}
+    \ew(S) &= \sum\limits_{k = 0}^n \ew(a_{k})\\
+    &= \sum\limits_{k = 0}^n \left( \ew(m) - (a_{k} - m - 1) \right)\\
+    &= n \cdot \ew(m) - n (m + 1) - \sum\limits_{k=0}^{n} a_k
+\end{align*}
+
+Given that \(a_k \in \{m + 1, \dots, 2m - 2\}\) we want to optimize for given \(a_k\)
+
+
+\end{document}

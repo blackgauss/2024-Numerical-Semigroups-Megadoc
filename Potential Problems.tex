@@ -35,46 +35,74 @@ I am listing potential problems to work on and interesting questions raised duri
     \end{enumerate}
     \item Given a numerical semigroup $S$, what can you say about the distribution of $n(T)$ as $T$ varies through the numerical sets with $A(T)=S$ for which $T\setminus S$ is \emph{self-dual} (This is not the same as the partition of $T$ being symmetric).
 \end{enumerate}
+    \item We say a numerical set $T$ has no small atoms if $A(T)=\{0,F(T)+1\rightarrow\}$. Denote the number of partitions of $n$, by $p(n)$. Show that
+    \[\lim_{n\to\infty} \frac{\#\{T\mid n(T)=n, T \text{ has no small atoms}\}}{p(n)}=0.\]
     \item
     \begin{enumerate}
         \item Given a numerical semigroup $S$, what is $\min\{n(T)\mid A(T)=S\}$? (what about $\max$?)
         \item Under what condition on $S$ can you conclude that $\min\{n(T)\mid A(T)=S\}=n(S)$?
         \item Do "most" numerical semigroups $S$ satisfy $\min\{n(T)\mid A(T)=S\}=n(S)$?
+        \item 
+        \[f(n)=\min\{|\lambda(T)|\mid A(T)=S, \lambda(S)=n\}.\]
+        Describe the growth of $f$.\\
+        Alternately, describe a function $f$ (and try to make it as big as possible), such that:
+        For sufficiently large $n$, if $S$ is a numerical semigroup with $n(S)=n$ and $A(T)=S$, then $n(T)\geq f(n)$.\\
+        We have a family that shows we must have $f(n)\leq 0.8 n$.\\
+        We (maybe) have a family that shows $f(n)\leq \epsilon n$ for any $\epsilon>0$.\\
+        Would $f(n)=n^\alpha$ work for some constant $0<\alpha<1$?
     \end{enumerate}
 \end{itemize}
 
 
 \section{Numerical semigroups of size $n$}
-Consider the set of all numerical semigroups for which $n(S)=n$.
+
+\begin{itemize}
+    \item Consider the set of all numerical semigroups for which $n(S)=n$.
 \begin{enumerate}
     \item Among them what is the largest/smallest Frobenius number?
     \item Among them what is the largest/smallest genus?
     \item Among them what is the largest/smallest Durfee square?
     \item Do most of them have Frobenius number close to some value?
     \item Do most of them have genus close to some value?
+    \item Do most of them have multiplicity number close to some value?
 \end{enumerate}
+
+
+
+
+\end{itemize}
+
+
+
+
+
+
+
 
 
 \section{Counting numerical semigroups of size $n$}
 Let $p(n)$ be the number of partitions of $n$. So $p(n)=\#\{T\mid n(T)=n\}$. It is known that
 \[p(n)\sim \frac{1}{4\sqrt{3} n}\exp\Big(\pi\sqrt{\frac{2}{3}}\sqrt{n}\Big).\]
+Denote $p_{NS}(n)=\#\{S\mid n(S)=n\}$.
 
 \begin{itemize}
     \item Show that
-    \[\lim_{n\to\infty} \frac{\#\{S\mid n(S)=n\}}{p(n)}=0.\]
+    \[\lim_{n\to\infty} \frac{p_{NS}(n)}{p(n)}=0.\]
     \item Does the following limit exist
-    \[\lim_{n\to\infty} \frac{\log(n\times \#\{S\mid n(S)=n\})}{\sqrt{n}}?\]
+    \[\lim_{n\to\infty} \frac{\log(n\times p_{NS}(n))}{\sqrt{n}}?\]
+    \item What if you count the number of symmetric numerical semigroups whose partitions have size $n$?
 \end{itemize}
 
 
-\section{Void poset}
+\section{Void poset and Partition of NS}
 \begin{itemize}
     \item Which finite posets $(X,\preccurlyeq)$ occur as a void poset of a numerical semigroup?
     \begin{enumerate}
-        \item It needs to be self dual.
-        \item The map $\phi: X\to X$, has exactly one ficed point if $|X|$ is odd, and no fixed points if $|X|$ is even.
-        \item For $x,y\in X$ if $x\preccurlyeq y$, then the number of elements of $X$ directly above $x$ is at least as many as directly above $y$.
+        \item It needs to be self dual, i.e., there is a bijection $\phi:X\to X$, such that $x\preccurlyeq y$ if and only if $\phi(y)\preccurlyeq \phi(x)$.
+        \item The duality map $\phi: X\to X$, has exactly one fixed point if $|X|$ is odd, and no fixed points if $|X|$ is even.
+        \item For $x,y\in X$, if $x\preccurlyeq y$, then the number of elements of $X$ directly above $x$ is at least as many as directly above $y$.
         \item What else???
+        \item If there is at least one NS whose Void poset is $(X,\preccurlyeq)$, then are there infinitely many NS whose Void poset is $(X,\preccurlyeq)$?
     \end{enumerate}
     \item What properties of a numerical semigroup can be deduced by looking at its void poset?
     \begin{enumerate}
@@ -83,7 +111,52 @@ Let $p(n)$ be the number of partitions of $n$. So $p(n)=\#\{T\mid n(T)=n\}$. It 
         \item $S$ is almost-symmetric iff $M(S)$ has no relations.
         \item What else???
     \end{enumerate}
+
+    \item What properties of a numerical semigroup $S$ can be seen from $\lambda(S)$.
+\begin{enumerate}
+    \item $F(S)$ is the largest hook length.
+    \item $g(S)$ is the number of rows
+    \item The gaps of $S$ are the hook lengths of $\lambda(S)$.
+    \item Pseudo-Frobenius numbers of $S$ the hook lengths that occur exactly once (proven this summer).
+    \item Void of $S$ consists of hooklengths that don't occur the the top row (proven this summer).
+    \item The Void Poset can be seen from $\lambda(S)$.
+    \item Can $GPF(S)$ be seen from $\lambda(S)$?
+    \item A numerical semigroup has type $1$ if and only if $\lambda(S)$ is self conjugate.
+    If $t(S)=2$, is there something interesting in $\lambda(S)$?
+    \item Given $\lambda(S)$, we can use it to construct the Gap Poset. We have shown that the number of relations in the Gap poset (including $x\preccurlyeq x$) is the size of $\lambda(S)$.\\
+    Can we use the Gap Poset of $S$ to construct $\lambda(S)$?\\
+    If $T$ is a numerical set, we have a partition $\lambda(T)$. Is there a generalization of Gap Poset which maintains the correspondence?\\
+    If $S$ is a numerical semigroup, and $I\subseteq H(S)$ is an order ideal of the gap poset. Can the size of $\lambda(S\cup I)$ be seen from the Gap poset?
+    \item If $S$ has embedding dimension $2$, then $S$ is symmetric, so $M(S)=\emptyset$ and $\lambda(S)$ is self conjugate.\\
+    If $S$ has embedding dimension $3$, it appears from some examples that $\lambda(S)$ "appears to be" self dual (of course it is not actually self dual). Can you turn this into a precise statement? The Void poset also appears to be "nice and orderly", can this be made precise?
+    \item Is there a relation between the height of void poset of $S$ and how much $\lambda(S)$ "appears" to be self conjugate?
+\end{enumerate}
 \end{itemize}
+
+
+
+\section{Effective weight}
+
+\begin{itemize}
+    \item Pfluger conjecture: given any numerical semigroup $S$, it satisfies:
+    \[ewt(S)\leq \frac{(g(S)+1)^2}{8}\]
+    \begin{enumerate}
+        \item Prove Pfluger conjecture for numerical semigroups of depth $2$.
+        \item Prove Pfluger conjecture for numerical semigroups of depth $3$.
+        \item Prove Pfluger conjecture for numerical semigroups of multiplicity at most $N$ (choose $N$, make it as big as you can).
+        \item Find other intermediate steps
+        \item Prove Pfluger conjecture in general.
+    \end{enumerate}
+\end{itemize}
+
+\section{NS tree}
+
+If a nuerical semigroup $S'$, is a child of $S$ in the semigroup tree. Then How are properties of $S'$ related to those of $S$?
+\begin{enumerate}
+    \item Compare their void posets.
+    \item Compare $P(S)$.
+    \item What else?
+\end{enumerate}
 
 
 \end{document}

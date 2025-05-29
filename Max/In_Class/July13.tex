@@ -1,0 +1,179 @@
+\subsubsection*{What should I do?}
+
+Friday I asked Professor Kaplan what I should work on. Here is some background he provided: 
+
+\# effective gens of S $= eg(S)$
+\thm{O'Dorney}{$$\lim_{g \to \infty} \frac{\# \{S | g(S) = g, eg(S) = h \}}{N(g)} = \frac{1}{\varphi^{n+2}}$$}
+
+\Ques{Fix $m$. What is $$\lim_{g \to \infty} \frac{\# \{S | g(S) = g, m(S)=m, eg(S) = h \}}{\# \{ S | g(S) = g, m(S) = m\}} ?$$}
+
+Claim: $\# \{ S | g(S) = g, m(S) = 3, eg(S) = 0\} \leq \# \{ S | g(S) = g, m(S) = 3, eg(S) \geq 2\}$
+
+\subsubsection*{Code}
+I wrote code that does a breadth first traversal of the numerical semigroup tree looking at all semigroups of multiplicity m, up to genus g and counts their children. 
+
+\begin{lstlisting}[language=python]
+gap.eval('LoadPackage("numericalsgps")')
+load('/home/samwisega/Downloads/NumericalSemigroup.sage')
+
+def Children(S): #print children of S    #Max & Deepesh
+    GENS = S.gens 
+    F = S.FrobeniusNumber() 
+    MULT = GENS[0]
+    L = []
+    for i in GENS: 
+        if F < i: 
+            NEWGENS = []
+            for x in GENS: 
+                if x != i: 
+                    NEWGENS.append(x)
+            NEWGENS.append(i + MULT)
+            NEWGENS.append(i + MULT + 1)
+            L.append(NumericalSemigroup(NEWGENS))
+    return L   
+
+def Genus(S): 
+    return len(S.Gaps())
+
+class Node:
+    def __init__(self, value):
+        self.value = value
+        self.children = []
+        
+    def add_child(self, child_node):
+        self.children.append(child_node)
+        
+class Tree:
+    def __init__(self, root_value):
+        self.root = Node(root_value)
+
+    def find(self, value, node=None):
+        if node is None:
+            node = self.root
+        if node.value == value:
+            return node
+        for child in node.children:
+            result = self.find(value, child)
+            if result is not None:
+                return result
+        return None
+
+    def insert(self, parent_value, child_value):
+        parent_node = self.find(parent_value)
+        if parent_node is None:
+            raise ValueError(f'Parent node with value {parent_value} not found.')
+        child_node = Node(child_value)
+        parent_node.add_child(child_node)    
+
+    def display(self, node=None, level=0):
+        if node is None:
+            node = self.root
+        print(' ' * level * 2 + str(node.value))
+        for child in node.children:
+            self.display(child, level + 1)
+
+from collections import deque 
+from collections import Counter
+
+def branchmult(MAXG, m, S): #prints elements with multiplicity m in the num sgp tree starting at S
+    GENS = S.gens
+    tree = Tree(GENS)
+    visited = []
+    queue = deque([tree.root])
+    g = Genus(S)
+    numClst = []
+    
+    with open('/home/samwisega/MultChild.csv', 'w') as file:
+        file.write('Genus,Generators,Number of Children\n')
+        
+        while queue and g <= MAXG:
+            node = queue.popleft()
+            f = Genus(NumericalSemigroup(node.value))
+            visited.append(node.value)
+            current_gen = NumericalSemigroup(node.value)
+            C = Children(current_gen)
+            numC = len(C)
+            numClst.append(numC)
+            
+            # Print the genus, current semigroup and number of children  
+            # to a csv file 
+            file.write(str(g))
+            file.write(',"')
+            file.write(str(node.value))
+            file.write('",')
+            file.write(str(numC))
+            file.write('\n')
+
+            for c in C:  
+                tree.insert(node.value, c.gens)  
+                # Insert the new semigroup into the tree
+                if m in c.gens:
+                    queue.append(Node(c.gens))  
+                    # Append the new node to the queue
+            
+            nextnode = queue[0]
+            g = Genus(NumericalSemigroup(nextnode.value))
+            
+            if f < g: 
+                print('genus', f, Counter(numClst))
+                numClst = []
+\end{lstlisting}
+
+\subsubsection*{Results}
+First I ran this:
+\begin{lstlisting}[language=python]
+    S = NumericalSemigroup([3, 4, 5])
+    branchmult(150,3,S)
+\end{lstlisting}
+but I'm impatient and a pattern was already becoming clear so I stopped it at genus = 136. 
+
+I have uploaded the csv file to a google sheet titled \href{https://docs.google.com/spreadsheets/d/1xaydWKcqVwpPp5F2e6hJjlvRE8n7Usz3lbObVt-hW9E/edit?usp=sharing}{MultChild}, I made an error in formatting the semigroup gaps so it is easier to view m=3, g=100. 
+
+This also printed the number of times a semigroup has n children per genus for multiplicity 3. I also have pasted it into \href{https://docs.google.com/document/d/1cEPls2GodRP2_9fGsHNTLlVaDbv5GTP3PEub-oqsaGY/edit?usp=sharing}{this google doc} but to make viewing easier, here it is up to genus 32. 
+
+genus 2   Counter({3: 1}) \\
+genus 3   Counter({2: 1, 0: 1}) \\
+genus 4   Counter({2: 1, 0: 1})\\
+genus 5   Counter({2: 1, 1: 1})\\
+genus 6   Counter({2: 1, 1: 1, 0: 1})\\
+genus 7   Counter({2: 1, 1: 1, 0: 1})\\
+genus 8   Counter({1: 2, 2: 1})\\
+genus 9   Counter({1: 2, 2: 1, 0: 1})\\
+genus 10   Counter({1: 2, 2: 1, 0: 1})\\
+genus 11   Counter({1: 3, 2: 1})\\
+genus 12   Counter({1: 3, 2: 1, 0: 1})\\
+genus 13   Counter({1: 3, 2: 1, 0: 1})\\
+genus 14   Counter({1: 4, 2: 1})\\
+genus 15   Counter({1: 4, 2: 1, 0: 1})\\
+genus 16   Counter({1: 4, 2: 1, 0: 1})\\
+genus 17   Counter({1: 5, 2: 1})\\
+genus 18   Counter({1: 5, 2: 1, 0: 1})\\
+genus 19   Counter({1: 5, 2: 1, 0: 1})\\
+genus 20   Counter({1: 6, 2: 1})\\
+genus 21   Counter({1: 6, 2: 1, 0: 1})\\
+genus 22   Counter({1: 6, 2: 1, 0: 1})\\
+genus 23   Counter({1: 7, 2: 1})\\
+genus 24   Counter({1: 7, 2: 1, 0: 1})\\
+genus 25   Counter({1: 7, 2: 1, 0: 1})\\
+genus 26   Counter({1: 8, 2: 1})\\
+genus 27   Counter({1: 8, 2: 1, 0: 1})\\
+genus 28   Counter({1: 8, 2: 1, 0: 1})\\
+genus 29   Counter({1: 9, 2: 1})\\
+genus 30   Counter({1: 9, 2: 1, 0: 1})\\
+genus 31   Counter({1: 9, 2: 1, 0: 1})\\
+genus 32   Counter({1: 10, 2: 1})\\
+
+Notice a pattern? Yea, opening the google doc is a waste of time, it shows exactly what you would expect. 
+\newpage
+\begin{itemize}
+    \item for $m = 3, g > 2, \# \{S | eg(S) = 0\} \leq \# \{S | eg(S) = 2\}$  
+    \item when $g$ is odd the only semigroup with 2 effective generators is generated by \\
+    $\langle 3, 3(g+1)/2 - 1, 3(g+1)/2 +1  \rangle$, when $g$ is even it is generated by $\langle 3, 3g/2 + 1, 3g/2+2 \rangle $. 
+    
+    \item when $g = 0$ or $1 \mod 3$, the semigroup generated by $\langle 3, g+1 \rangle$ has 0 effective generators. When $g = 2 \mod 3$ there is no semigroup with 0 effective generators.
+    
+    \item In genus $g$ there are $\lfloor (g+1)/3\rfloor -1$ semigroups with $1$ effective generator. 
+\end{itemize}
+
+Therefore for semigroups with multiplicity $m=3$ and $h > 0$ we have 
+$$\lim_{g \to \infty} \frac{\# \{S | g(S) = g, eg(S) = h \}}{\# \{ S | g(S) = g\}} = 1$$

@@ -1,0 +1,11 @@
+If $S \to (k_1, k_2)$ then the children of $S$ will be 
+\begin{itemize}
+    \item $(k_1 + 1, k_2)$ when $k_2 + 1 \leq k_1 < 2k_2 + 1$,
+    \item $(k_1, k_2 + 1)$ when $k_1 \leq k_2 < 2k_1$.
+\end{itemize}
+Note: If $k_1=k_2$ or $k_1 = k_2 + 1$ both $(k_1 + 1, k_2)$ and $(k_1, k_2 + 1)$ will be children. If $k_1 = 2k+1$ or $k_2 = 2k_1$ there will be no children.
+
+\includegraphics[scale=0.3]{Max/images/Screenshot from 2024-07-15 13-01-52.png}
+
+We can show that for semigroups of multiplicity 3 and $h > 0$ we have 
+$$\lim_{g \to \infty} \frac{\# \{S | g(S) = g, eg(S) = h \}}{\# \{ S | g(S) = g\}} = 1$$
